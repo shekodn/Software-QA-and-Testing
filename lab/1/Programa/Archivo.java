@@ -10,8 +10,8 @@ public class Archivo implements Comparable <Archivo> {
      */
     public Archivo(){
         this.sName = "no name";
-        this.iBlankLines = -1;
-        this.iLines = -1;
+        this.iBlankLines = 0;
+        this.iLines = 0;
     }
 
     /* Getters and setters */
@@ -100,6 +100,7 @@ public class Archivo implements Comparable <Archivo> {
      * Prints file description in the desired format
      */
     public void printFileData(){
+        System.out.println("")
         System.out.println("Nombre del archivo: " + this.sName);
         System.out.println("Cantidad de líneas en blanco " + this.iBlankLines);
         System.out.println("Cantidad de líneas con información " + this.iLines);

@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+
 
 
 public class FileAnalyzer {
@@ -26,9 +28,9 @@ public class FileAnalyzer {
 
     }
 
-    public void howManyFiles(){
+    public int howManyFiles(){
 
-        int iNumberOfFiles;
+        int iNumberOfFiles = 0;
         System.out.println("How many files do you want to analyze? -> ");
         iNumberOfFiles = scUserInput.nextInt();
 
@@ -38,25 +40,25 @@ public class FileAnalyzer {
             return iNumberOfFiles;
         }
 
-        return 0;
+        return iNumberOfFiles;
     }
 
     void fileName(LinkedList <Archivo> list, int iNumberOfFiles){
 
         String sName;
         int iCounter = 1;
-        File temporalFile = new File();
+        Archivo temporalFile = new Archivo();
         Analyzer analyzer = new Analyzer();
 
         for(int iI = 0; iI < iNumberOfFiles; iI++){
 
-            System.out.println("Name for file " + iCounter + "/" +
-                    iNumberOfFiles + " ->");
+            System.out.print("Name for file " + iCounter + " out of " +
+            iNumberOfFiles + " ->");
+            System.out.println();
 
             sName = scFileName.nextLine();
 
-            // if(analyzer.isAFile(sName){
-            if(true){
+            if(analyzer.isAFile(sName)){
                 temporalFile.setName(sName);
                 list.add(temporalFile);
 
@@ -70,12 +72,21 @@ public class FileAnalyzer {
     public void scan(LinkedList <Archivo> list){
 
         Analyzer analyzer = new Analyzer();
-        File temporalFile = new File();
+        Archivo temporalFile = new Archivo();
 
-        for(int iI = 0; iI < list.size(), iI++){
-            analyzer.readByLine(list.get(iI).getName(), temporalFile);
-            list.add(temporalFile);
-            temporalFile.resetValues();
+        for(int iI = 0; iI < list.size(); iI++){
+
+            try{
+
+                temporalFile = analyzer.readByLine(list.get(iI).getName(), temporalFile);
+                list.get(iI).setBlankLines(temporalFile.getBlankLines());
+                list.get(iI).setLines(temporalFile.getLines());
+                temporalFile.resetValues();
+
+            }
+            catch (FileNotFoundException ex){
+                System.out.println("Error reading the file in scan method");
+            }
         }
     }
 
@@ -90,8 +101,9 @@ public class FileAnalyzer {
     public void printGlobalData(){
 
         Analyzer analyzer = new Analyzer();
-        analyzer.calculateLinesGlobalInfo(lklFiles, iBLANKLINES, iLINES){
-        analyzer.globalInformation(lklFiles.size(),iBLANKLINES, iLINES);
+        iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles, iBLANKLINES);
+        iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
+        analyzer.globalInformation(lklFiles.size(), iBLANKLINES ,iLINES);
     }
 
     public void analyze(){
@@ -100,10 +112,10 @@ public class FileAnalyzer {
         init();
         iNumberOfFiles = howManyFiles();
         fileName(lklFiles, iNumberOfFiles);
-        scan();
+        scan(lklFiles);
         // sort in ascending order
         Collections.sort(lklFiles);
-        printIndividualData();
+        individualData(lklFiles);
         printGlobalData();
     }
 
