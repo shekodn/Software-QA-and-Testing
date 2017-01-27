@@ -9,6 +9,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+
+
 public class Analyzer {
 
     private int iLINES = 0;
@@ -41,29 +47,82 @@ public class Analyzer {
             return true;
 
         } else{
-            //System.out.println(fileName + " is not FILE ");
+            System.out.println(fileName + " is not FILE ");
             return false;
         }
 
     }
+
+    public Archivo readByLine2(String fileName, Archivo archivo){
+
+        String FILENAME = fileName;
+        BufferedReader br = null;
+        FileReader fr = null;
+        int iBlankCounter = 0;
+        int iLineCounter = 0;
+
+        try {
+
+            fr = new FileReader(FILENAME);
+            br = new BufferedReader(fr);
+
+            String sCurrentLine;
+
+            br = new BufferedReader(new FileReader(FILENAME));
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                // System.out.println(sCurrentLine.length());
+
+                if(sCurrentLine.length() >= 1){
+                    iLineCounter++;
+                    //System.out.println(sCurrentLine.length());
+                } else{
+                    iBlankCounter++;
+                    //System.out.println(sCurrentLine.length());
+                }
+            }
+
+
+            archivo.setName(fileName);
+            archivo.setBlankLines(iBlankCounter);
+            archivo.setLines(iLineCounter);
+
+
+            br.close();
+
+
+        } catch (IOException e) {
+
+            //e.printStackTrace();
+
+        }
+
+
+        return archivo;
+
+    }
+
+
 
     public Archivo readByLine(String fileName, Archivo archivo) throws FileNotFoundException{
 
         Scanner linReader = new Scanner(new File(fileName));
         int iBlankCounter = 0;
         int iLineCounter = 0;
-        String sLine;
 
-        while (linReader.hasNext()){
 
-            sLine = linReader.nextLine();
 
-            if(sLine.length() > 0){
+        // while (linReader.hasNextLine()){
+        while(linReader.hasNext()){
+
+            String sLine = linReader.nextLine();
+
+            if(sLine.length() >= 1){
                 iLineCounter++;
-                //System.out.println(sLine.length());
+                System.out.println(sLine.length());
             } else{
                 iBlankCounter++;
-                //System.out.println(sLine.length());
+                System.out.println(sLine.length());
             }
         }
 
