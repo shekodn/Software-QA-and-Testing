@@ -15,22 +15,6 @@ public class Archivo implements Comparable <Archivo> {
 
     }
 
-    // public Archivo copyArchivo (Archivo archivo){
-    //     Archivo a = new Archivo();
-    //     //for all properties in FOo
-    //     a.set(archivo.get());
-    //     return a;
-    // }
-
-    /**
-    * Copy constructor.
-    */
-    // public Archivo(Archivo aArchivo) {
-    //     this(aArchivo.getName(), aArchivo.getBlankLines(), aArchivo.getLines());
-    //     //no defensive copies are created here, since
-    //     //there are no mutable object fields (String is immutable)
-    // }
-
     // copy constructor
     Archivo(Archivo a) {
         System.out.println("Copy constructor called");
@@ -40,10 +24,13 @@ public class Archivo implements Comparable <Archivo> {
 
     }
 
-
-
-
-
+    /**
+     * Default constructor
+     * @param  String sName         [file name]
+     * @param  int    iBlankLines   [number of blank lines]
+     * @param  int    iLines        [number of lines with information]
+     * @return        [Object file]
+     */
     public Archivo(String sName, int iBlankLines, int iLines){
         this.sName = sName;
         this.iBlankLines = iBlankLines;
@@ -53,7 +40,7 @@ public class Archivo implements Comparable <Archivo> {
     /* Getters and setters */
 
     /**
-    * [gets file name]
+    * gets file name
     * @return [sName]
     */
     public String getName(){
@@ -69,7 +56,7 @@ public class Archivo implements Comparable <Archivo> {
     }
 
     /**
-    * [getBlankLines of file]
+    * getBlankLines of file
     * @return [number of blank lines]
     */
     public int getBlankLines(){
@@ -78,7 +65,7 @@ public class Archivo implements Comparable <Archivo> {
     }
 
     /**
-    * [setBlankLines]
+    * setBlankLines
     * @param int iN [number of blank lines]
     */
     public void setBlankLines(int iN){
@@ -105,7 +92,9 @@ public class Archivo implements Comparable <Archivo> {
 
     /* Special funcitons */
 
-
+    /**
+     * resets all File values
+     */
     public void resetValues(){
 
         this.sName = "reset name";
@@ -121,6 +110,11 @@ public class Archivo implements Comparable <Archivo> {
     */
 
     //@Override
+    /**
+     * Function used to sort according to lines with information
+     * @param  Archivo File to compare with
+     * @return         [gretest file (according to lines with information)]
+     */
     public int compareTo(Archivo o) {
         int comparedSize = o.iLines;
         if (this.iLines > comparedSize) {
@@ -136,10 +130,9 @@ public class Archivo implements Comparable <Archivo> {
     * Prints file description in the desired format
     */
     public void printFileData(){
-        System.out.println("");
         System.out.println("Nombre del archivo: " + this.sName);
-        System.out.println("Cantidad de líneas en blanco " + this.iBlankLines);
-        System.out.println("Cantidad de líneas con información " + this.iLines);
+        System.out.println("Cantidad de líneas en blanco: " + this.iBlankLines);
+        System.out.println("Cantidad de líneas con información: " + this.iLines);
         System.out.println("-------------------------------------------------");
     }
 }

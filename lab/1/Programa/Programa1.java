@@ -6,43 +6,71 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileAnalyzer {
+public class Programa1 {
 
-    private LinkedList <Archivo> lklFiles;
-    private int iBLANKLINES;
-    private int iLINES;
-    private Scanner scUserInput;
-    private Scanner scFileName;
-    private int iNumberOfFiles;
+    private LinkedList <Archivo> lklFiles; //LinkedList of Archivo object
+    private int iBLANKLINES; //global number of blank lines
+    private int iLINES; //global number of lines with info.
+    private Scanner scUserInput; //scanner with user input (how many files)
+    private Scanner scFileName; //scanner with user input to name files
+    private int iNumberOfFiles; //number of files to analyze
+    private boolean isACorrectNumberInput;
 
+    /**
+     * Initializes variables
+     */
     public void init(){
         lklFiles = new LinkedList<Archivo>();
-//        lklFiles = new LinkedList<Archivo>();
         iBLANKLINES = 0;
         iLINES = 0;
         scUserInput = new Scanner(System.in);
         scFileName = new Scanner(System.in);
-
         iNumberOfFiles = 0;
+        isACorrectNumberInput = false;
     }
 
+    /**
+     * This functions is for slowing down the output in the screen
+     * @param int ms [number of miliseconds]
+     */
+    private void sleep(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Asks the user how many files he is going to scan
+     * @return [number o files]
+     */
     public int howManyFiles(){
 
         int iNumberOfFiles = 0;
-        System.out.println("How many files do you want to analyze? -> ");
-        iNumberOfFiles = scUserInput.nextInt();
-        System.out.println("");
 
+        try{
 
-        //checks if it is a number
-        if (iNumberOfFiles > 0){
+            System.out.println("How many files do you want to analyze? -> ");
+            iNumberOfFiles = scUserInput.nextInt();
 
-            return iNumberOfFiles;
-        }
+            System.out.println("");
+            isACorrectNumberInput = true;
 
         return iNumberOfFiles;
+
+        } catch(Exception e){
+
+            System.out.println("You need to put a number!" + "\n");
+        }
+
+        return 0;
     }
 
+    /**
+     * The user put the name of the files he is goint to scan
+     * @param int iNumberOfFiles
+     */
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -61,31 +89,34 @@ public class FileAnalyzer {
             if(analyzer.isAFile(sName)){
                 temporalFile.setName(sName);
                 lklFiles.add(temporalFile);
-                System.out.println(temporalFile.getName() + " is a file!");
-
-                System.out.println("");
+                System.out.println(temporalFile.getName() + " is a file!" +
+                        "\n");
+                iCounter++;
 
             } else{
-                System.out.println(temporalFile.getName() + " was not added bc is not a file");
-                System.out.println("");
+
+                sleep(500);
+                System.out.println("PLEASE TRY AGAIN!" + "\n");
+                iI-=1;
             }
 
-            iCounter++;
         }
     }
-
+    /**
+     * Scans and count the number of blank and normal lines per file
+     */
     public void scan(){
-
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
             analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile);
             lklFiles.set(iI,temporalFile);
         }
-
-        System.out.println("FINISHES SCAN METHOD");
     }
 
+    /**
+     * prints data per file
+     */
     public void individualData(){
 
         for(int iI = 0; iI < lklFiles.size(); iI++){
@@ -93,14 +124,20 @@ public class FileAnalyzer {
         }
     }
 
+    /**
+     * prints total quantities of lines, blank lines and files
+     */
     public void printGlobalData(){
-
         Analyzer analyzer = new Analyzer();
-        iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles, iBLANKLINES);
+        iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles,
+                iBLANKLINES);
         iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
         analyzer.globalInformation(lklFiles.size(), iBLANKLINES ,iLINES);
     }
 
+    /**
+     * Performs the overall analysis of files
+     */
     public void analyze(){
         //methods
         init();
@@ -113,9 +150,8 @@ public class FileAnalyzer {
         printGlobalData();
     }
 
-
     public static void main(String[] args) {
-        FileAnalyzer program = new FileAnalyzer();
+        Programa1 program = new Programa1();
         program.analyze();
     }
 }
