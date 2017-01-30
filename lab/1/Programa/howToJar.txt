@@ -1,0 +1,30 @@
+1) Ensure that all necessary files are within the directory, you have opened a terminal/Command Prompt and have navigated to that directory.
+
+2) Compile the .java class, for example HelloWorld.java with
+
+javac HelloWorld.java
+3) This will produce a .class file needed for the JAR file.
+
+4) Next create a manifest file (saved using the extension .txt) using the text editor and input the following
+
+Main-Class: HelloWorld
+or whatever your file's name is.
+
+5) Next create the JAR file using this code:
+
+jar cfm HelloWorld.jar Manifest.txt HelloWorld.class
+6) Run the file:
+
+java -jar HelloWorld.jar
+If anything seems unclear consult these websites: creating a jar file and setting an applications entry point.
+
+Hope this helps others, cheers Tom!
+
+Edit:
+
+Following inga's comment it's worth noting that in order to include multiple files in the jar you need to use the:
+
+javac *.java
+followed by
+
+jar cfm HelloWorld.jar Manifest.txt *.class
