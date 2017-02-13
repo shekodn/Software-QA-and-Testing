@@ -13,16 +13,18 @@ public class Programa2 {
     //&i
     private LinkedList <Archivo> lklFiles; //LinkedList of Archivo object
 
-    private LinkedList <Parte> lklPartesBase;
-    private LinkedList <Parte> lklPartesNuevas;
-    private LinkedList <Parte> lklPartesReusadas;
-
     private int iBLANKLINES; //global number of blank lines
     private int iLINES; //global number of lines with info.
     private Scanner scUserInput; //scanner with user input (how many files)
     private Scanner scFileName; //scanner with user input to name files
     private int iNumberOfFiles; //number of files to analyze
     private boolean isACorrectNumberInput;
+
+    private LinkedList <Parte> lklPartes;
+    private LinkedList <Parte> lklPartesBase;
+    private LinkedList <Parte> lklPartesNuevas;
+    private LinkedList <Parte> lklPartesReusadas;
+
 
     /**
      * Initializes variables
@@ -36,6 +38,13 @@ public class Programa2 {
         scFileName = new Scanner(System.in);
         iNumberOfFiles = 0;
         isACorrectNumberInput = false;
+
+        //listas
+        lklPartes = new LinkedList<Parte>();
+        lklPartesBase = new LinkedList<Parte>();
+        lklPartesNuevas = new LinkedList<Parte>();
+        lklPartesReusadas = new LinkedList<Parte>();
+
     }
 
     /**

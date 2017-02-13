@@ -51,7 +51,7 @@ public class Parte {
     public Parte(String sName, String sTipoDeParte ,int iLDC, int iLineasBase,
                 int iLineasBorradas, int iLineasModificadas, int iLineasAgregadas,
                 int iLineasTotales, int iNumberOfItems){
-                    
+
         this.sName = sName;
         this.sTipoDeParte = sTipoDeParte;
         this.iLDC = iLDC;
@@ -171,44 +171,6 @@ public class Parte {
         }
     }
 
-    //&i
-    /**
-     * Verfies that LOC is a part //&p-"
-     * @param  String sPart
-     * @return
-     */
-    public boolean isAPart(String sPart){
-        if(sPart.contains("//&p-")){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
-    /**
-     * Determines if LOC is an item
-     * @param  String sPart
-     * @return
-     */
-    public boolean isAnItem(String sPart){
-        if(sPart.contains("//&i")){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
-    /**
-     * Preconditions: Use is a part method (true)
-     * gets the name of a part ex. "//&p-NNN"
-     * @param  String sLine
-     * @return NNN
-     */
-    //&i
-    public String getPartName(String sLine){
-        return sLine.substring(5);
-    }
-
     /**
      * getLinesOfSpecificID description ex. //&b-42
      * @param  String sName
@@ -217,7 +179,7 @@ public class Parte {
     //&i
     public int getLinesOfSpecificID(String sName){
 
-        if(sName == "base" || sName == "nueva" ||sName == "reusada"){
+        if(sName.contains("base") || sName.contains("nueva") ||sName.contains("reusada")){
 
             return Integer.parseInt(sName.substring(5));
 

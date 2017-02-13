@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 
+
 public class Analyzer {
 
     /**
@@ -25,6 +26,20 @@ public class Analyzer {
     private int iLINES = 0;
     private int iBLANKLINES = 0;
     private boolean isClosed = true; // true comment closed, false, waiting to close comment
+
+    private LinkedList <Parte> lklPartes;
+    private LinkedList <Parte> lklPartesBase;
+    private LinkedList <Parte> lklPartesNuevas;
+    private LinkedList <Parte> lklPartesReusadas;
+
+    // public void init(){
+    //
+    //     lklPartes = new LinkedList<Parte>();
+    //     lklPartesBase = new LinkedList<Parte>();
+    //     lklPartesNuevas = new LinkedList<Parte>();
+    //     lklPartesReusadas = new LinkedList<Parte>();
+    // }
+
 
     /**
      * gets total lines
@@ -89,36 +104,75 @@ public class Analyzer {
         FileReader fr = null;
         int iBlankCounter = 0;
         int iLineCounter = 0;
+        lklPartes = new LinkedList<Parte>();
 
         try {
 
             fr = new FileReader(FILENAME);
             br = new BufferedReader(fr);
-
             String sCurrentLine;
-
             br = new BufferedReader(new FileReader(FILENAME));
 
             while ((sCurrentLine = br.readLine()) != null) {
 
                 isClosed = checksComment(sCurrentLine);
 
-                if(isClosed || (sCurrentLine.trim().equals("") ||
+                if((sCurrentLine.trim().equals("") ||
                                 sCurrentLine.trim().equals("\t") ||
                                 sCurrentLine.trim().equals(" ")  ||
                                 sCurrentLine.trim().equals("}")  ||
                                 sCurrentLine.trim().equals("{")  ||
-                                sCurrentLine.contains("/*")      ||
                                 sCurrentLine.contains("//")      ||
-                                sCurrentLine.contains("*/") ){
+                                sCurrentLine.contains("/*")      ||
+                                sCurrentLine.contains("*/"))){
 
-                    iBlankCounter++;
+                    if(sCurrentLine.contains("//")){ //si hay comentario
+
+                        //hacer funcion
+                        //Agrgar parte si es que hay
+                        if (isAPart(sCurrentLine)){// checa si tiene el tag de parte
+
+                            if(isAlreadyAPart(lklPartes, getPartName(sCurrentLine)) >= 0){ //checa si la parte ya esta en la lista
+
+                            } else {
+                                //Si no esta, creala, ponle la info y metela a la lista
+                                Parte parParte = new Parte();
+                                parParte.setName(getPartName(sCurrentLine));
+                                lklPartes.add(parParte);
+                            }
+                        }
+
+                        //checar que no esten despues de una LDC que se debe de contar
+                        if(sCurrentLine.contains("//&m") ){
+                            iLineCounter++;
+                            System.out.println(" after" + sCurrentLine + "Line  counter " + iLineCounter);
+
+                        } else{
+                            iBlankCounter++;
+                            //System.out.println("not after " +sCurrentLine);
+                        }
+
+                    } else {
+                        iBlankCounter++;
+                        //System.out.println("else after " +sCurrentLine);
+                    }
 
                 } else{
+                    if (isClosed){
+                        iLineCounter++;
 
-                    iLineCounter++;
+                    } else{
+                        iBlankCounter++;
+                    }
                 }
             }
+
+            System.out.println("Partes: " + lklPartes.size());
+
+            for(int iI = 0; iI < lklPartes.size(); iI++){
+                System.out.println(lklPartes.get(iI).getName());
+            }
+
             archivo.setName(fileName);
             archivo.setBlankLines(iBlankCounter);
             archivo.setLines(iLineCounter);
@@ -130,6 +184,60 @@ public class Analyzer {
         }
 
         return archivo;
+    }
+
+    /* PART HELPER */
+
+    public int isAlreadyAPart(LinkedList <Parte> list, String sName){
+
+        for (int iI = 0; iI < list.size(); iI ++){
+
+            if(sName == list.get(iI).getName()){
+                //System.out.println(sName + "already is a part");
+                return iI;
+            }
+        }
+
+        //System.out.println(sName + "is a new part");
+        return -1;
+    }
+
+    /**
+     * Preconditions: Use is a part method (true)
+     * gets the name of a part ex. "//&p-NNN"
+     * @param  String sLine
+     * @return NNN
+     */
+    //&i
+    public String getPartName(String sLine){
+        return sLine.substring(5);
+    }
+
+    //&i
+    /**
+     * Verfies that LOC is a part //&p-"
+     * @param  String sPart
+     * @return
+     */
+    public boolean isAPart(String sPart){
+        if(sPart.contains("//&p-")){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    /**
+     * Determines if LOC is an item
+     * @param  String sPart
+     * @return
+     */
+    public boolean isAnItem(String sPart){
+        if(sPart.contains("//&i")){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     private boolean checksComment(String sCurrentLine){
@@ -145,9 +253,9 @@ public class Analyzer {
 
         if(sCurrentLine.contains("/*")){
             return false;
-        } else{
-            return true;
         }
+
+        return true;
     }
 
     public boolean comment(String sLinea){
@@ -173,6 +281,28 @@ public class Analyzer {
             return false;
         }
     }
+
+    public boolean isCommentAfterStatement(String sLinea){
+
+        Pattern pattern2 = Pattern.compile(".*//");
+        Matcher matcher2 = pattern2.matcher(sLinea);
+
+        if(matcher2.find()) {
+
+            if(matcher2.group().length() == 2){ //this starts with comment
+                 return false;
+
+            } else{
+                //this has a comment after statements
+                return true;
+            }
+
+        } else{
+
+            return false;
+        }
+    }
+
 
 
     /**
@@ -221,4 +351,5 @@ public class Analyzer {
         }
         return iBlankLines;
     }
+
 }
