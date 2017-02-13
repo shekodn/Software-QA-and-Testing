@@ -128,50 +128,31 @@ public class Analyzer {
 
                     if(sCurrentLine.contains("//")){ //si hay comentario
 
-                        //hacer funcion
-                        //Agrgar parte si es que hay
-                        if (isAPart(sCurrentLine)){// checa si tiene el tag de parte
-
-                            if(isAlreadyAPart(lklPartes, getPartName(sCurrentLine)) >= 0){ //checa si la parte ya esta en la lista
-
-                            } else {
-                                //Si no esta, creala, ponle la info y metela a la lista
-                                Parte parParte = new Parte();
-                                parParte.setName(getPartName(sCurrentLine));
-                                lklPartes.add(parParte);
-                            }
-                        }
+                        addingParts(sCurrentLine, lklPartes);
 
                         //checar que no esten despues de una LDC que se debe de contar
                         if(sCurrentLine.contains("//&m") ){
                             iLineCounter++;
-                            System.out.println(" after" + sCurrentLine + "Line  counter " + iLineCounter);
 
                         } else{
                             iBlankCounter++;
-                            //System.out.println("not after " +sCurrentLine);
                         }
 
                     } else {
+                        //si no contiene "//", sumar lineas blancas
                         iBlankCounter++;
-                        //System.out.println("else after " +sCurrentLine);
                     }
 
                 } else{
+                    //is closed es para no agregar palabras entre comentarios /* */
                     if (isClosed){
                         iLineCounter++;
-
                     } else{
                         iBlankCounter++;
                     }
                 }
             }
 
-            System.out.println("Partes: " + lklPartes.size());
-
-            for(int iI = 0; iI < lklPartes.size(); iI++){
-                System.out.println(lklPartes.get(iI).getName());
-            }
 
             archivo.setName(fileName);
             archivo.setBlankLines(iBlankCounter);
@@ -183,10 +164,33 @@ public class Analyzer {
             //e.printStackTrace();
         }
 
+        System.out.println("Partes: " + lklPartes.size());
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+            System.out.println(lklPartes.get(iI).getName());
+        }
+
         return archivo;
     }
 
     /* PART HELPER */
+
+
+    public void addingParts(String sCurrentLine, LinkedList <Parte> list){
+
+        //hacer funcion
+        //Agrgar parte si es que hay
+        if (isAPart(sCurrentLine)){// checa si tiene el tag de parte
+
+            if(isAlreadyAPart(list, getPartName(sCurrentLine)) >= 0){ //checa si la parte ya esta en la lista
+
+            } else {
+                //Si no esta, creala, ponle la info y metela a la lista
+                Parte parParte = new Parte();
+                parParte.setName(getPartName(sCurrentLine));
+                list.add(parParte);
+            }
+        }
+    }
 
     public int isAlreadyAPart(LinkedList <Parte> list, String sName){
 
