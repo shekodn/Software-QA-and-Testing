@@ -32,6 +32,10 @@ public class Analyzer {
     private LinkedList <Parte> lklPartesNuevas;
     private LinkedList <Parte> lklPartesReusadas;
 
+    private String sActivePart;
+    private int iCurrentIndex = 0;
+
+
     // public void init(){
     //
     //     lklPartes = new LinkedList<Parte>();
@@ -128,7 +132,7 @@ public class Analyzer {
 
                     if(sCurrentLine.contains("//")){ //si hay comentario
 
-                        addingParts(sCurrentLine, lklPartes);
+                        sActivePart = addingParts(sCurrentLine, lklPartes);
 
                         //checar que no esten despues de una LDC que se debe de contar
                         if(sCurrentLine.contains("//&m") ){
@@ -137,6 +141,16 @@ public class Analyzer {
                         } else{
                             iBlankCounter++;
                         }
+
+                        //conteo de tags
+                        if(sCurrentLine.contains("//&i") && sActivePart != null){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            System.out.println("Current index: " + iCurrentIndex);
+                            lklPartes.get(iCurrentIndex).addItem();
+                        }
+
+                        //conteo de tags
+
 
                     } else {
                         //si no contiene "//", sumar lineas blancas
@@ -167,35 +181,81 @@ public class Analyzer {
         System.out.println("Partes: " + lklPartes.size());
         for(int iI = 0; iI < lklPartes.size(); iI++){
             System.out.println(lklPartes.get(iI).getName());
+            System.out.println(lklPartes.get(iI).getNumberOfItems() + "\n");
         }
+
+        // lklPartes.get(0).setName("new email");
+        // System.out.println(lklPartes.get(0).getName());
+
 
         return archivo;
     }
 
     /* PART HELPER */
+    /**
+     * Precondition: this methood should be inside is a part
+     * @param String     sPartName [description]
+     * @param LinkedList <Parte>   list          [description]
+     */
+    public void currentPartName(String sPartName, LinkedList <Parte> list){
+
+        //si se usa la parte actual
+        if(getPartName(sPartName) == sActivePart){
 
 
-    public void addingParts(String sCurrentLine, LinkedList <Parte> list){
+        } else{
 
+            //busca parte
+            for(int iI = 0; iI < lklPartes.size(); iI++){
+
+                if (getPartName(sPartName) == sActivePart){
+                    sActivePart = list.get(iI).getName();
+                    //agregar items aqui
+                }
+            }
+        }
+    }
+
+
+    public String addingParts(String sCurrentLine, LinkedList <Parte> list){
         //hacer funcion
         //Agrgar parte si es que hay
         if (isAPart(sCurrentLine)){// checa si tiene el tag de parte
 
             if(isAlreadyAPart(list, getPartName(sCurrentLine)) >= 0){ //checa si la parte ya esta en la lista
 
+                sActivePart = getPartName(sCurrentLine);
+
             } else {
                 //Si no esta, creala, ponle la info y metela a la lista
                 Parte parParte = new Parte();
                 parParte.setName(getPartName(sCurrentLine));
+                sActivePart = getPartName(sCurrentLine);
                 list.add(parParte);
             }
         }
+
+        return sActivePart;
     }
+
+    public int getCurrentPartIndex(String sPartName, LinkedList <Parte> list){
+
+        int iIndex = 0;
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            if (sPartName.equals(list.get(iI).getName())){
+                return iI;
+           }
+        }
+
+        return 0;
+    }
+
 
     public int isAlreadyAPart(LinkedList <Parte> list, String sName){
 
         for (int iI = 0; iI < list.size(); iI ++){
-
             if(sName == list.get(iI).getName()){
                 //System.out.println(sName + "already is a part");
                 return iI;

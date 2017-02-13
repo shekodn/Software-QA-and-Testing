@@ -156,6 +156,10 @@ public class Parte {
 
     /* Other methods */
 
+    public int addItem(){
+        iNumberOfItems = iNumberOfItems + 1;
+        return iNumberOfItems;
+    }
 
     //&i
     public String tipoDeParte(int iB, int iM, int iD, int iA){
