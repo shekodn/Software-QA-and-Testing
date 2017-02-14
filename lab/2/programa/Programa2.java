@@ -170,7 +170,6 @@ public class Programa2 {
         scan();
         //sort in ascending order
         Collections.sort(lklFiles);
-        individualData();
         printGlobalData();
     }
 

@@ -93,9 +93,9 @@ public class Parte {
     //     return iLineasAgregadas;
     // }
 
-    // public int getLineasTotales(){
-    //     return iLineasTotales;
-    // }
+    public int getLineasTotales(){
+        return iLineasTotales;
+    }
 
     public int getNumberOfItems(){
         return iNumberOfItems;
@@ -107,7 +107,7 @@ public class Parte {
         return iT - iB + iD;
     }
 
-    public int getLineasTotales(int iA, int iB, int iD){
+    public int calculaLineasTotales(int iA, int iB, int iD){
         return  iA + iB - iD;
     }
 
@@ -171,18 +171,29 @@ public class Parte {
         return iLineasBorradas;
     }
 
+    public int addLineasTotales(){
+        iLineasTotales = iLineasTotales + 1;
+        return iLineasTotales;
+    }
+
+
+
 
     //&i
-    public String tipoDeParte(int iB, int iM, int iD, int iA){
+    public void tipoDeParte(int iB, int iM, int iD, int iA){
 
         if (iB > 0 && (iM > 0 || iD > 0 || iA > 0)) {
-            return "base";
+            this.sTipoDeParte = "base";
+            // return "base";
         } else if (iB == 0 && iM == 0 && iD == 0 && iA > 0) {
-            return "nueva";
+            this.sTipoDeParte = "nueva";
+            // return "nueva";
         } else if (iB > 0 && iM == 0 && iD == 0 && iA == 0) {
-            return "reusada";
+            this.sTipoDeParte = "reusada";
+            // return "reusada";
         }  else {
-            return "error";
+            this.sTipoDeParte = "error";
+            // return "error";
         }
     }
 
@@ -205,26 +216,25 @@ public class Parte {
     }
 
 
-    public void printPartInfo(String sPartName, String iLineasTotales, String iNumberOfItems,
-                    String iLineasBase, String iLineasBorradas, String iLineasModificadas,
-                    String iLineasAgregadas){
+    public void printPartInfo(String sPartName, int iLineasTotales, int iNumberOfItems,
+                    int iLineasBase, int iLineasBorradas, int iLineasModificadas,
+                    int iLineasAgregadas, String sTipo){
 
-        System.out.println("PARTES BASE:");
-        System.out.println("\t" + sPartName + ": T=" + iLineasTotales +
-                        ", I=" + iNumberOfItems + ", B=" + iLineasBase + ", D=" +
-                        iLineasBorradas + ", M=" + iLineasModificadas + ", A=" +
-                        iLineasAgregadas);
+        if(sTipo == "base"){
+            System.out.println("\t" + sPartName + ": T=" + iLineasTotales +
+                            ", I=" + iNumberOfItems + ", B=" + iLineasBase + ", D=" +
+                            iLineasBorradas + ", M=" + iLineasModificadas + ", A=" +
+                            iLineasAgregadas);
 
+        } else if (sTipo == "nueva"){
+            System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
+                            " I=" + iNumberOfItems + " B=" + iLineasBase);
 
-        System.out.println("PARTES NUEVAS:");
-        System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
-                        " I=" + iNumberOfItems + " B=" + iLineasBase);
-
-
-        System.out.println("PARTES REUSADAS:");
-        System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
-                        " I=" + iNumberOfItems + " B=" + iLineasBase);
-
-        System.out.println("--------------------------------------------");
+        } else if (sTipo == "reusada"){
+            System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
+                            " I=" + iNumberOfItems + " B=" + iLineasBase);
+        } else {
+            System.out.println("ERROR CON EL TIPO DE PARTE");
+        }
     }
 }

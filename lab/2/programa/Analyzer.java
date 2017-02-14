@@ -119,7 +119,9 @@ public class Analyzer {
 
             while ((sCurrentLine = br.readLine()) != null) {
 
+                String strippedString = sCurrentLine.trim();
                 isClosed = checksComment(sCurrentLine);
+                sActivePart = addingParts(strippedString, lklPartes);
 
                 if((sCurrentLine.trim().equals("") ||
                                 sCurrentLine.trim().equals("\t") ||
@@ -130,21 +132,13 @@ public class Analyzer {
                                 sCurrentLine.contains("/*")      ||
                                 sCurrentLine.contains("*/"))){
 
-                    //sCurrentLine = sCurrentLine.strip(' \t\n\r')
-
-                    //String strippedString = sCurrentLine.replace("\t", "");
-                    //String strippedString = sCurrentLine.strip("\t\n\r")
-                    //String strippedString = sCurrentLine.strip();
-                    String strippedString = sCurrentLine.trim();
 
 
+                    if(strippedString.contains("//")){ //si hay comentario
 
-                    if(sCurrentLine.contains("//")){ //si hay comentario
-
-                        sActivePart = addingParts(sCurrentLine, lklPartes);
 
                         //checar que no esten despues de una LDC que se debe de contar
-                        if(sCurrentLine.contains("//&m") ){
+                        if(strippedString.contains("//&m") ){
                             iLineCounter++;
 
                         } else{
@@ -152,31 +146,27 @@ public class Analyzer {
                         }
 
                         //conteo de tags
-                        if(sCurrentLine.contains("//&i") && sActivePart != null){
+                        if(strippedString.contains("//&i") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                             lklPartes.get(iCurrentIndex).addItem();
                         }
 
                         //conteo de tags base
-                        if(sCurrentLine.contains("//&b=") && sActivePart != null){
+                        if(strippedString.contains("//&b=") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            int iLinesBase = getLinesOfSpecificID(sCurrentLine,"//&b=");
-                            lklPartes.get(iCurrentIndex).setLineasBase(iLinesBase);
+                            int iLinesBase = getLinesOfSpecificID(strippedString,"//&b=");
+                            lklPartes.get(iCurrentIndex).setLineasBase(iLinesBase + lklPartes.get(iCurrentIndex).getLineasBase());
                         }
 
                         //conteo de tags deleted
                         if(strippedString.contains("//&d=") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            System.out.println("Striped " + strippedString.length());
-                            System.out.println("Striped " + strippedString);
-
                             int iLineasBorradas = getLinesOfSpecificID(strippedString, "//&d=");
-                            System.out.println(strippedString);
                             lklPartes.get(iCurrentIndex).setLineasBorradas(lklPartes.get(iCurrentIndex).getLineasBorradas() + iLineasBorradas);
                         }
 
                         //conteo de tags deleted
-                        if(sCurrentLine.contains("//&m") && sActivePart != null && isClosed && !sCurrentLine.contains("\"")){
+                        if(strippedString.contains("//&m") && sActivePart != null && isClosed && !strippedString.contains("\"")){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                             //System.out.println(sCurrentLine);
                             lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
@@ -190,14 +180,14 @@ public class Analyzer {
 
                 } else{
                     //is closed es para no agregar palabras entre comentarios /* */
-                    if (isClosed){
-                        iLineCounter++;
-                    } else{
-                        iBlankCounter++;
+                    if( sActivePart != null){
+                        iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                        lklPartes.get(iCurrentIndex).addLineasTotales();
                     }
+
+                    iLineCounter++;
                 }
             }
-
 
             archivo.setName(fileName);
             archivo.setBlankLines(iBlankCounter);
@@ -209,20 +199,88 @@ public class Analyzer {
             //e.printStackTrace();
         }
 
-        System.out.println("Partes: " + lklPartes.size());
-        for(int iI = 0; iI < lklPartes.size(); iI++){
-            System.out.println(lklPartes.get(iI).getName());
-            System.out.println(lklPartes.get(iI).getNumberOfItems());
-            System.out.println(lklPartes.get(iI).getLineasBase());
-            System.out.println(lklPartes.get(iI).getLineasModificadas());
-            System.out.println(lklPartes.get(iI).getLineasBorradas() + "\n");
 
+        String sPartName = "";
+        int iNumberOfItems = 0;
+        int iLineasBase = 0;
+        int iLineasBorradas = 0;
+        int iLineasModificadas = 0;
+        int iLineasTotales = 0;
+        int iLineasAgregadas = 0;
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "base"){
+
+                if(iI == 0){
+                    System.out.println("PARTES BASE:");
+                }
+
+                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, lklPartes.get(iI).getNumberOfItems(),
+                                iLineasBase, iLineasBorradas, iLineasModificadas,
+                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+            }
 
         }
 
-        // lklPartes.get(0).setName("new email");
-        // System.out.println(lklPartes.get(0).getName());
 
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "nueva"){
+
+                if(iI == 0){
+                    System.out.println("PARTES NUEVAS:");
+                }
+
+                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
+                                iLineasBase, iLineasBorradas, iLineasModificadas,
+                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+            }
+        }
+
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "reusada"){
+                if(iI == 0){
+                    System.out.println("PARTES REUSADAS:");
+                }
+
+                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
+                                iLineasBase, iLineasBorradas, iLineasModificadas,
+                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+            }
+        }
 
         return archivo;
     }
@@ -430,10 +488,7 @@ public class Analyzer {
      */
     //&i
     public void globalInformation(int iListSize, int blankLines, int iLines){
-        System.out.println("TOTALES:");
-        System.out.println("Cantidad de archivos " + iListSize);
-        System.out.println("Cantidad de líneas en blanco " + blankLines);
-        System.out.println("Cantidad de líneas con información " + iLines);
+        System.out.println("Total de LDC: "  + iLines);
     }
 
     /**
