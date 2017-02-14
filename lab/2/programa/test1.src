@@ -1,25 +1,25 @@
 //comentario
-    
+
 linea;
-			
-linea; 
-linea;		
-             
+
+linea;
+linea;
+
 /* otro comentario */
 
 	linea;
- 
+
 /* comentario de varias lineas
    segunda parte del comentario
-   tercera parte... en esta parte se incluye una etiqueta que no se debe contar: //&m porque es comentario */    
+   tercera parte... en esta parte se incluye una etiqueta que no se debe contar: //&m porque es comentario */
 
 //esta parte es nueva (added)
 //&p-Banco
 class Banco
 	{
 	 linea;
-	 linea;	
-	 
+	 linea;
+
 	 //&i
 	 //item
 	function initialize() {
@@ -79,7 +79,7 @@ class Cuenta
   declara;
   declara;
   declara;
-  
+
   //&i
 		  //Obtain a reference to the 'content' div
 		var content = document.getElementById('content');
@@ -130,7 +130,7 @@ class Cuenta
 
 			for (var i = 0, blogEntry; blogEntry = blogEntries[i]; i++) {
 			  //&d=1
-			  var blogURL = blogEntry.getHtmlLink().getHref(); //&m		
+			  var blogURL = blogEntry.getHtmlLink().getHref(); //&m
 			  var blogUpdated = blogEntry.getUpdated().getValue().getDate();
 			  html += '<tr>'
 					+ '<td><a href="' + blogURL + '" target="_blank">'
@@ -139,11 +139,11 @@ class Cuenta
 					+ '<td>' + blogUpdated + '</td>'
 					+ '</tr>';
 			}
-			
+
 			//&d=10
-			
+
 			html += '</tbody>'
-				  + '</table>'; //&m    
+				  + '</table>'; //&m
 		  };
 
 		  //Output buffered HTML and clear 'Loading...' message
@@ -169,7 +169,7 @@ class Cuenta
 		  linea;
 		  linea;
 		  linea;
-		  
+
 		};
 
 		//Error handler called when getBlogFeed() produces an error
@@ -215,8 +215,8 @@ class Cliente
 		  linea;
 		  linea;
 		  linea;
-		  
-	//&i		
+
+	//&i
 		  linea;
 		  linea;
 		  linea;
@@ -230,7 +230,7 @@ class Cliente
 		  linea;
 		  linea;
 
-	//&i  
+	//&i
 		  linea;
 		  linea;
 		  linea;
@@ -239,13 +239,13 @@ class Cliente
 		  linea;
 		  linea; //&m
 
-	//&i	
+	//&i
 		  linea;
 		  linea;
-		  //&d=8  
+		  //&d=8
 		  linea;
 		  linea;
-		  linea; //&m	
+		  linea; //&m
 		  linea;
 		  linea;
 		  linea;

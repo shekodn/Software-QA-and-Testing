@@ -130,6 +130,15 @@ public class Analyzer {
                                 sCurrentLine.contains("/*")      ||
                                 sCurrentLine.contains("*/"))){
 
+                    //sCurrentLine = sCurrentLine.strip(' \t\n\r')
+
+                    //String strippedString = sCurrentLine.replace("\t", "");
+                    //String strippedString = sCurrentLine.strip("\t\n\r")
+                    //String strippedString = sCurrentLine.strip();
+                    String strippedString = sCurrentLine.trim();
+
+
+
                     if(sCurrentLine.contains("//")){ //si hay comentario
 
                         sActivePart = addingParts(sCurrentLine, lklPartes);
@@ -145,11 +154,33 @@ public class Analyzer {
                         //conteo de tags
                         if(sCurrentLine.contains("//&i") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            System.out.println("Current index: " + iCurrentIndex);
                             lklPartes.get(iCurrentIndex).addItem();
                         }
 
-                        //conteo de tags
+                        //conteo de tags base
+                        if(sCurrentLine.contains("//&b=") && sActivePart != null){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            int iLinesBase = getLinesOfSpecificID(sCurrentLine,"//&b=");
+                            lklPartes.get(iCurrentIndex).setLineasBase(iLinesBase);
+                        }
+
+                        //conteo de tags deleted
+                        if(strippedString.contains("//&d=") && sActivePart != null){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            System.out.println("Striped " + strippedString.length());
+                            System.out.println("Striped " + strippedString);
+
+                            int iLineasBorradas = getLinesOfSpecificID(strippedString, "//&d=");
+                            System.out.println(strippedString);
+                            lklPartes.get(iCurrentIndex).setLineasBorradas(lklPartes.get(iCurrentIndex).getLineasBorradas() + iLineasBorradas);
+                        }
+
+                        //conteo de tags deleted
+                        if(sCurrentLine.contains("//&m") && sActivePart != null && isClosed && !sCurrentLine.contains("\"")){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            //System.out.println(sCurrentLine);
+                            lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
+                        }
 
 
                     } else {
@@ -181,7 +212,12 @@ public class Analyzer {
         System.out.println("Partes: " + lklPartes.size());
         for(int iI = 0; iI < lklPartes.size(); iI++){
             System.out.println(lklPartes.get(iI).getName());
-            System.out.println(lklPartes.get(iI).getNumberOfItems() + "\n");
+            System.out.println(lklPartes.get(iI).getNumberOfItems());
+            System.out.println(lklPartes.get(iI).getLineasBase());
+            System.out.println(lklPartes.get(iI).getLineasModificadas());
+            System.out.println(lklPartes.get(iI).getLineasBorradas() + "\n");
+
+
         }
 
         // lklPartes.get(0).setName("new email");
@@ -192,6 +228,23 @@ public class Analyzer {
     }
 
     /* PART HELPER */
+
+    public int getLinesOfSpecificID(String sName, String sTag){
+
+        int indexOf = sTag.indexOf("=");
+
+
+        if(sName.contains(sTag)){
+
+            return Integer.parseInt(sName.substring(indexOf + 1));
+
+        } else {
+            System.out.println("Could not get number of lines");
+            return 0;
+        }
+    }
+
+
     /**
      * Precondition: this methood should be inside is a part
      * @param String     sPartName [description]

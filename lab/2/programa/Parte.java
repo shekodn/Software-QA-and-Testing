@@ -161,6 +161,17 @@ public class Parte {
         return iNumberOfItems;
     }
 
+    public int addModified(){
+        iLineasModificadas = iLineasModificadas + 1;
+        return iLineasModificadas;
+    }
+
+    public int addDeleted(){
+        iLineasBorradas = iLineasBorradas + 1;
+        return iLineasBorradas;
+    }
+
+
     //&i
     public String tipoDeParte(int iB, int iM, int iD, int iA){
 
