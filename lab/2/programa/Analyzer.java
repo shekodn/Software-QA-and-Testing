@@ -19,8 +19,8 @@ import java.util.regex.Matcher;
 public class Analyzer {
 
     /**
-     * Initializes variables
-     */
+    * Initializes variables
+    */
 
     //&i
     private int iLINES = 0;
@@ -35,6 +35,15 @@ public class Analyzer {
     private String sActivePart;
     private int iCurrentIndex = 0;
 
+    String sPartName = "";
+    int iNumberOfItems = 0;
+    int iLineasBase = 0;
+    int iLineasBorradas = 0;
+    int iLineasModificadas = 0;
+    int iLineasTotales = 0;
+    int iLineasAgregadas = 0;
+
+
 
     // public void init(){
     //
@@ -46,25 +55,25 @@ public class Analyzer {
 
 
     /**
-     * gets total lines
-     * @return gets total lines
-     */
+    * gets total lines
+    * @return gets total lines
+    */
     public int getTotalLines(){
         return iLINES;
     }
 
     /**
-     * getTotalBlankLines
-     * @return [number of blank lines]
-     */
+    * getTotalBlankLines
+    * @return [number of blank lines]
+    */
     public int getTotalBlankLines(){
         return iBLANKLINES;
     }
 
     /**
-     * setTotalLines
-     * @param int iN [set total lines]
-     */
+    * setTotalLines
+    * @param int iN [set total lines]
+    */
     public void setTotalLines(int iN){
         this.iLINES = iN;
     }
@@ -74,10 +83,10 @@ public class Analyzer {
     }
 
     /**
-     * Checks if given file name it's actually a file
-     * @param  String fileName
-     * @return  true if it is a file
-     */
+    * Checks if given file name it's actually a file
+    * @param  String fileName
+    * @return  true if it is a file
+    */
     //&i
     public boolean isAFile(String fileName){
 
@@ -95,11 +104,11 @@ public class Analyzer {
     }
 
     /**
-     * [readByLine2 description]
-     * @param  String  fileName
-     * @param  Archivo archivo
-     * @return a file with updated infomration
-     */
+    * [readByLine2 description]
+    * @param  String  fileName
+    * @param  Archivo archivo
+    * @return a file with updated infomration
+    */
     //&i
     public Archivo readByLine2(String fileName, Archivo archivo){
 
@@ -124,13 +133,13 @@ public class Analyzer {
                 sActivePart = addingParts(strippedString, lklPartes);
 
                 if((sCurrentLine.trim().equals("") ||
-                                sCurrentLine.trim().equals("\t") ||
-                                sCurrentLine.trim().equals(" ")  ||
-                                sCurrentLine.trim().equals("}")  ||
-                                sCurrentLine.trim().equals("{")  ||
-                                sCurrentLine.contains("//")      ||
-                                sCurrentLine.contains("/*")      ||
-                                sCurrentLine.contains("*/"))){
+                sCurrentLine.trim().equals("\t") ||
+                sCurrentLine.trim().equals(" ")  ||
+                sCurrentLine.trim().equals("}")  ||
+                sCurrentLine.trim().equals("{")  ||
+                sCurrentLine.contains("//")      ||
+                sCurrentLine.contains("/*")      ||
+                sCurrentLine.contains("*/"))){
 
 
 
@@ -165,24 +174,47 @@ public class Analyzer {
                             lklPartes.get(iCurrentIndex).setLineasBorradas(lklPartes.get(iCurrentIndex).getLineasBorradas() + iLineasBorradas);
                         }
 
-                        //conteo de tags deleted
+                        //conteo de tags modified
                         if(strippedString.contains("//&m") && sActivePart != null && isClosed && !strippedString.contains("\"")){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            //System.out.println(sCurrentLine);
-                            lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
+
+                            // System.out.println("----------------------------");
+                            // System.out.println("Stripped: " + strippedString + "\n" + "\n");
+
+                            // if(isCommentAfterStatement(sCurrentLine)){
+                            //
+                            //     lklPartes.get(iCurrentIndex).addLineasTotales();
+                            //
+                            // } else{
+                            //
+                            //     lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
+                            //
+                            // }
+                            //
+
+                            if(strippedString.contains("//&m")){
+
+                                System.out.println("MODIFICADAå");
+                                lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
+                            } else{
+                                System.out.println("NO MODIFICADAå " + strippedString.charAt(0) + "WHOLE " + strippedString);
+                                lklPartes.get(iCurrentIndex).addLineasTotales();
+                            }
+
                         }
 
 
                     } else {
-                        //si no contiene "//", sumar lineas blancas
                         iBlankCounter++;
                     }
 
                 } else{
+
                     //is closed es para no agregar palabras entre comentarios /* */
                     if( sActivePart != null){
                         iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                         lklPartes.get(iCurrentIndex).addLineasTotales();
+                        //System.out.println(strippedString);
                     }
 
                     iLineCounter++;
@@ -199,14 +231,16 @@ public class Analyzer {
             //e.printStackTrace();
         }
 
+        // System.out.println("Name " + lklPartes.get(0).getName());
+        // System.out.println("Lineas totales " + lklPartes.get(0).getLineasTotales() + "\n");
+        //
+        // System.out.println("Name " + lklPartes.get(1).getName());
+        // System.out.println("Lineas totales " + lklPartes.get(1).getLineasTotales() + "\n");
 
-        String sPartName = "";
-        int iNumberOfItems = 0;
-        int iLineasBase = 0;
-        int iLineasBorradas = 0;
-        int iLineasModificadas = 0;
-        int iLineasTotales = 0;
-        int iLineasAgregadas = 0;
+
+
+
+
 
         for(int iI = 0; iI < lklPartes.size(); iI++){
 
@@ -216,7 +250,7 @@ public class Analyzer {
             iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
             iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
             iLineasTotales = lklPartes.get(iI).getLineasTotales();
-            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
             lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
             lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
 
@@ -226,9 +260,13 @@ public class Analyzer {
                     System.out.println("PARTES BASE:");
                 }
 
-                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, lklPartes.get(iI).getNumberOfItems(),
-                                iLineasBase, iLineasBorradas, iLineasModificadas,
-                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, lklPartes.get(iI).getNumberOfItems(),
+                // iLineasBase, iLineasBorradas, iLineasModificadas,
+                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+
+
+                lklPartes.get(iI).imprimir(lklPartes, iI);
+
             }
 
         }
@@ -242,7 +280,7 @@ public class Analyzer {
             iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
             iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
             iLineasTotales = lklPartes.get(iI).getLineasTotales();
-            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
             lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
             lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
 
@@ -252,33 +290,39 @@ public class Analyzer {
                     System.out.println("PARTES NUEVAS:");
                 }
 
-                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
-                                iLineasBase, iLineasBorradas, iLineasModificadas,
-                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
+                // iLineasBase, iLineasBorradas, iLineasModificadas,
+                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+
+                lklPartes.get(iI).imprimir(lklPartes, iI);
+
             }
         }
 
 
         for(int iI = 0; iI < lklPartes.size(); iI++){
 
-            sPartName = lklPartes.get(iI).getName();
-            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
-            iLineasBase = lklPartes.get(iI).getLineasBase();
-            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
-            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
-            iLineasTotales = lklPartes.get(iI).getLineasTotales();
-            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
-            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
-            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+            // sPartName = lklPartes.get(iI).getName();
+            // iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            // iLineasBase = lklPartes.get(iI).getLineasBase();
+            // iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            // iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            // iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            // iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
+            // lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            // lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
 
             if(lklPartes.get(iI).getTipoDeParte() == "reusada"){
                 if(iI == 0){
                     System.out.println("PARTES REUSADAS:");
                 }
 
-                lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
-                                iLineasBase, iLineasBorradas, iLineasModificadas,
-                                iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
+                // iLineasBase, iLineasBorradas, iLineasModificadas,
+                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
+
+                lklPartes.get(iI).imprimir(lklPartes, iI);
+
             }
         }
 
@@ -286,6 +330,34 @@ public class Analyzer {
     }
 
     /* PART HELPER */
+
+    public boolean isCommentAfterStatement(String sLine){
+
+        Pattern pattern2 = Pattern.compile(".*//.*");
+        Matcher matcher2 = pattern2.matcher(sLine);
+
+        if(matcher2.find()) {
+            String sNewLine = matcher2.group().trim();
+            System.out.println(sNewLine);
+            int indexOf = sNewLine.indexOf("/");
+            char a_char = sNewLine.charAt(0);
+            char a_char2 = sNewLine.charAt(1);
+
+            System.out.println( a_char ); // Prints f
+
+            if(a_char == '/' || a_char2 == '/'){
+                return false; // it is a a normal
+            } else {
+                return true; // it is a comment after a line
+            }
+
+        } else{
+
+            System.out.println("ERROR in comment after statement");
+        }
+
+        return false; // it is a a normal
+    }
 
     public int getLinesOfSpecificID(String sName, String sTag){
 
@@ -304,10 +376,10 @@ public class Analyzer {
 
 
     /**
-     * Precondition: this methood should be inside is a part
-     * @param String     sPartName [description]
-     * @param LinkedList <Parte>   list          [description]
-     */
+    * Precondition: this methood should be inside is a part
+    * @param String     sPartName [description]
+    * @param LinkedList <Parte>   list          [description]
+    */
     public void currentPartName(String sPartName, LinkedList <Parte> list){
 
         //si se usa la parte actual
@@ -357,7 +429,7 @@ public class Analyzer {
 
             if (sPartName.equals(list.get(iI).getName())){
                 return iI;
-           }
+            }
         }
 
         return 0;
@@ -378,11 +450,11 @@ public class Analyzer {
     }
 
     /**
-     * Preconditions: Use is a part method (true)
-     * gets the name of a part ex. "//&p-NNN"
-     * @param  String sLine
-     * @return NNN
-     */
+    * Preconditions: Use is a part method (true)
+    * gets the name of a part ex. "//&p-NNN"
+    * @param  String sLine
+    * @return NNN
+    */
     //&i
     public String getPartName(String sLine){
         return sLine.substring(5);
@@ -390,10 +462,10 @@ public class Analyzer {
 
     //&i
     /**
-     * Verfies that LOC is a part //&p-"
-     * @param  String sPart
-     * @return
-     */
+    * Verfies that LOC is a part //&p-"
+    * @param  String sPart
+    * @return
+    */
     public boolean isAPart(String sPart){
         if(sPart.contains("//&p-")){
             return true;
@@ -403,10 +475,10 @@ public class Analyzer {
     }
 
     /**
-     * Determines if LOC is an item
-     * @param  String sPart
-     * @return
-     */
+    * Determines if LOC is an item
+    * @param  String sPart
+    * @return
+    */
     public boolean isAnItem(String sPart){
         if(sPart.contains("//&i")){
             return true;
@@ -457,46 +529,24 @@ public class Analyzer {
         }
     }
 
-    public boolean isCommentAfterStatement(String sLinea){
-
-        Pattern pattern2 = Pattern.compile(".*//");
-        Matcher matcher2 = pattern2.matcher(sLinea);
-
-        if(matcher2.find()) {
-
-            if(matcher2.group().length() == 2){ //this starts with comment
-                 return false;
-
-            } else{
-                //this has a comment after statements
-                return true;
-            }
-
-        } else{
-
-            return false;
-        }
-    }
-
-
 
     /**
-     * globalInformation description
-     * @param int iListSize
-     * @param int blankLines
-     * @param int iLines
-     */
+    * globalInformation description
+    * @param int iListSize
+    * @param int blankLines
+    * @param int iLines
+    */
     //&i
     public void globalInformation(int iListSize, int blankLines, int iLines){
         System.out.println("Total de LDC: "  + iLines);
     }
 
     /**
-     * calculateLinesGlobalInfo description
-     * @param  LinkedList <Archivo> linked list of files
-     * @param  int iLines = number of lines with info
-     * @return number of lines with info
-     */
+    * calculateLinesGlobalInfo description
+    * @param  LinkedList <Archivo> linked list of files
+    * @param  int iLines = number of lines with info
+    * @return number of lines with info
+    */
     //&i
     public int calculateLinesGlobalInfo(LinkedList <Archivo> list, int iLines){
 
@@ -508,14 +558,14 @@ public class Analyzer {
         return iLines;
     }
     /**
-     * calculateBlankLinesGlobalInfo description
-     * @param  LinkedList <Archivo>     list          [linked list with files]
-     * @param  int        iBlankLines   Total number of blank lines
-     * @return Total number of blank lines
-     */
+    * calculateBlankLinesGlobalInfo description
+    * @param  LinkedList <Archivo>     list          [linked list with files]
+    * @param  int        iBlankLines   Total number of blank lines
+    * @return Total number of blank lines
+    */
     //&i
     public int calculateBlankLinesGlobalInfo(LinkedList <Archivo> list,
-            int iBlankLines){
+    int iBlankLines){
 
         for(int iI = 0; iI < list.size(); iI++){
 

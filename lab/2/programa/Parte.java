@@ -1,6 +1,8 @@
 //&p-Parte
 //&a
 import java.io.*;
+import java.util.LinkedList;
+
 
 public class Parte {
 
@@ -103,8 +105,8 @@ public class Parte {
 
     //special getters
 
-    public int getLineasAgregadas(int iT, int iB, int iD){
-        return iT - iB + iD;
+    public int getLineasAgregadas(){
+        return this.iLineasTotales - this.iLineasBase + this.iLineasBorradas;
     }
 
     public int calculaLineasTotales(int iA, int iB, int iD){
@@ -236,5 +238,17 @@ public class Parte {
         } else {
             System.out.println("ERROR CON EL TIPO DE PARTE");
         }
+    }
+
+
+    void imprimir(LinkedList<Parte> list, int iIndex){
+
+        System.out.println(list.get(iIndex).getName() + ": "
+        + "T=" + list.get(iIndex).getLineasTotales() + ", "
+        + "I=" + list.get(iIndex).getNumberOfItems() + ", "
+        + "B=" + list.get(iIndex).getLineasBase() + ", "
+        + "D=" + list.get(iIndex).getLineasBorradas() + ", "
+        + "M=" + list.get(iIndex).getLineasModificadas() + ", "
+        + "A=" + list.get(iIndex).getLineasAgregadas());
     }
 }
