@@ -118,6 +118,8 @@ public class Analyzer {
         int iBlankCounter = 0;
         int iLineCounter = 0;
         lklPartes = new LinkedList<Parte>();
+        int pendingLines = 0;
+
 
         try {
 
@@ -145,14 +147,12 @@ public class Analyzer {
 
                     if(strippedString.contains("//")){ //si hay comentario
 
-
                         //checar que no esten despues de una LDC que se debe de contar
-                        if(strippedString.contains("//&m") ){
-                            iLineCounter++;
-
-                        } else{
-                            iBlankCounter++;
-                        }
+                        // if(strippedString.contains("//&m")){
+                        //     iLineCounter++;
+                        // } else{
+                        //     iBlankCounter++;
+                        // }
 
                         //conteo de tags
                         if(strippedString.contains("//&i") && sActivePart != null){
@@ -175,36 +175,30 @@ public class Analyzer {
                         }
 
                         //conteo de tags modified
+
                         if(strippedString.contains("//&m") && sActivePart != null && isClosed && !strippedString.contains("\"")){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            System.out.println(lklPartes.get(iCurrentIndex).getName());
+                            System.out.print(" " + strippedString);
 
-                            // System.out.println("----------------------------");
-                            // System.out.println("Stripped: " + strippedString + "\n" + "\n");
-
-                            // if(isCommentAfterStatement(sCurrentLine)){
-                            //
-                            //     lklPartes.get(iCurrentIndex).addLineasTotales();
-                            //
-                            // } else{
-                            //
-                            //     lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
-                            //
-                            // }
-                            //
-
-                            if(strippedString.contains("//&m")){
-
-                                System.out.println("MODIFICADAå");
+                            if(strippedString.charAt(0) == '/'){
+                                iBlankCounter++;
+                                System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES COMENTARIO");
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
+
                             } else{
-                                System.out.println("NO MODIFICADAå " + strippedString.charAt(0) + "WHOLE " + strippedString);
-                                lklPartes.get(iCurrentIndex).addLineasTotales();
+                                iLineCounter++;
+                                System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES LDC");
+
+                                lklPartes.get(iCurrentIndex).setLineasTotales(lklPartes.get(iCurrentIndex).getLineasTotales() + 1);
+                                lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
                             }
 
                         }
 
 
                     } else {
+
                         iBlankCounter++;
                     }
 
@@ -214,10 +208,11 @@ public class Analyzer {
                     if( sActivePart != null){
                         iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                         lklPartes.get(iCurrentIndex).addLineasTotales();
-                        //System.out.println(strippedString);
-                    }
+                        iLineCounter++;
 
-                    iLineCounter++;
+                    } else if (isClosed){
+                        iLineCounter++;
+                    }
                 }
             }
 
@@ -231,17 +226,6 @@ public class Analyzer {
             //e.printStackTrace();
         }
 
-        // System.out.println("Name " + lklPartes.get(0).getName());
-        // System.out.println("Lineas totales " + lklPartes.get(0).getLineasTotales() + "\n");
-        //
-        // System.out.println("Name " + lklPartes.get(1).getName());
-        // System.out.println("Lineas totales " + lklPartes.get(1).getLineasTotales() + "\n");
-
-
-
-
-
-
         for(int iI = 0; iI < lklPartes.size(); iI++){
 
             sPartName = lklPartes.get(iI).getName();
@@ -254,19 +238,13 @@ public class Analyzer {
             lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
             lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
 
+
+            if(iI == 0){
+                System.out.println("PARTES BASE:");
+            }
+
             if(lklPartes.get(iI).getTipoDeParte() == "base"){
-
-                if(iI == 0){
-                    System.out.println("PARTES BASE:");
-                }
-
-                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, lklPartes.get(iI).getNumberOfItems(),
-                // iLineasBase, iLineasBorradas, iLineasModificadas,
-                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
-
-
                 lklPartes.get(iI).imprimir(lklPartes, iI);
-
             }
 
         }
@@ -283,43 +261,41 @@ public class Analyzer {
             iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
             lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
             lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(iI == 0){
+                System.out.println("-------------------------------------");
+                System.out.println("PARTES NUEVAS:");
+            }
+
 
             if(lklPartes.get(iI).getTipoDeParte() == "nueva"){
 
-                if(iI == 0){
-                    System.out.println("PARTES NUEVAS:");
-                }
-
-                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
-                // iLineasBase, iLineasBorradas, iLineasModificadas,
-                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
 
                 lklPartes.get(iI).imprimir(lklPartes, iI);
-
             }
         }
 
 
         for(int iI = 0; iI < lklPartes.size(); iI++){
 
-            // sPartName = lklPartes.get(iI).getName();
-            // iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
-            // iLineasBase = lklPartes.get(iI).getLineasBase();
-            // iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
-            // iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
-            // iLineasTotales = lklPartes.get(iI).getLineasTotales();
-            // iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas(iLineasTotales, iLineasBase, iLineasBorradas);
-            // lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
-            // lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+
+            if(iI == 0){
+                System.out.println("-------------------------------------");
+                System.out.println("PARTES REUSADAS:");
+            }
 
             if(lklPartes.get(iI).getTipoDeParte() == "reusada"){
-                if(iI == 0){
-                    System.out.println("PARTES REUSADAS:");
-                }
 
-                // lklPartes.get(iI).printPartInfo(lklPartes.get(iI).getName(), iLineasTotales, iNumberOfItems,
-                // iLineasBase, iLineasBorradas, iLineasModificadas,
-                // iLineasAgregadas, lklPartes.get(iI).getTipoDeParte());
 
                 lklPartes.get(iI).imprimir(lklPartes, iI);
 
@@ -330,34 +306,6 @@ public class Analyzer {
     }
 
     /* PART HELPER */
-
-    public boolean isCommentAfterStatement(String sLine){
-
-        Pattern pattern2 = Pattern.compile(".*//.*");
-        Matcher matcher2 = pattern2.matcher(sLine);
-
-        if(matcher2.find()) {
-            String sNewLine = matcher2.group().trim();
-            System.out.println(sNewLine);
-            int indexOf = sNewLine.indexOf("/");
-            char a_char = sNewLine.charAt(0);
-            char a_char2 = sNewLine.charAt(1);
-
-            System.out.println( a_char ); // Prints f
-
-            if(a_char == '/' || a_char2 == '/'){
-                return false; // it is a a normal
-            } else {
-                return true; // it is a comment after a line
-            }
-
-        } else{
-
-            System.out.println("ERROR in comment after statement");
-        }
-
-        return false; // it is a a normal
-    }
 
     public int getLinesOfSpecificID(String sName, String sTag){
 
@@ -538,6 +486,7 @@ public class Analyzer {
     */
     //&i
     public void globalInformation(int iListSize, int blankLines, int iLines){
+        System.out.println("-------------------------------------");
         System.out.println("Total de LDC: "  + iLines);
     }
 

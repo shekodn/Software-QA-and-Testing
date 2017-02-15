@@ -109,9 +109,7 @@ public class Parte {
         return this.iLineasTotales - this.iLineasBase + this.iLineasBorradas;
     }
 
-    public int calculaLineasTotales(int iA, int iB, int iD){
-        return  iA + iB - iD;
-    }
+
 
     /* Setters */
 
@@ -240,15 +238,42 @@ public class Parte {
         }
     }
 
+    public boolean checaCeros(int iValor){
 
-    void imprimir(LinkedList<Parte> list, int iIndex){
+        if(iValor > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
 
-        System.out.println(list.get(iIndex).getName() + ": "
-        + "T=" + list.get(iIndex).getLineasTotales() + ", "
-        + "I=" + list.get(iIndex).getNumberOfItems() + ", "
-        + "B=" + list.get(iIndex).getLineasBase() + ", "
-        + "D=" + list.get(iIndex).getLineasBorradas() + ", "
-        + "M=" + list.get(iIndex).getLineasModificadas() + ", "
-        + "A=" + list.get(iIndex).getLineasAgregadas());
+    public void imprimir(LinkedList<Parte> list, int iIndex){
+
+        System.out.print("\t" + list.get(iIndex).getName() + ": ");
+
+        if(list.get(iIndex).getLineasTotales() > 0){
+            System.out.print("T=" + list.get(iIndex).getLineasTotales());
+        }
+
+        if(list.get(iIndex).getNumberOfItems() > 0){
+            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
+        }
+
+        if(list.get(iIndex).getLineasBase() > 0){
+            System.out.print(", B=" + list.get(iIndex).getLineasBase());
+        }
+
+        if(list.get(iIndex).getLineasBorradas() > 0){
+            System.out.print(", D=" + list.get(iIndex).getLineasBorradas());
+        }
+
+        if(list.get(iIndex).getLineasModificadas() > 0){
+            System.out.print(", M=" + list.get(iIndex).getLineasModificadas());
+        }
+
+        if(list.get(iIndex).getLineasAgregadas() > 0){
+            System.out.print(", A=" + list.get(iIndex).getLineasAgregadas() + "\n");
+        }
+
     }
 }

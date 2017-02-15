@@ -141,4 +141,5 @@ public class Archivo implements Comparable <Archivo> {
         System.out.println("Cantidad de líneas con información: " + this.iLines);
         System.out.println("-------------------------------------------------");
     }
+
 }
