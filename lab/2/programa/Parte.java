@@ -247,9 +247,7 @@ public class Parte {
         }
     }
 
-    public void imprimir(LinkedList<Parte> list, int iIndex){
-
-        System.out.print("\n");
+    public void imprimirBase(LinkedList<Parte> list, int iIndex){
 
         System.out.print("\t" + list.get(iIndex).getName() + ": ");
 
@@ -278,7 +276,39 @@ public class Parte {
         }
 
         System.out.print("\n");
+    }
 
+    public void imprimirNueva(LinkedList<Parte> list, int iIndex){
 
+        System.out.print("\t" + list.get(iIndex).getName() + ": ");
+
+        if(list.get(iIndex).getLineasTotales() > 0){
+            System.out.print("T=" + list.get(iIndex).getLineasTotales());
+        }
+
+        if(list.get(iIndex).getNumberOfItems() > 0){
+            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
+        }
+
+        System.out.print("\n");
+    }
+
+    public void imprimirReusado(LinkedList<Parte> list, int iIndex){
+
+        System.out.print("\t" + list.get(iIndex).getName() + ": ");
+
+        if(list.get(iIndex).getLineasTotales() > 0){
+            System.out.print("T=" + list.get(iIndex).getLineasTotales());
+        }
+
+        if(list.get(iIndex).getNumberOfItems() > 0){
+            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
+        }
+
+        if(list.get(iIndex).getLineasBase() > 0){
+            System.out.print(", B=" + list.get(iIndex).getLineasBase());
+        }
+
+        System.out.print("\n");
     }
 }
