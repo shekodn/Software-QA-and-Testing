@@ -14,8 +14,6 @@ import java.io.FileReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-
-
 public class Analyzer {
 
     /**
@@ -296,9 +294,7 @@ public class Analyzer {
 
             if(lklPartes.get(iI).getTipoDeParte() == "reusada"){
 
-
                 lklPartes.get(iI).imprimir(lklPartes, iI);
-
             }
         }
 
@@ -379,7 +375,7 @@ public class Analyzer {
                 return iI;
             }
         }
-
+        
         return 0;
     }
 
@@ -422,21 +418,7 @@ public class Analyzer {
         }
     }
 
-    /**
-    * Determines if LOC is an item
-    * @param  String sPart
-    * @return
-    */
-    public boolean isAnItem(String sPart){
-        if(sPart.contains("//&i")){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
     private boolean checksComment(String sCurrentLine){
-
 
         if (sCurrentLine.contains("/*") && sCurrentLine.contains("*/")){
             return true;
@@ -451,30 +433,6 @@ public class Analyzer {
         }
 
         return true;
-    }
-
-    public boolean comment(String sLinea){
-
-        Pattern pattern1 = Pattern.compile("/\\*.*?\\*/");
-        Pattern pattern2 = Pattern.compile(".*//.*");
-
-        Matcher matcher1 = pattern1.matcher(sLinea);
-        Matcher matcher2 = pattern2.matcher(sLinea);
-
-        if (matcher1.find()) {
-            // Indicates match is found. Do further processing
-            //System.out.println(matcher1.group());
-            return true;
-        }
-        if(matcher2.find()) {
-            // Indicates match is found. Do further processing
-            //System.out.println(matcher2.group());
-            return true;
-
-        } else{
-
-            return false;
-        }
     }
 
 

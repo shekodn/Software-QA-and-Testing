@@ -249,6 +249,8 @@ public class Parte {
 
     public void imprimir(LinkedList<Parte> list, int iIndex){
 
+        System.out.print("\n");
+
         System.out.print("\t" + list.get(iIndex).getName() + ": ");
 
         if(list.get(iIndex).getLineasTotales() > 0){
@@ -272,8 +274,11 @@ public class Parte {
         }
 
         if(list.get(iIndex).getLineasAgregadas() > 0){
-            System.out.print(", A=" + list.get(iIndex).getLineasAgregadas() + "\n");
+            System.out.print(", A=" + list.get(iIndex).getLineasAgregadas());
         }
+
+        System.out.print("\n");
+
 
     }
 }
