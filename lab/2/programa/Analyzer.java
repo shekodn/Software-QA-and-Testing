@@ -132,13 +132,6 @@ public class Analyzer {
 
                     if(strippedString.contains("//")){ //si hay comentario
 
-                        //checar que no esten despues de una LDC que se debe de contar
-                        // if(strippedString.contains("//&m")){
-                        //     iLineCounter++;
-                        // } else{
-                        //     iBlankCounter++;
-                        // }
-
                         //conteo de tags
                         if(strippedString.contains("//&i") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
@@ -168,7 +161,7 @@ public class Analyzer {
                             if(strippedString.charAt(0) == '/'){
                                 iBlankCounter++;
                                 //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES COMENTARIO");
-                                System.out.println("COMMENT = " + strippedString);
+                                //System.out.println("COMMENT = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
 
                             } else{
@@ -184,7 +177,6 @@ public class Analyzer {
                     } else {
 
                         iBlankCounter++;
-
                     }
 
                 } else{
@@ -197,9 +189,8 @@ public class Analyzer {
 
                     } else{
 
-                        if(isClosed && strippedString.charAt(1) != '/'){
+                        if(isClosed && strippedString.contains(";")){
                             iLineCounter++;
-                            System.out.println("ACTIVE: = " + strippedString);
                         }
                     }
                 }
@@ -351,8 +342,6 @@ public class Analyzer {
         if(!sCurrentLine.contains(";")){
             return false;
         }
-
-
 
         return true;
     }
