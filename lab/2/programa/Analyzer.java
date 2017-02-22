@@ -175,21 +175,16 @@ public class Analyzer {
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
 
                             if(strippedString.charAt(0) == '/'){
-                                System.out.println("BLANK: " + strippedString);
 
                                 iBlankCounter++;
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
 
                             } else{
-                                System.out.println("  LDC: " + strippedString);
-                                //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES LDC");
-                                //System.out.println("LDC = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasTotales(lklPartes.get(iCurrentIndex).getLineasTotales() + 1);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
                             }
 
                             iLineCounter++;
-                            System.out.println("LINEA: " + strippedString);
                         }
 
                     } else {
@@ -204,13 +199,11 @@ public class Analyzer {
                         iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                         lklPartes.get(iCurrentIndex).addLineasTotales();
                         iLineCounter++;
-                        System.out.println("LINEA: " + strippedString);
 
                     } else{
 
                         if(isClosed && strippedString.contains(";")){
                             iLineCounter++;
-                            System.out.println("LINEA: " + strippedString);
                         }
                     }
                 }
@@ -311,12 +304,9 @@ public class Analyzer {
 
         for (int iI = 0; iI < list.size(); iI ++){
             if(sName == list.get(iI).getName()){
-                //System.out.println(sName + "already is a part");
                 return iI;
             }
         }
-
-        //System.out.println(sName + "is a new part");
         return -1;
     }
 
