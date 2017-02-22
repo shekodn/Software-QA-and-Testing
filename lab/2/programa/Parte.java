@@ -2,6 +2,21 @@
 //&a
 import java.io.*;
 import java.util.LinkedList;
+import java.io.*;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.LinkedList;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 
 
 public class Parte {
@@ -311,4 +326,5 @@ public class Parte {
 
         System.out.print("\n");
     }
+    
 }

@@ -28,10 +28,6 @@ public class Programa2 {
     private LinkedList <Parte> lklPartesReusadas;
 
 
-
-
-
-
     /**
      * Initializes variables
      */
@@ -138,14 +134,137 @@ public class Programa2 {
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
-
             lklPartes = (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile).clone();
-            System.out.println(lklPartes);
             lklFiles.set(iI,temporalFile);
         }
     }
 
+    public void printParts(){
 
+        String sPartName = "";
+        int iNumberOfItems = 0;
+        int iLineasBase = 0;
+        int iLineasBorradas = 0;
+        int iLineasModificadas = 0;
+        int iLineasTotales = 0;
+        int iLineasAgregadas = 0;
+
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "base"){
+                lklPartesBase.add(lklPartes.get(iI));
+            }
+        }
+
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "nueva"){
+                lklPartesNuevas.add(lklPartes.get(iI));
+            }
+        }
+
+
+        for(int iI = 0; iI < lklPartes.size(); iI++){
+
+            sPartName = lklPartes.get(iI).getName();
+            iNumberOfItems = lklPartes.get(iI).getNumberOfItems();
+            iLineasBase = lklPartes.get(iI).getLineasBase();
+            iLineasBorradas = lklPartes.get(iI).getLineasBorradas();
+            iLineasModificadas = lklPartes.get(iI).getLineasModificadas();
+            iLineasTotales = lklPartes.get(iI).getLineasTotales();
+            iLineasAgregadas = lklPartes.get(iI).getLineasAgregadas();
+            lklPartes.get(iI).setLineasAgregadas(iLineasAgregadas);
+            lklPartes.get(iI).tipoDeParte(iLineasBase, iLineasModificadas , iLineasBorradas, iLineasAgregadas);
+
+            if(lklPartes.get(iI).getTipoDeParte() == "reusada"){
+                lklPartesReusadas.add(lklPartes.get(iI));
+            }
+        }
+
+        try{
+
+            PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
+
+            System.out.println("PARTES BASE:");
+            writer.println("PARTES BASE:");
+            for (int i = 0; i<lklPartesBase.size();i++) {
+                System.out.println(lklPartesBase.get(i).getName() + ": "
+                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
+                writer.println(lklPartesBase.get(i).getName() + ": "
+                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
+
+            }
+
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            System.out.println("PARTES NUEVAS:");
+            writer.println("PARTES NUEVAS");
+            for (int r = 0; r<lklPartesNuevas.size();r++){
+                System.out.println(lklPartesNuevas.get(r).getName() + ": "
+                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
+                writer.println(lklPartesNuevas.get(r).getName() + "; "
+                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
+
+            }
+
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            System.out.println("PARTES REUSADAS:");
+            writer.println("PARTES REUSADAS:");
+            for (int i = 0;i<lklPartesReusadas.size();i++){
+                System.out.println(lklPartesReusadas.get(i).getName() + ": "
+                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesReusadas.get(i).getLineasBase());
+                writer.println(lklPartesReusadas.get(i).getName() + ": "
+                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(i).getNumberOfItems());
+            }
+
+            //System.out.println("Total LDC: " + iLineCounter);
+            // writer.println("Total LDC: " +  iLineCounter);
+            writer.close();
+
+
+        } catch(IOException e){
+
+        }
+
+    }
     /**
      * prints data per file
      */
@@ -192,6 +311,7 @@ public class Programa2 {
         iNumberOfFiles = howManyFiles();
         fileName(iNumberOfFiles);
         scan();
+        printParts();
         //sort in ascending order
         Collections.sort(lklFiles);
         printGlobalData();
