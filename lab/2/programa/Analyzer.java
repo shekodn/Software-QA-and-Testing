@@ -25,10 +25,10 @@ public class Analyzer {
     private int iBLANKLINES = 0;
     private boolean isClosed = true; // true comment closed, false, waiting to close comment
 
-    private LinkedList <Parte> lklPartes;
-    private LinkedList <Parte> lklPartesBase;
-    private LinkedList <Parte> lklPartesNuevas;
-    private LinkedList <Parte> lklPartesReusadas;
+    protected LinkedList <Parte> lklPartes;
+    protected LinkedList <Parte> lklPartesBase;
+    protected LinkedList <Parte> lklPartesNuevas;
+    protected LinkedList <Parte> lklPartesReusadas;
 
     private String sActivePart;
     private int iCurrentIndex = 0;
@@ -108,7 +108,10 @@ public class Analyzer {
     * @return a file with updated infomration
     */
     //&i
-    public Archivo readByLine2(String fileName, Archivo archivo){
+    public Archivo readByLine2(String fileName, Archivo archivo, LinkedList <Parte> lklPartesNuevas,
+                LinkedList <Parte> lklPartesBase, LinkedList <Parte> lklPartesReusadas){
+
+
 
         String FILENAME = fileName;
         BufferedReader br = null;
@@ -275,23 +278,88 @@ public class Analyzer {
             }
         }
 
-        System.out.println("PARTES BASE:");
-        for(int iI = 0; iI < lklPartesBase.size(); iI++){
-            lklPartesBase.get(iI).imprimirBase(lklPartesBase, iI);
-        }
+        // System.out.println("PARTES BASE:");
+        // for(int iI = 0; iI < lklPartesBase.size(); iI++){
+        //     lklPartesBase.get(iI).imprimirBase(lklPartesBase, iI);
+        // }
+        //
+        // System.out.println("-------------------------------------");
+        // System.out.println("PARTES NUEVAS:");
+        // for(int iI = 0; iI < lklPartesNuevas.size(); iI++){
+        //     lklPartesNuevas.get(iI).imprimirNueva(lklPartesNuevas, iI);
+        // }
+        //
+        // System.out.println("-------------------------------------");
+        // System.out.println("PARTES REUSADAS:");
+        // for(int iI = 0; iI < lklPartesReusadas.size(); iI++){
+        //     lklPartesReusadas.get(iI).imprimirReusado(lklPartesReusadas, iI);
+        // }
+        //
+        //
 
-        System.out.println("-------------------------------------");
-        System.out.println("PARTES NUEVAS:");
-        for(int iI = 0; iI < lklPartesNuevas.size(); iI++){
-            lklPartesNuevas.get(iI).imprimirNueva(lklPartesNuevas, iI);
-        }
 
-        System.out.println("-------------------------------------");
-        System.out.println("PARTES REUSADAS:");
-        for(int iI = 0; iI < lklPartesReusadas.size(); iI++){
-            lklPartesReusadas.get(iI).imprimirReusado(lklPartesReusadas, iI);
-        }
+        try{
 
+            PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
+
+            System.out.println("PARTES BASE:");
+            writer.println("PARTES BASE:");
+            for (int i = 0; i<lklPartesBase.size();i++) {
+                System.out.println(lklPartesBase.get(i).getName() + ": "
+                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
+                writer.println(lklPartesBase.get(i).getName() + ": "
+                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
+
+            }
+
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            System.out.println("PARTES NUEVAS:");
+            writer.println("PARTES NUEVAS");
+            for (int r = 0; r<lklPartesNuevas.size();r++){
+                System.out.println(lklPartesNuevas.get(r).getName() + ": "
+                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
+                writer.println(lklPartesNuevas.get(r).getName() + "; "
+                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
+
+            }
+
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            System.out.println("PARTES REUSADAS:");
+            writer.println("PARTES REUSADAS:");
+            for (int i = 0;i<lklPartesReusadas.size();i++){
+                System.out.println(lklPartesReusadas.get(i).getName() + ": "
+                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(i).getNumberOfItems() + ", "
+                + "B=" + lklPartesReusadas.get(i).getLineasBase());
+                writer.println(lklPartesReusadas.get(i).getName() + ": "
+                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(i).getNumberOfItems());
+            }
+
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            //System.out.println("Total LDC: " + iTotalesLC);
+            //writer.println("Total LDC: " +  iTotalesLC);
+
+            writer.close();
+        } catch(IOException e){
+            System.out.println("writing error");
+        }
+        
         return archivo;
     }
 
@@ -474,5 +542,7 @@ public class Analyzer {
         }
         return iBlankLines;
     }
+
+
 
 }

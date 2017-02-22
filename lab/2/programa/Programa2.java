@@ -130,9 +130,19 @@ public class Programa2 {
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
-            analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile);
+            analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile, lklPartesNuevas, lklPartesBase, lklPartesReusadas);
             lklFiles.set(iI,temporalFile);
         }
+
+
+    }
+
+
+    public void afterScanBase(){
+
+        System.out.println(lklPartesNuevas.size());
+        System.out.println(lklPartesBase.size());
+        System.out.println(lklPartesReusadas.size());
     }
 
     /**
@@ -168,6 +178,7 @@ public class Programa2 {
         iNumberOfFiles = howManyFiles();
         fileName(iNumberOfFiles);
         scan();
+        afterScanBase();
         //sort in ascending order
         Collections.sort(lklFiles);
         printGlobalData();
