@@ -138,7 +138,9 @@ public class Programa2 {
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
-            analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile, lklPartesNuevas, lklPartesBase, lklPartesReusadas);
+
+            lklPartes = (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile).clone();
+            System.out.println(lklPartes);
             lklFiles.set(iI,temporalFile);
         }
     }
@@ -177,7 +179,6 @@ public class Programa2 {
         } catch(IOException e){
 
         }
-
     }
 
     /**
@@ -197,7 +198,7 @@ public class Programa2 {
 
     }
 
-
+    //&b=12
     public static void clearTheFile() {
         try{
             FileWriter fwOb = new FileWriter("ConteoLDC.txt", false);
@@ -206,7 +207,7 @@ public class Programa2 {
             pwOb.close();
             fwOb.close();
         } catch(IOException e){
-            
+
         }
 
     }

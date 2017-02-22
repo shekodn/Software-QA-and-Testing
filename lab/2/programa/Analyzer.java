@@ -41,17 +41,6 @@ public class Analyzer {
     int iLineasTotales = 0;
     int iLineasAgregadas = 0;
 
-
-
-    // public void init(){
-    //
-    //     lklPartes = new LinkedList<Parte>();
-    //     lklPartesBase = new LinkedList<Parte>();
-    //     lklPartesNuevas = new LinkedList<Parte>();
-    //     lklPartesReusadas = new LinkedList<Parte>();
-    // }
-
-
     /**
     * gets total lines
     * @return gets total lines
@@ -91,10 +80,7 @@ public class Analyzer {
         File f = new File(fileName);
 
         if (f.isFile() && f.canRead()) {
-
-            //System.out.println(fileName + " is a FILE ");
             return true;
-
         } else{
             System.out.println(fileName + " is not FILE ");
             return false;
@@ -108,10 +94,7 @@ public class Analyzer {
     * @return a file with updated infomration
     */
     //&i
-    public Archivo readByLine2(String fileName, Archivo archivo, LinkedList <Parte> lklPartesNuevas,
-                LinkedList <Parte> lklPartesBase, LinkedList <Parte> lklPartesReusadas){
-
-
+    public LinkedList<Parte> readByLine2(String fileName, Archivo archivo){
 
         String FILENAME = fileName;
         BufferedReader br = null;
@@ -338,7 +321,7 @@ public class Analyzer {
             System.out.println("writing error");
         }
 
-        return archivo;
+        return lklPartes;
     }
 
     /* PART HELPER */
