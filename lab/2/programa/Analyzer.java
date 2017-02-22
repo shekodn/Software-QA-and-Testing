@@ -117,6 +117,7 @@ public class Analyzer {
 
             while ((sCurrentLine = br.readLine()) != null) {
 
+
                 String strippedString = sCurrentLine.trim();
                 isClosed = checksComment(sCurrentLine);
                 sActivePart = addingParts(strippedString, lklPartes);
@@ -138,6 +139,23 @@ public class Analyzer {
                             lklPartes.get(iCurrentIndex).addItem();
                         }
 
+
+                        //conteo de urls
+                        if(strippedString.contains("www") && sActivePart != null){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            iLineCounter++;
+                            lklPartes.get(iCurrentIndex).setLineasTotales(1 + lklPartes.get(iCurrentIndex).getLineasTotales());
+
+                        }
+
+                        //conteo de tags dentro de strings
+                        if(strippedString.contains("\"") && strippedString.contains("//&m") && sActivePart != null){
+                            iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
+                            iLineCounter++;
+                            lklPartes.get(iCurrentIndex).setLineasTotales(1 + lklPartes.get(iCurrentIndex).getLineasTotales());
+
+                        }
+
                         //conteo de tags base
                         if(strippedString.contains("//&b=") && sActivePart != null){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
@@ -155,23 +173,23 @@ public class Analyzer {
                         //conteo de tags modified
                         if(strippedString.contains("//&m") && sActivePart != null && isClosed && !strippedString.contains("\"")){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            //System.out.println(lklPartes.get(iCurrentIndex).getName());
-                            //System.out.println(" " + strippedString);
 
                             if(strippedString.charAt(0) == '/'){
+                                System.out.println("BLANK: " + strippedString);
+
                                 iBlankCounter++;
-                                //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES COMENTARIO");
-                                //System.out.println("COMMENT = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
 
                             } else{
-
-                                iLineCounter++;
+                                System.out.println("  LDC: " + strippedString);
                                 //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES LDC");
                                 //System.out.println("LDC = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasTotales(lklPartes.get(iCurrentIndex).getLineasTotales() + 1);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
                             }
+
+                            iLineCounter++;
+                            System.out.println("LINEA: " + strippedString);
                         }
 
                     } else {
@@ -186,11 +204,13 @@ public class Analyzer {
                         iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                         lklPartes.get(iCurrentIndex).addLineasTotales();
                         iLineCounter++;
+                        System.out.println("LINEA: " + strippedString);
 
                     } else{
 
                         if(isClosed && strippedString.contains(";")){
                             iLineCounter++;
+                            System.out.println("LINEA: " + strippedString);
                         }
                     }
                 }
@@ -390,7 +410,4 @@ public class Analyzer {
         }
         return iBlankLines;
     }
-
-
-
 }
