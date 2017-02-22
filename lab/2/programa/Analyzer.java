@@ -278,26 +278,6 @@ public class Analyzer {
             }
         }
 
-        // System.out.println("PARTES BASE:");
-        // for(int iI = 0; iI < lklPartesBase.size(); iI++){
-        //     lklPartesBase.get(iI).imprimirBase(lklPartesBase, iI);
-        // }
-        //
-        // System.out.println("-------------------------------------");
-        // System.out.println("PARTES NUEVAS:");
-        // for(int iI = 0; iI < lklPartesNuevas.size(); iI++){
-        //     lklPartesNuevas.get(iI).imprimirNueva(lklPartesNuevas, iI);
-        // }
-        //
-        // System.out.println("-------------------------------------");
-        // System.out.println("PARTES REUSADAS:");
-        // for(int iI = 0; iI < lklPartesReusadas.size(); iI++){
-        //     lklPartesReusadas.get(iI).imprimirReusado(lklPartesReusadas, iI);
-        // }
-        //
-        //
-
-
         try{
 
             PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
@@ -350,16 +330,14 @@ public class Analyzer {
                 + "I=" + lklPartesReusadas.get(i).getNumberOfItems());
             }
 
-            System.out.println("--------------------------------------------");
-            writer.println("--------------------------------------------");
-            //System.out.println("Total LDC: " + iTotalesLC);
-            //writer.println("Total LDC: " +  iTotalesLC);
-
+            //System.out.println("Total LDC: " + iLineCounter);
+            // writer.println("Total LDC: " +  iLineCounter);
             writer.close();
+
         } catch(IOException e){
             System.out.println("writing error");
         }
-        
+
         return archivo;
     }
 
@@ -506,7 +484,6 @@ public class Analyzer {
     */
     //&i
     public void globalInformation(int iListSize, int blankLines, int iLines){
-        System.out.println("-------------------------------------");
         System.out.println("Total de LDC: "  + iLines);
     }
 

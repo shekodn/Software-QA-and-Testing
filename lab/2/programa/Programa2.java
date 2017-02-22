@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.*;
+
 
 
 public class Programa2 {
@@ -26,6 +28,10 @@ public class Programa2 {
     private LinkedList <Parte> lklPartesReusadas;
 
 
+
+
+
+
     /**
      * Initializes variables
      */
@@ -44,6 +50,8 @@ public class Programa2 {
         lklPartesBase = new LinkedList<Parte>();
         lklPartesNuevas = new LinkedList<Parte>();
         lklPartesReusadas = new LinkedList<Parte>();
+
+
 
     }
 
@@ -133,17 +141,8 @@ public class Programa2 {
             analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile, lklPartesNuevas, lklPartesBase, lklPartesReusadas);
             lklFiles.set(iI,temporalFile);
         }
-
-
     }
 
-
-    public void afterScanBase(){
-
-        System.out.println(lklPartesNuevas.size());
-        System.out.println(lklPartesBase.size());
-        System.out.println(lklPartesReusadas.size());
-    }
 
     /**
      * prints data per file
@@ -162,10 +161,23 @@ public class Programa2 {
      //&i
     public void printGlobalData(){
         Analyzer analyzer = new Analyzer();
-        iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles,
-                iBLANKLINES);
+        // iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles,
+        //         iBLANKLINES);
         iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
-        analyzer.globalInformation(lklFiles.size(), iBLANKLINES ,iLINES);
+        //analyzer.globalInformation(lklFiles.size(), iBLANKLINES ,iLINES);
+
+        try{
+            PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
+            System.out.println("--------------------------------------------");
+            writer.println("--------------------------------------------");
+            System.out.println("Total LDC: " + iLINES);
+            writer.println("Total LDC: " +  iLINES);
+            writer.close();
+
+        } catch(IOException e){
+
+        }
+
     }
 
     /**
@@ -174,14 +186,29 @@ public class Programa2 {
      //&i
     public void analyze(){
         //methods
+        clearTheFile();
         init();
         iNumberOfFiles = howManyFiles();
         fileName(iNumberOfFiles);
         scan();
-        afterScanBase();
         //sort in ascending order
         Collections.sort(lklFiles);
         printGlobalData();
+
+    }
+
+
+    public static void clearTheFile() {
+        try{
+            FileWriter fwOb = new FileWriter("ConteoLDC.txt", false);
+            PrintWriter pwOb = new PrintWriter(fwOb, false);
+            pwOb.flush();
+            pwOb.close();
+            fwOb.close();
+        } catch(IOException e){
+            
+        }
+
     }
 
     //&i
