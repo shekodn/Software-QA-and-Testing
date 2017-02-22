@@ -130,7 +130,6 @@ public class Analyzer {
                 sCurrentLine.contains("/*")      ||
                 sCurrentLine.contains("*/"))){
 
-
                     if(strippedString.contains("//")){ //si hay comentario
 
                         //checar que no esten despues de una LDC que se debe de contar
@@ -163,17 +162,20 @@ public class Analyzer {
                         //conteo de tags modified
                         if(strippedString.contains("//&m") && sActivePart != null && isClosed && !strippedString.contains("\"")){
                             iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
-                            // System.out.println(lklPartes.get(iCurrentIndex).getName());
-                            // System.out.print(" " + strippedString);
+                            //System.out.println(lklPartes.get(iCurrentIndex).getName());
+                            //System.out.println(" " + strippedString);
 
                             if(strippedString.charAt(0) == '/'){
                                 iBlankCounter++;
-                                // System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES COMENTARIO");
+                                //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES COMENTARIO");
+                                System.out.println("COMMENT = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
 
                             } else{
+
                                 iLineCounter++;
-                                // System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES LDC");
+                                //System.out.println(lklPartes.get(iCurrentIndex).getName() + "ES LDC");
+                                //System.out.println("LDC = " + strippedString);
                                 lklPartes.get(iCurrentIndex).setLineasTotales(lklPartes.get(iCurrentIndex).getLineasTotales() + 1);
                                 lklPartes.get(iCurrentIndex).setLineasModificadas(lklPartes.get(iCurrentIndex).getLineasModificadas() + 1);
                             }
@@ -182,6 +184,7 @@ public class Analyzer {
                     } else {
 
                         iBlankCounter++;
+
                     }
 
                 } else{
@@ -192,8 +195,12 @@ public class Analyzer {
                         lklPartes.get(iCurrentIndex).addLineasTotales();
                         iLineCounter++;
 
-                    } else if (isClosed){
-                        iLineCounter++;
+                    } else{
+
+                        if(isClosed && strippedString.charAt(1) != '/'){
+                            iLineCounter++;
+                            System.out.println("ACTIVE: = " + strippedString);
+                        }
                     }
                 }
             }
@@ -227,7 +234,6 @@ public class Analyzer {
             return 0;
         }
     }
-
 
     /**
     * Precondition: this methood should be inside is a part
@@ -341,6 +347,12 @@ public class Analyzer {
         if(sCurrentLine.contains("/*")){
             return false;
         }
+
+        if(!sCurrentLine.contains(";")){
+            return false;
+        }
+
+
 
         return true;
     }

@@ -1,5 +1,5 @@
 //&p-Parte
-//&a
+//&A
 import java.io.*;
 import java.util.LinkedList;
 import java.io.*;
@@ -106,10 +106,6 @@ public class Parte {
         return iLineasModificadas;
     }
 
-    // public int getLineasAgregadas(){
-    //     return iLineasAgregadas;
-    // }
-
     public int getLineasTotales(){
         return iLineasTotales;
     }
@@ -192,8 +188,6 @@ public class Parte {
     }
 
 
-
-
     //&i
     public void tipoDeParte(int iB, int iM, int iD, int iA){
 
@@ -229,102 +223,4 @@ public class Parte {
             return 0;
         }
     }
-
-
-    public void printPartInfo(String sPartName, int iLineasTotales, int iNumberOfItems,
-                    int iLineasBase, int iLineasBorradas, int iLineasModificadas,
-                    int iLineasAgregadas, String sTipo){
-
-        if(sTipo == "base"){
-            System.out.println("\t" + sPartName + ": T=" + iLineasTotales +
-                            ", I=" + iNumberOfItems + ", B=" + iLineasBase + ", D=" +
-                            iLineasBorradas + ", M=" + iLineasModificadas + ", A=" +
-                            iLineasAgregadas);
-
-        } else if (sTipo == "nueva"){
-            System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
-                            " I=" + iNumberOfItems + " B=" + iLineasBase);
-
-        } else if (sTipo == "reusada"){
-            System.out.println("\t" + sPartName + ": " + "T=" + iLineasTotales +
-                            " I=" + iNumberOfItems + " B=" + iLineasBase);
-        } else {
-            System.out.println("ERROR CON EL TIPO DE PARTE");
-        }
-    }
-
-    public boolean checaCeros(int iValor){
-
-        if(iValor > 0){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
-    public void imprimirBase(LinkedList<Parte> list, int iIndex){
-
-        System.out.print("\t" + list.get(iIndex).getName() + ": ");
-
-        if(list.get(iIndex).getLineasTotales() > 0){
-            System.out.print("T=" + list.get(iIndex).getLineasTotales());
-        }
-
-        if(list.get(iIndex).getNumberOfItems() > 0){
-            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
-        }
-
-        if(list.get(iIndex).getLineasBase() > 0){
-            System.out.print(", B=" + list.get(iIndex).getLineasBase());
-        }
-
-        if(list.get(iIndex).getLineasBorradas() > 0){
-            System.out.print(", D=" + list.get(iIndex).getLineasBorradas());
-        }
-
-        if(list.get(iIndex).getLineasModificadas() > 0){
-            System.out.print(", M=" + list.get(iIndex).getLineasModificadas());
-        }
-
-        if(list.get(iIndex).getLineasAgregadas() > 0){
-            System.out.print(", A=" + list.get(iIndex).getLineasAgregadas());
-        }
-
-        System.out.print("\n");
-    }
-
-    public void imprimirNueva(LinkedList<Parte> list, int iIndex){
-
-        System.out.print("\t" + list.get(iIndex).getName() + ": ");
-
-        if(list.get(iIndex).getLineasTotales() > 0){
-            System.out.print("T=" + list.get(iIndex).getLineasTotales());
-        }
-
-        if(list.get(iIndex).getNumberOfItems() > 0){
-            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
-        }
-
-        System.out.print("\n");
-    }
-
-    public void imprimirReusado(LinkedList<Parte> list, int iIndex){
-
-        System.out.print("\t" + list.get(iIndex).getName() + ": ");
-
-        if(list.get(iIndex).getLineasTotales() > 0){
-            System.out.print("T=" + list.get(iIndex).getLineasTotales());
-        }
-
-        if(list.get(iIndex).getNumberOfItems() > 0){
-            System.out.print(", I=" + list.get(iIndex).getNumberOfItems());
-        }
-
-        if(list.get(iIndex).getLineasBase() > 0){
-            System.out.print(", B=" + list.get(iIndex).getLineasBase());
-        }
-
-        System.out.print("\n");
-    }
-    
 }
