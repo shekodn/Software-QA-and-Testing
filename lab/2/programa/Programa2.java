@@ -134,7 +134,8 @@ public class Programa2 {
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
-            lklPartes = (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile).clone();
+            //lklPartes = (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile).clone();
+            lklPartes.addAll( (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile));
             lklFiles.set(iI,temporalFile);
         }
     }
@@ -238,7 +239,6 @@ public class Programa2 {
                 writer.println(lklPartesNuevas.get(r).getName() + "; "
                 + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
                 + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
-
             }
 
             System.out.println("--------------------------------------------");
@@ -263,7 +263,6 @@ public class Programa2 {
         } catch(IOException e){
 
         }
-
     }
     /**
      * prints data per file
