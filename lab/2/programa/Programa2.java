@@ -1,10 +1,10 @@
 //&p-Programa2
+//&b=8
 import java.io.*;
 import java.util.*;
 
 public class Programa2 {
 
-    //&i
     private LinkedList <Archivo> lklFiles; //LinkedList of Archivo object
     private int iBLANKLINES; //global number of blank lines
     private int iLINES; //global number of lines with info.
@@ -12,15 +12,16 @@ public class Programa2 {
     private Scanner scFileName; //scanner with user input to name files
     private int iNumberOfFiles; //number of files to analyze
     private boolean isACorrectNumberInput;
-    private LinkedList <Parte> lklPartes;
-    private LinkedList <Parte> lklPartesBase;
-    private LinkedList <Parte> lklPartesNuevas;
-    private LinkedList <Parte> lklPartesReusadas;
+    private LinkedList <Parte> lklPartes; //&m
+    private LinkedList <Parte> lklPartesBase; //&m
+    private LinkedList <Parte> lklPartesNuevas; //&m
+    private LinkedList <Parte> lklPartesReusadas; //&m
 
     /**
      * Initializes variables
      */
      //&i
+     //&b=7
     public void init(){
         lklFiles = new LinkedList<Archivo>();
         iBLANKLINES = 0;
@@ -31,33 +32,19 @@ public class Programa2 {
         isACorrectNumberInput = false;
 
         //listas
-        lklPartes = new LinkedList<Parte>();
-        lklPartesBase = new LinkedList<Parte>();
-        lklPartesNuevas = new LinkedList<Parte>();
-        lklPartesReusadas = new LinkedList<Parte>();
-
-
-
+        lklPartes = new LinkedList<Parte>(); //&m
+        lklPartesBase = new LinkedList<Parte>(); //&m
+        lklPartesNuevas = new LinkedList<Parte>(); //&m
+        lklPartesReusadas = new LinkedList<Parte>(); //&m
     }
 
-    /**
-     * This functions is for slowing down the output in the screen
-     * @param int ms [number of miliseconds]
-     */
-     //&i
-    private void sleep(int ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Asks the user how many files he is going to scan
      * @return [number o files]
      */
      //&i
+     //&b=11
     public int howManyFiles(){
 
         int iNumberOfFiles = 0;
@@ -84,6 +71,7 @@ public class Programa2 {
      * @param int iNumberOfFiles
      */
      //&i
+     //&b=18
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -102,13 +90,10 @@ public class Programa2 {
             if(analyzer.isAFile(sName)){
                 temporalFile.setName(sName);
                 lklFiles.add(temporalFile);
-                System.out.println(temporalFile.getName() + " is a file!" +
-                        "\n");
+                System.out.println(temporalFile.getName() + " is a file!" + "\n");
                 iCounter++;
 
             } else{
-
-                sleep(500);
                 System.out.println("PLEASE TRY AGAIN!" + "\n");
                 iI-=1;
             }
@@ -129,7 +114,7 @@ public class Programa2 {
             lklFiles.set(iI,temporalFile);
         }
     }
-
+    //&i
     public void printParts(){
 
         String sPartName = "";
@@ -254,16 +239,6 @@ public class Programa2 {
 
         }
     }
-    /**
-     * prints data per file
-     */
-     //&i
-    public void individualData(){
-
-        for(int iI = 0; iI < lklFiles.size(); iI++){
-            lklFiles.get(iI).printFileData();
-        }
-    }
 
     /**
      * prints total quantities of lines, blank lines and files
@@ -271,10 +246,7 @@ public class Programa2 {
      //&i
     public void printGlobalData(){
         Analyzer analyzer = new Analyzer();
-        // iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles,
-        //         iBLANKLINES);
         iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
-        //analyzer.globalInformation(lklFiles.size(), iBLANKLINES ,iLINES);
 
         try{
             PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
@@ -283,7 +255,6 @@ public class Programa2 {
             System.out.println("Total LDC: " + iLINES);
             writer.println("Total LDC: " +  iLINES);
             writer.close();
-
         } catch(IOException e){
 
         }
@@ -293,6 +264,7 @@ public class Programa2 {
      * Performs the overall analysis of files
      */
      //&i
+     //&b=9
     public void analyze(){
         //methods
         clearTheFile();
@@ -300,14 +272,12 @@ public class Programa2 {
         iNumberOfFiles = howManyFiles();
         fileName(iNumberOfFiles);
         scan();
-        printParts();
+        printParts(); //&m
         //sort in ascending order
         Collections.sort(lklFiles);
         printGlobalData();
-
     }
-
-    //&b=8
+    //&i
     public static void clearTheFile() {
         try{
             FileWriter fwOb = new FileWriter("ConteoLDC.txt", false);
@@ -320,10 +290,10 @@ public class Programa2 {
         }
     }
 
-    //&i
+    //&p-Main
+    //&b=3
     public static void main(String[] args) {
         Programa2 program = new Programa2();
         program.analyze();
     }
-
 }
