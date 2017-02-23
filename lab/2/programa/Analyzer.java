@@ -112,6 +112,8 @@ public class Analyzer {
                 sCurrentLine.trim().equals(" ")  ||
                 sCurrentLine.trim().equals("}")  ||
                 sCurrentLine.trim().equals("{")  ||
+                sCurrentLine.trim().equals("*") ||
+                strippedString.indexOf("*") == 0 ||
                 sCurrentLine.contains("//")      ||
                 sCurrentLine.contains("/*")      ||
                 sCurrentLine.contains("*/"))){
@@ -170,6 +172,7 @@ public class Analyzer {
                             }
 
                             iLineCounter++;
+                            System.out.println(strippedString);
                         }
 
                     } else {
@@ -184,11 +187,15 @@ public class Analyzer {
                         iCurrentIndex = getCurrentPartIndex(sActivePart, lklPartes);
                         lklPartes.get(iCurrentIndex).addLineasTotales();
                         iLineCounter++;
+                        System.out.println(strippedString);
+
 
                     } else{
 
                         if(isClosed && strippedString.contains(";")){
                             iLineCounter++;
+                            System.out.println(strippedString);
+
                         }
                     }
                 }
