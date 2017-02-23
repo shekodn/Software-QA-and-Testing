@@ -92,8 +92,12 @@ Total de LDC=162
 
 ###Teclear en pantalla:
 ```
-Test2a.src
+Test2a.src 
 Test2b.src
+```
+
+###Salida
+```
 PARTES BASE:
    Lista: T=39, I=4, B=65, D=35, M=3, A=9
 --------------------------------------------
