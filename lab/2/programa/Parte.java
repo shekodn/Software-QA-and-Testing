@@ -1,30 +1,12 @@
 //&p-Parte
-//&A
 import java.io.*;
-import java.util.LinkedList;
-import java.io.*;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.LinkedList;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
-
+import java.util.*;
 
 public class Parte {
 
     /**
      * private attributes
      */
-    //&i
     private String sName;
     private String sTipoDeParte;
     private int iLDC;
@@ -115,7 +97,7 @@ public class Parte {
     }
 
     //special getters
-
+    //&i
     public int getLineasAgregadas(){
         return this.iLineasTotales - this.iLineasBase + this.iLineasBorradas;
     }
@@ -128,6 +110,7 @@ public class Parte {
         this.sName = sN;
     }
 
+    //&i
     public void setTipoDeParte(String sN){
 
         if(sName == "base" || sName == "nueva" ||sName == "reusada"){
@@ -167,27 +150,49 @@ public class Parte {
 
     /* Other methods */
 
+    //&i
     public int addItem(){
         iNumberOfItems = iNumberOfItems + 1;
         return iNumberOfItems;
     }
 
+    /**
+     * [addModified description]
+     * @return [description]
+     */
+    //&i
     public int addModified(){
         iLineasModificadas = iLineasModificadas + 1;
         return iLineasModificadas;
     }
 
+    /**
+     * [addDeleted description]
+     * @return [description]
+     */
+    //&i
     public int addDeleted(){
         iLineasBorradas = iLineasBorradas + 1;
         return iLineasBorradas;
     }
 
+    /**
+     * [addLineasTotales description]
+     * @return [description]
+     */
+    //&i
     public int addLineasTotales(){
         iLineasTotales = iLineasTotales + 1;
         return iLineasTotales;
     }
 
-
+    /**
+     *
+     * @param int iB [description]
+     * @param int iM [description]
+     * @param int iD [description]
+     * @param int iA [description]
+     */
     //&i
     public void tipoDeParte(int iB, int iM, int iD, int iA){
 

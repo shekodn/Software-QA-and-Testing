@@ -1,35 +1,20 @@
 //&p-Analyzer
+//&b=
 import java.io.*;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.LinkedList;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import java.util.*;
 
 public class Analyzer {
-
     /**
     * Initializes variables
     */
-
     //&i
     private int iLINES = 0;
     private int iBLANKLINES = 0;
     private boolean isClosed = true; // true comment closed, false, waiting to close comment
-
     protected LinkedList <Parte> lklPartes;
     protected LinkedList <Parte> lklPartesBase;
     protected LinkedList <Parte> lklPartesNuevas;
     protected LinkedList <Parte> lklPartesReusadas;
-
     private String sActivePart;
     private int iCurrentIndex = 0;
 
@@ -285,6 +270,7 @@ public class Analyzer {
         return sActivePart;
     }
 
+
     public int getCurrentPartIndex(String sPartName, LinkedList <Parte> list){
 
         int iIndex = 0;
@@ -299,7 +285,13 @@ public class Analyzer {
         return 0;
     }
 
-
+    /**
+     * [isAlreadyAPart description]
+     * @param  LinkedList <Parte>
+     * @param  String     sName
+     * @return
+     */
+    //&i
     public int isAlreadyAPart(LinkedList <Parte> list, String sName){
 
         for (int iI = 0; iI < list.size(); iI ++){
@@ -321,12 +313,12 @@ public class Analyzer {
         return sLine.substring(5);
     }
 
-    //&i
     /**
     * Verfies that LOC is a part //&p-"
     * @param  String sPart
     * @return
     */
+    //&i
     public boolean isAPart(String sPart){
         if(sPart.contains("//&p-")){
             return true;
@@ -334,7 +326,12 @@ public class Analyzer {
             return false;
         }
     }
-
+    /**
+     * Checks if there is a comment
+     * @param  String sCurrentLine
+     * @return
+     */
+    //&i
     private boolean checksComment(String sCurrentLine){
 
         if (sCurrentLine.contains("/*") && sCurrentLine.contains("*/")){
@@ -356,18 +353,6 @@ public class Analyzer {
         return true;
     }
 
-
-    /**
-    * globalInformation description
-    * @param int iListSize
-    * @param int blankLines
-    * @param int iLines
-    */
-    //&i
-    public void globalInformation(int iListSize, int blankLines, int iLines){
-        System.out.println("Total de LDC: "  + iLines);
-    }
-
     /**
     * calculateLinesGlobalInfo description
     * @param  LinkedList <Archivo> linked list of files
@@ -378,26 +363,8 @@ public class Analyzer {
     public int calculateLinesGlobalInfo(LinkedList <Archivo> list, int iLines){
 
         for(int iI = 0; iI < list.size(); iI++){
-
             iLines = iLines + list.get(iI).getLines();
         }
-
         return iLines;
-    }
-    /**
-    * calculateBlankLinesGlobalInfo description
-    * @param  LinkedList <Archivo>     list          [linked list with files]
-    * @param  int        iBlankLines   Total number of blank lines
-    * @return Total number of blank lines
-    */
-    //&i
-    public int calculateBlankLinesGlobalInfo(LinkedList <Archivo> list,
-    int iBlankLines){
-
-        for(int iI = 0; iI < list.size(); iI++){
-
-            iBlankLines = iBlankLines + list.get(iI).getBlankLines();
-        }
-        return iBlankLines;
     }
 }

@@ -1,32 +1,21 @@
 //&p-Programa2
-import java.util.*;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.*;
-
-
+import java.util.*;
 
 public class Programa2 {
 
     //&i
     private LinkedList <Archivo> lklFiles; //LinkedList of Archivo object
-
     private int iBLANKLINES; //global number of blank lines
     private int iLINES; //global number of lines with info.
     private Scanner scUserInput; //scanner with user input (how many files)
     private Scanner scFileName; //scanner with user input to name files
     private int iNumberOfFiles; //number of files to analyze
     private boolean isACorrectNumberInput;
-
     private LinkedList <Parte> lklPartes;
     private LinkedList <Parte> lklPartesBase;
     private LinkedList <Parte> lklPartesNuevas;
     private LinkedList <Parte> lklPartesReusadas;
-
 
     /**
      * Initializes variables
@@ -134,8 +123,9 @@ public class Programa2 {
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             Archivo temporalFile = new Archivo();
-            //lklPartes = (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile).clone();
-            lklPartes.addAll( (LinkedList<Parte>) analyzer.readByLine2(lklFiles.get(iI).getName(), temporalFile));
+            lklPartes.addAll( (LinkedList<Parte>)
+                            analyzer.readByLine2(lklFiles.get(iI).getName(),
+                            temporalFile));
             lklFiles.set(iI,temporalFile);
         }
     }
@@ -317,7 +307,7 @@ public class Programa2 {
 
     }
 
-    //&b=12
+    //&b=8
     public static void clearTheFile() {
         try{
             FileWriter fwOb = new FileWriter("ConteoLDC.txt", false);
@@ -328,7 +318,6 @@ public class Programa2 {
         } catch(IOException e){
 
         }
-
     }
 
     //&i
