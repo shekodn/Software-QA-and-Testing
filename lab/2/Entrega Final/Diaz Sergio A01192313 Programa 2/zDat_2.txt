@@ -1,0 +1,10 @@
+/*
+ * [addModified description]
+ * @return [description]
+ */
+//&p-HOLA
+
+public int addModified()
+    iLineasModificadas = iLineasModificadas + 1;
+    return iLineasModificadas;
+}

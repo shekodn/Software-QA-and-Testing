@@ -1,0 +1,46 @@
+public class Archivo implements Comparable <Archivo> {
+    private String sName;
+    private int iBlankLines;
+    private int iLines;
+    public Archivo(){
+        this.sName = "no name";
+        this.iBlankLines = 0;
+        this.iLines = 0;
+    Archivo(Archivo a) {
+        System.out.println("Copy constructor called");
+        sName = a.getName();
+        iLines = a.getLines();
+        iBlankLines = a.getBlankLines();
+    public Archivo(String sName, int iBlankLines, int iLines){
+        this.sName = sName;
+        this.iBlankLines = iBlankLines;
+        this.iLines = iLines;
+    public String getName(){
+        return sName;
+    public void setName(String sName){
+        this.sName = sName;
+    public int getBlankLines(){
+        return iBlankLines;
+    public void setBlankLines(int iN){
+        this.iBlankLines = iN;
+    public int getLines(){
+        return iLines;
+    public void setLines(int iN){
+        this.iLines = iN;
+    public void resetValues(){
+        this.sName = "reset name";
+        this.iBlankLines = 0;
+        this.iLines = 0;
+    public int compareTo(Archivo o) {
+        int comparedSize = o.iLines;
+        if (this.iLines > comparedSize) {
+            return 1;
+ else if (this.iLines == comparedSize) {
+            return 0;
+ else {
+            return -1;
+    public void printFileData(){
+        System.out.println("Nombre del archivo: " + this.sName);
+        System.out.println("Cantidad de líneas en blanco: " + this.iBlankLines);
+        System.out.println("Cantidad de líneas con información: " + this.iLines);
+        System.out.println("-------------------------------------------------");
