@@ -280,7 +280,6 @@ public class Analyzer {
 
     public int getCurrentPartIndex(String sPartName, LinkedList <Parte> list){
 
-        int iIndex = 0;
 
         for(int iI = 0; iI < lklPartes.size(); iI++){
 
