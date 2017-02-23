@@ -114,6 +114,10 @@ public class Programa2 {
             lklFiles.set(iI,temporalFile);
         }
     }
+
+    /**
+     * [printParts description]
+     */
     //&i
     public void printParts(){
 
@@ -185,21 +189,21 @@ public class Programa2 {
 
             System.out.println("PARTES BASE:");
             writer.println("PARTES BASE:");
-            for (int i = 0; i<lklPartesBase.size();i++) {
-                System.out.println(lklPartesBase.get(i).getName() + ": "
-                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
-                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
-                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
-                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
-                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
-                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
-                writer.println(lklPartesBase.get(i).getName() + ": "
-                + "T=" + lklPartesBase.get(i).getLineasTotales() + ", "
-                + "I=" + lklPartesBase.get(i).getNumberOfItems() + ", "
-                + "B=" + lklPartesBase.get(i).getLineasBase() + ", "
-                + "D=" + lklPartesBase.get(i).getLineasBorradas() + ", "
-                + "M=" + lklPartesBase.get(i).getLineasModificadas() + ", "
-                + "A=" + lklPartesBase.get(i).getLineasAgregadas());
+            for (int iI = 0; iI<lklPartesBase.size();iI++) {
+                System.out.println(lklPartesBase.get(iI).getName() + ": "
+                + "T=" + lklPartesBase.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(iI).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(iI).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(iI).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(iI).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(iI).getLineasAgregadas());
+                writer.println(lklPartesBase.get(iI).getName() + ": "
+                + "T=" + lklPartesBase.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesBase.get(iI).getNumberOfItems() + ", "
+                + "B=" + lklPartesBase.get(iI).getLineasBase() + ", "
+                + "D=" + lklPartesBase.get(iI).getLineasBorradas() + ", "
+                + "M=" + lklPartesBase.get(iI).getLineasModificadas() + ", "
+                + "A=" + lklPartesBase.get(iI).getLineasAgregadas());
 
             }
 
@@ -207,56 +211,39 @@ public class Programa2 {
             writer.println("--------------------------------------------");
             System.out.println("PARTES NUEVAS:");
             writer.println("PARTES NUEVAS");
-            for (int r = 0; r<lklPartesNuevas.size();r++){
-                System.out.println(lklPartesNuevas.get(r).getName() + ": "
-                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
-                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
-                writer.println(lklPartesNuevas.get(r).getName() + "; "
-                + "T=" + lklPartesNuevas.get(r).getLineasTotales() + ", "
-                + "I=" + lklPartesNuevas.get(r).getNumberOfItems());
+            for (int iI = 0; iI < lklPartesNuevas.size(); iI++){
+                System.out.println(lklPartesNuevas.get(iI).getName() + ": "
+                + "T=" + lklPartesNuevas.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(iI).getNumberOfItems());
+                writer.println(lklPartesNuevas.get(iI).getName() + "; "
+                + "T=" + lklPartesNuevas.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesNuevas.get(iI).getNumberOfItems());
             }
 
             System.out.println("--------------------------------------------");
             writer.println("--------------------------------------------");
             System.out.println("PARTES REUSADAS:");
             writer.println("PARTES REUSADAS:");
-            for (int i = 0;i<lklPartesReusadas.size();i++){
-                System.out.println(lklPartesReusadas.get(i).getName() + ": "
-                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
-                + "I=" + lklPartesReusadas.get(i).getNumberOfItems() + ", "
-                + "B=" + lklPartesReusadas.get(i).getLineasBase());
-                writer.println(lklPartesReusadas.get(i).getName() + ": "
-                + "T=" + lklPartesReusadas.get(i).getLineasTotales() + ", "
-                + "I=" + lklPartesReusadas.get(i).getNumberOfItems());
+            for (int iI = 0; iI < lklPartesReusadas.size(); iI++){
+                System.out.println(lklPartesReusadas.get(iI).getName() + ": "
+                + "T=" + lklPartesReusadas.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(iI).getNumberOfItems() + ", "
+                + "B=" + lklPartesReusadas.get(iI).getLineasBase());
+                writer.println(lklPartesReusadas.get(iI).getName() + ": "
+                + "T=" + lklPartesReusadas.get(iI).getLineasTotales() + ", "
+                + "I=" + lklPartesReusadas.get(iI).getNumberOfItems());
             }
 
-            //System.out.println("Total LDC: " + iLineCounter);
-            // writer.println("Total LDC: " +  iLineCounter);
-            writer.close();
-
-
-        } catch(IOException e){
-
-        }
-    }
-
-    /**
-     * prints total quantities of lines, blank lines and files
-     */
-     //&i
-    public void printGlobalData(){
-        Analyzer analyzer = new Analyzer();
-        iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
-
-        try{
-            PrintWriter writer = new PrintWriter(new FileOutputStream(new File("ConteoLDC.txt"), true));
             System.out.println("--------------------------------------------");
             writer.println("--------------------------------------------");
+            Analyzer analyzer = new Analyzer();
+            iLINES = analyzer.calculateLinesGlobalInfo(lklFiles, iLINES);
             System.out.println("Total LDC: " + iLINES);
             writer.println("Total LDC: " +  iLINES);
             writer.close();
-        } catch(IOException e){
 
+        } catch(IOException e){
+            System.out.println("error with the writer");
         }
     }
 
@@ -275,8 +262,11 @@ public class Programa2 {
         printParts(); //&m
         //sort in ascending order
         Collections.sort(lklFiles);
-        printGlobalData();
     }
+
+    /**
+     * [clearTheFile description]
+     */
     //&i
     public static void clearTheFile() {
         try{
@@ -290,6 +280,10 @@ public class Programa2 {
         }
     }
 
+    /**
+     * [main description]
+     * @param String[] args [description]
+     */
     //&p-Main
     //&b=3
     public static void main(String[] args) {

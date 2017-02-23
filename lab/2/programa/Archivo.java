@@ -16,7 +16,9 @@ public class Archivo implements Comparable <Archivo> {
         this.iLines = 0;
     }
 
-    // copy constructor
+    /**
+     * Copy Constructor
+     */
     //&i
     Archivo(Archivo a) {
         System.out.println("Copy constructor called");
