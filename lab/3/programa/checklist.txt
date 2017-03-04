@@ -1,0 +1,14 @@
+Diseño:
+1.	Flujo del programa
+2.	Diseño de clases
+3.	Diseño de métodos
+4.	Diseño de código prototipo
+5.	Diseño de pruebas
+
+
+
+Código:
+1.	Importar librerías que se van a utilizar
+2.	Realizar cada clase
+3.	Declarar variables globales
+4.	Hacer método para inicializar esas variables globales
