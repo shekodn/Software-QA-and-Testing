@@ -203,7 +203,7 @@ public class Controlador {
 
     ////////////////////////////////////////////////////////////////////////////
     public double calculaPromedio(double dNum, int size){
-        return (dNum) / size;
+        return roundNumber((dNum) / size);
     }
 
     public double sumatoriaXi(LinkedList <Coordenada> list){
@@ -213,11 +213,11 @@ public class Controlador {
 
         for(int iI = 0; iI < list.size(); iI++){
 
-            dN = list.get(iI).getX();
+            dN = roundNumber(list.get(iI).getX());
             dSum = dSum + dN;
         }
 
-        return dSum;
+        return roundNumber(dSum);
     }
 
     public double sumatoriaYi(LinkedList <Coordenada> list){
@@ -228,20 +228,20 @@ public class Controlador {
 
         for(int iI = 0; iI < list.size(); iI++){
 
-            dN = list.get(iI).getY();
+            dN = roundNumber(list.get(iI).getY());
             dSum = dSum + dN;
         }
 
-        return dSum;
+        return roundNumber(dSum);
     }
 
     public double calculaB1(LinkedList <Coordenada> list){
 
-        double xiyi = sumatoriaXY(list);
+        double xiyi = roundNumber(sumatoriaXY(list));
         double n = list.size();
         double xavg = calculaPromedio(sumatoriaXi(list), list.size());
         double yavg = calculaPromedio(sumatoriaYi(list), list.size());
-        double x2 = sumatoriaX2(list);
+        double x2 = roundNumber(sumatoriaX2(list));
 
         return roundNumber(((xiyi) - (n*xavg*yavg)) / ((x2) - (n * (xavg * xavg )))); //checked
     }
@@ -269,11 +269,11 @@ public class Controlador {
     }
 
     public double calculaB0(LinkedList <Coordenada> list){
-        double yavg = calculaPromedio(sumatoriaYi(list), list.size());
-        double b1 = calculaB1(list);
+        double yavg = roundNumber(calculaPromedio(sumatoriaYi(list), list.size()));
+        double b1 = roundNumber(calculaB1(list));
         double xavg = roundNumber(calculaPromedio(sumatoriaXi(list), list.size()));
 
-        return roundNumber(yavg - (b1*xavg));
+        return roundNumber(yavg - (b1 * xavg));
     }
 
     public double calculaYK(LinkedList <Coordenada> list, double xk){
