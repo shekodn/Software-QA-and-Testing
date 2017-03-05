@@ -124,7 +124,12 @@ public class Controlador {
 
     /* methods */
 
-
+    /**
+     * [rounds to the fifth decimal place]
+     * @param  double dNum          [description]
+     * @return        [description]
+     */
+    //&i
     public double roundNumber(double dNum){
 
         double factor = 1e5; // = 1 * 10^5 = 100000.
@@ -133,6 +138,7 @@ public class Controlador {
         return result;
     }
 
+    //&i
     public void printInfo(){
 
         System.out.println("N  = " + iN );
@@ -148,10 +154,12 @@ public class Controlador {
 
     ////////////////////////////////////////////////////////////////////////////
 
+    //&i
     public double calculaCuadrado(double dNum){
         return dNum * dNum;
     }
 
+    //&i
     public double sumatoriaX2(LinkedList <Coordenada> list){
 
         double dSum = 0;
@@ -166,6 +174,7 @@ public class Controlador {
         return dSum;
     }
 
+    //&i
     public double sumatoriaY2(LinkedList <Coordenada> list){
 
         double dSum = 0;
@@ -181,10 +190,13 @@ public class Controlador {
     }
 
     ////////////////////////////////////////////////////////////////////////////
+
+    //&i
     public double calculaXY(double dX, double dY){
         return (dX) * (dY);
     }
 
+    //&i
     public double sumatoriaXY(LinkedList <Coordenada> list){
 
         double dSum = 0;
@@ -202,10 +214,13 @@ public class Controlador {
     }
 
     ////////////////////////////////////////////////////////////////////////////
+
+    //&i
     public double calculaPromedio(double dNum, int size){
         return ((dNum) / size);
     }
 
+    //&i
     public double sumatoriaXi(LinkedList <Coordenada> list){
 
         double dSum = 0;
@@ -220,6 +235,7 @@ public class Controlador {
         return (dSum);
     }
 
+    //&i
     public double sumatoriaYi(LinkedList <Coordenada> list){
 
         double dSum = 0;
@@ -235,6 +251,7 @@ public class Controlador {
         return (dSum);
     }
 
+    //&i
     public double calculaB1(LinkedList <Coordenada> list){
 
         double xiyi = (sumatoriaXY(list));
@@ -243,11 +260,12 @@ public class Controlador {
         double yavg = calculaPromedio(sumatoriaYi(list), list.size());
         double x2 = (sumatoriaX2(list));
 
-        return ((xiyi) - (n*xavg*yavg)) / ((x2) - (n * (xavg * xavg ))); //checked
+        return ((xiyi) - (n*xavg*yavg)) / ((x2) - (n * (xavg * xavg )));
     }
 
     ////////////////////////////////////////////////////////////////////////////
 
+    //&i
     public double calculaR(LinkedList <Coordenada> list){
 
         double xiyi = sumatoriaXY(list);
@@ -259,14 +277,16 @@ public class Controlador {
         double x2 = sumatoriaX2(list);
         double y2 = sumatoriaY2(list);
 
-        return ( (n*(xiyi) - (xi)*(yi)) / Math.sqrt( ((n * (x2)-(xi * xi)) * (n * (y2) - (yi * yi))))); //checked
+        return ( (n*(xiyi) - (xi)*(yi)) / Math.sqrt( ((n * (x2)-(xi * xi)) * (n * (y2) - (yi * yi)))));
     }
 
+    //&i
     public double calculaR2(double dR){
 
         return ((dR) * (dR));
     }
 
+    //&i
     public double calculaB0(LinkedList <Coordenada> list){
         double yavg = (calculaPromedio(sumatoriaYi(list), list.size()));
         double b1 = (calculaB1(list));
@@ -275,6 +295,7 @@ public class Controlador {
         return (yavg - ((b1 * xavg)));
     }
 
+    //&i
     public double calculaYK(LinkedList <Coordenada> list, double xk){
 
         double b1 = (calculaB1(list));

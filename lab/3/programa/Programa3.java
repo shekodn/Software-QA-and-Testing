@@ -1,5 +1,5 @@
 //&p-Programa3
-//&b=8
+//&b=6
 import java.io.*;
 import java.util.*;
 
@@ -10,8 +10,6 @@ public class Programa3 {
     private int iXK; //first number of file
     private Controlador controlador; //controlador principal
     private Scanner scFileName; //scanner with user input to name files
-
-
 
     /**
      * Initializes variables
@@ -59,7 +57,6 @@ public class Programa3 {
                 System.out.println("PLEASE TRY AGAIN!" + "\n");
                 iI-=1;
             }
-
         }
     }
 
@@ -93,23 +90,20 @@ public class Programa3 {
 
     }
 
-
-
     /**
      * Performs the overall analysis of files
      */
      //&i
      //&b=9
+     //&d=4
     public void analyze(){
-        //methods
 
         init();
-        fileName(1);
+        fileName(1);//&m
         addCoordinatesToList();
         performCalculation();
         controlador.printInfo();
     }
-
 
 
     /**
@@ -118,8 +112,9 @@ public class Programa3 {
      */
     //&p-Main
     //&b=3
+    //&i
     public static void main(String[] args) {
-        Programa3 program = new Programa3();
+        Programa3 program = new Programa3();//&m
         program.analyze();
     }
 }

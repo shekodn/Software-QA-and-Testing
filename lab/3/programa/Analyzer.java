@@ -10,6 +10,7 @@ public class Analyzer {
      * @return  true if it is a file
      */
      //&i
+     //&b=7
     public boolean isAFile(String fileName){
 
         File f = new File(fileName);
@@ -32,6 +33,8 @@ public class Analyzer {
      * @return a file with updated infomration
      */
      //&i
+     //&b=13
+     //&d=13
     public int readByLine(String fileName, LinkedList<Coordenada> list){
 
         String FILENAME = fileName;
@@ -76,5 +79,4 @@ public class Analyzer {
 
         return iN;
     }
-
 }

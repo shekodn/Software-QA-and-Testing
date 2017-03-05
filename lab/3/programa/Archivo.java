@@ -1,4 +1,5 @@
 //&p-Archivo
+//&b=48
 public class Archivo implements Comparable <Archivo> {
 
     private String sName;
