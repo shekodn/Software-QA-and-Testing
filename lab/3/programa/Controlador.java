@@ -137,11 +137,11 @@ public class Controlador {
 
         System.out.println("N  = " + iN );
         System.out.println("xk = " + dXK);
-        System.out.println("r  = " + dR );
-        System.out.println("r2 = " + dR2);
-        System.out.println("b0 = " + dB0);
-        System.out.println("b1 = " + dB1);
-        System.out.println("yk = " + dYK);
+        System.out.println("r  = " + roundNumber(dR));
+        System.out.println("r2 = " + roundNumber(dR2));
+        System.out.println("b0 = " + roundNumber(dB0));
+        System.out.println("b1 = " + roundNumber(dB1));
+        System.out.println("yk = " + roundNumber(dYK));
     }
 
     /* Sumatorias */
@@ -203,7 +203,7 @@ public class Controlador {
 
     ////////////////////////////////////////////////////////////////////////////
     public double calculaPromedio(double dNum, int size){
-        return roundNumber((dNum) / size);
+        return ((dNum) / size);
     }
 
     public double sumatoriaXi(LinkedList <Coordenada> list){
@@ -213,11 +213,11 @@ public class Controlador {
 
         for(int iI = 0; iI < list.size(); iI++){
 
-            dN = roundNumber(list.get(iI).getX());
+            dN = (list.get(iI).getX());
             dSum = dSum + dN;
         }
 
-        return roundNumber(dSum);
+        return (dSum);
     }
 
     public double sumatoriaYi(LinkedList <Coordenada> list){
@@ -228,22 +228,22 @@ public class Controlador {
 
         for(int iI = 0; iI < list.size(); iI++){
 
-            dN = roundNumber(list.get(iI).getY());
+            dN = (list.get(iI).getY());
             dSum = dSum + dN;
         }
 
-        return roundNumber(dSum);
+        return (dSum);
     }
 
     public double calculaB1(LinkedList <Coordenada> list){
 
-        double xiyi = roundNumber(sumatoriaXY(list));
+        double xiyi = (sumatoriaXY(list));
         double n = list.size();
         double xavg = calculaPromedio(sumatoriaXi(list), list.size());
         double yavg = calculaPromedio(sumatoriaYi(list), list.size());
-        double x2 = roundNumber(sumatoriaX2(list));
+        double x2 = (sumatoriaX2(list));
 
-        return roundNumber(((xiyi) - (n*xavg*yavg)) / ((x2) - (n * (xavg * xavg )))); //checked
+        return ((xiyi) - (n*xavg*yavg)) / ((x2) - (n * (xavg * xavg ))); //checked
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -259,27 +259,26 @@ public class Controlador {
         double x2 = sumatoriaX2(list);
         double y2 = sumatoriaY2(list);
 
-
-        return roundNumber( (n*(xiyi) - (xi)*(yi)) / Math.sqrt( ((n * (x2)-(xi * xi)) * (n * (y2) - (yi * yi))))); //checked
+        return ( (n*(xiyi) - (xi)*(yi)) / Math.sqrt( ((n * (x2)-(xi * xi)) * (n * (y2) - (yi * yi))))); //checked
     }
 
     public double calculaR2(double dR){
 
-        return roundNumber(dR * dR);
+        return ((dR) * (dR));
     }
 
     public double calculaB0(LinkedList <Coordenada> list){
-        double yavg = roundNumber(calculaPromedio(sumatoriaYi(list), list.size()));
-        double b1 = roundNumber(calculaB1(list));
-        double xavg = roundNumber(calculaPromedio(sumatoriaXi(list), list.size()));
+        double yavg = (calculaPromedio(sumatoriaYi(list), list.size()));
+        double b1 = (calculaB1(list));
+        double xavg = (calculaPromedio(sumatoriaXi(list), list.size()));
 
-        return roundNumber(yavg - (b1 * xavg));
+        return (yavg - ((b1 * xavg)));
     }
 
     public double calculaYK(LinkedList <Coordenada> list, double xk){
 
-        double b1 = calculaB1(list);
-        double b0 = calculaB0(list);
-        return roundNumber(b0 + b1 * xk);
+        double b1 = (calculaB1(list));
+        double b0 = (calculaB0(list));
+        return (b0 + (b1 * xk));
     }
 }
