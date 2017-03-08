@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<defectLog>
+  <defect num="1" type="Syntax" inj="Code" rem="Compile" ft="4.2" fd="" desc="fixes ;" count="14" date="@1487042710200" />
+  <defect num="2" type="Function" inj="Code" rem="Compile" ft="4.8" fd="" desc="function import" date="@1487042971834" />
+  <defect num="3" type="Function" inj="Code" rem="Compile" ft="7.7" fd="" desc="String instead of int" date="@1487043261008" />
+  <defect num="4" type="Function" inj="Code" rem="Test" ft="46.4" fd="" desc="no cuenta //&amp;m" date="@1487044989877" />
+</defectLog>

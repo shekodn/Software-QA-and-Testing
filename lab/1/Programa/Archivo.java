@@ -1,3 +1,4 @@
+//&p-Archivo
 public class Archivo implements Comparable <Archivo> {
 
     private String sName;
@@ -8,6 +9,7 @@ public class Archivo implements Comparable <Archivo> {
     /**
     * empty constructor for file
     */
+    //&i
     public Archivo(){
         this.sName = "no name";
         this.iBlankLines = 0;
@@ -16,6 +18,7 @@ public class Archivo implements Comparable <Archivo> {
     }
 
     // copy constructor
+    //&i
     Archivo(Archivo a) {
         System.out.println("Copy constructor called");
         sName = a.getName();
@@ -31,6 +34,7 @@ public class Archivo implements Comparable <Archivo> {
      * @param  int    iLines        [number of lines with information]
      * @return        [Object file]
      */
+     //&i
     public Archivo(String sName, int iBlankLines, int iLines){
         this.sName = sName;
         this.iBlankLines = iBlankLines;
@@ -95,6 +99,7 @@ public class Archivo implements Comparable <Archivo> {
     /**
      * resets all File values
      */
+     //&i
     public void resetValues(){
 
         this.sName = "reset name";
@@ -102,12 +107,6 @@ public class Archivo implements Comparable <Archivo> {
         this.iLines = 0;
     }
 
-    /**
-    * [compareTo description]
-    * @param  Archivo o [file to compare with]
-    * @return This method is to sort according to number of lines with
-    * information (min to max)
-    */
 
     //@Override
     /**
@@ -115,6 +114,7 @@ public class Archivo implements Comparable <Archivo> {
      * @param  Archivo File to compare with
      * @return         [gretest file (according to lines with information)]
      */
+     //&i
     public int compareTo(Archivo o) {
         int comparedSize = o.iLines;
         if (this.iLines > comparedSize) {
@@ -129,6 +129,7 @@ public class Archivo implements Comparable <Archivo> {
     /**
     * Prints file description in the desired format
     */
+    //&i
     public void printFileData(){
         System.out.println("Nombre del archivo: " + this.sName);
         System.out.println("Cantidad de líneas en blanco: " + this.iBlankLines);

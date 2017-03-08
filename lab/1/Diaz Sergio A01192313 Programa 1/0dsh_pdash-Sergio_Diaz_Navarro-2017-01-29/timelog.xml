@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<timeLogEntries>
+  <time id="1" path="/Non Project/PSP Training/Program 1/Planning" start="@1484766791383" delta="4" interrupt="4" />
+  <time id="3" path="/Non Project/PSP Training/Program 1/Planning" start="@1485020478904" delta="2" />
+  <time id="4" path="/Non Project/PSP Training/Program 1/Planning" start="@1485021998926" delta="3" />
+  <time id="5" path="/Non Project/PSP Training/Program 1/Design" start="@1485022240558" delta="12" />
+  <time id="6" path="/Non Project/PSP Training/Program 1/Design" start="@1485028562838" delta="35" interrupt="2" />
+  <time id="7" path="/Non Project/PSP Training/Program 1/Design" start="@1485031514505" delta="1" />
+  <time id="8" path="/Non Project/PSP Training/Program 1/Design" start="@1485358948484" delta="15" />
+  <time id="9" path="/Non Project/PSP Training/Program 1/Design" start="@1485363668262" delta="7" interrupt="4" />
+  <time id="10" path="/Non Project/PSP Training/Program 1/Code" start="@1485364378373" delta="9" interrupt="1" />
+  <time id="11" path="/Non Project/PSP Training/Program 1/Code" start="@1485365538254" delta="3" interrupt="4" />
+  <time id="12" path="/Non Project/PSP Training/Program 1/Design" start="@1485366081622" delta="11" interrupt="3" />
+  <time id="13" path="/Non Project/PSP Training/Program 1/Code" start="@1485366949728" delta="57" />
+  <time id="14" path="/Non Project/PSP Training/Program 1/Code" start="@1485371704253" delta="20" />
+  <time id="15" path="/Non Project/PSP Training/Program 1/Compile" start="@1485371943074" delta="6" interrupt="3" />
+  <time id="16" path="/Non Project/PSP Training/Program 1/Compile" start="@1485385742399" delta="4" />
+  <time id="17" path="/Non Project/PSP Training/Program 1/Compile" start="@1485394150393" delta="54" interrupt="4" />
+  <time id="18" path="/Non Project/PSP Training/Program 1/Compile" start="@1485486464112" delta="9" />
+  <time id="19" path="/Non Project/PSP Training/Program 1/Compile" start="@1485537095054" delta="165" />
+</timeLogEntries>

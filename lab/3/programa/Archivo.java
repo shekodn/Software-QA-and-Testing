@@ -1,5 +1,5 @@
 //&p-Archivo
-//&b=48
+//&b=46
 public class Archivo implements Comparable <Archivo> {
 
     private String sName;
@@ -109,7 +109,6 @@ public class Archivo implements Comparable <Archivo> {
     }
 
 
-    //@Override
     /**
      * Function used to sort according to lines with information
      * @param  Archivo File to compare with

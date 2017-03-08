@@ -1,0 +1,12 @@
+Process Dashboard - logging started at Sun Jan 29 17:04:13 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-29 17:04:13.569:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-29 17:04:13.682:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-29 17:04:13.853:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 29, 2017 5:04:16 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat

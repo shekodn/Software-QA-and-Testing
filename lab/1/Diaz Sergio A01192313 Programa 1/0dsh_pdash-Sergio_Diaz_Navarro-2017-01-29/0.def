@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<defectLog>
+  <defect num="1" type="Syntax" inj="Code" rem="Compile" ft="0.1" fd="" desc="missing ;" date="@1485365471101" />
+  <defect num="2" type="Function" inj="Code" rem="Compile" ft="0.3" fd="" desc="me falto el void" date="@1485372010487" />
+  <defect num="3" type="Syntax" inj="Code" rem="Compile" ft="0.3" fd="" desc="missing )" date="@1485372051365" />
+  <defect num="4" type="Syntax" inj="Code" rem="Compile" ft="0.3" fd="" desc="Analyzer.java:58: error: ';' expected&#10;" date="@1485372092938" />
+  <defect num="5" type="Function" inj="Code" rem="Compile" ft="0.6" fd="" desc="me falto importar libreria de linked list " date="@1485372404431" />
+  <defect num="6" type="Assignment" inj="Code" rem="Compile" ft="15.0" fd="" desc="Me falto importat una librerias (File)" date="@1485385715846" />
+  <defect num="7" type="Syntax" inj="Code" rem="Compile" ft="0.6" fd="" desc="falta )" date="@1485394198818" />
+  <defect num="8" type="Syntax" inj="Code" rem="Compile" ft="1.8" fd="" desc="falta ;" count="3" date="@1485394260180" />
+  <defect num="9" type="Data" inj="Code" rem="Compile" ft="3.0" fd="" desc="equivocacion de tipo" count="2" date="@1485394488870" />
+  <defect num="10" type="Function" inj="Code" rem="Compile" ft="1.4" fd="" desc="missing param" count="2" date="@1485394698357" />
+  <defect num="11" type="Syntax" inj="Code" rem="Compile" ft="1.2" fd="" desc="error y func. name" date="@1485394817773" />
+  <defect num="12" type="Build, package" inj="Code" rem="Compile" ft="3.8" fd="" desc="FileAnalyzer.java:75: error: unreported exception FileNotFoundException; must be caught or declared to be thrown&#10;            analyzer.readByLine(list.get(iI).getName(), temporalFile);&#10;" date="@1485394911797" />
+  <defect num="13" type="Function" inj="Code" rem="Compile" ft="15.3" fd="" desc="Error reading the file in scan method&#10;" date="@1485395418620" />
+  <defect num="14" type="Function" inj="Code" rem="Compile" ft="8.1" fd="" desc="wrong use of return, instead created 2 functions" count="10" date="@1485397309986" />
+  <defect num="15" type="Data" inj="Code" rem="Compile" ft="72.1" fd="" desc="Linked List error. I was only creating ONE object instead of N objects" date="@1485537095699" />
+</defectLog>

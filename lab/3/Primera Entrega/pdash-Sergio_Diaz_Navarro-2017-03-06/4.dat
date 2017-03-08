@@ -1,0 +1,63 @@
+#include <pspForEng3/psp2/dataFile2.txt>
+= Data for /Non Project/PSP Training/Program 3
+Base_Parts/0/Added=100.0
+Base_Parts/0/Base=140.0
+Base_Parts/0/Deleted=null
+Base_Parts/0/Description="Analyzer
+Base_Parts/0/Modified=null
+Base_Parts/1/Added=80.0
+Base_Parts/1/Base=168.0
+Base_Parts/1/Description="Programa3
+Base_Parts/1/Modified=25.0
+Base_Parts_List=="0123456
+Code Review/Time==20.0
+Code/Defects Injected==16.0
+Code/Started=@1488554736697
+Code/Time==170.0
+Compile/Defects Removed==15.0
+Compile/Started=@1488669868194
+Compile/Time==15.0
+Design Review/Defects Removed==1.0
+Design Review/Started=@1488394642137
+Design Review/Time==24.0
+Design/Defects Injected==1.0
+Design/Started=@1488392176193
+Design/Time==35.0
+Estimated New & Changed LOC/Beta0=0.0
+Estimated New & Changed LOC/Beta1=1.0
+Estimated New & Changed LOC/Interval Percent="N/A
+Estimated New & Changed LOC/LPI="N/A
+Estimated New & Changed LOC/Probe Method="D
+Estimated New & Changed LOC/R Squared="N/A
+Estimated New & Changed LOC/Range="N/A
+Estimated New & Changed LOC/UPI="N/A
+Estimated New & Changed LOC=205.0
+Estimated Time/Beta0=0.0
+Estimated Time/Beta1=3.0859872611464967
+Estimated Time/Edit_Timestamp=@1488389517991
+Estimated Time/Interval Percent="N/A
+Estimated Time/LPI="N/A
+Estimated Time/Probe Method="C3
+Estimated Time/R Squared="N/A
+Estimated Time/Range="N/A
+Estimated Time/UPI="N/A
+Estimated Time=632.6273885350317
+New_Objects_List=="0
+PROBE_LIST=="/Non Project/PSP Training/Program 1/Non Project/PSP Training/Program 2
+PROBE_Last_Run_Value/Estimated Added & Modified Size=205.0
+PROBE_Last_Run_Value/Estimated Proxy Size==205.0
+PROBE_Last_Run_Value/Estimated Time/Edit_Timestamp=@1488389517992
+PROBE_Last_Run_Value/Estimated Time=632.6273885350317
+Planning/Completed/Edit_Timestamp=@1488392174748
+Planning/Completed=@1488392174747
+Planning/Started=@1488387382150
+Planning/Time==25.0
+Postmortem/Started=@1488675874935
+Postmortem/Time==5.0
+Reused Objects/0/Description="Archivo
+Reused Objects/0/LOC=46.0
+Reused_Objects_List=="0
+Started=@1488387382150
+Test/Defects Removed==1.0
+Test/Started=@1488673468266
+Test/Time==5.0

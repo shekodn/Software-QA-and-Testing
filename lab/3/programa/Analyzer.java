@@ -67,7 +67,6 @@ public class Analyzer {
                 } else{
 
                     iN = Integer.parseInt(sCurrentLine);
-
                 }
             }
 

@@ -1,3 +1,4 @@
+//&p-Programa1
 import java.util.*;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -7,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Programa1 {
-
     private LinkedList <Archivo> lklFiles; //LinkedList of Archivo object
     private int iBLANKLINES; //global number of blank lines
     private int iLINES; //global number of lines with info.
@@ -19,6 +19,7 @@ public class Programa1 {
     /**
      * Initializes variables
      */
+     //&i
     public void init(){
         lklFiles = new LinkedList<Archivo>();
         iBLANKLINES = 0;
@@ -33,6 +34,7 @@ public class Programa1 {
      * This functions is for slowing down the output in the screen
      * @param int ms [number of miliseconds]
      */
+     //&i
     private void sleep(int ms) {
         try {
             Thread.sleep(ms);
@@ -45,6 +47,7 @@ public class Programa1 {
      * Asks the user how many files he is going to scan
      * @return [number o files]
      */
+     //&i
     public int howManyFiles(){
 
         int iNumberOfFiles = 0;
@@ -71,6 +74,7 @@ public class Programa1 {
      * The user put the name of the files he is goint to scan
      * @param int iNumberOfFiles
      */
+     //&i
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -105,6 +109,7 @@ public class Programa1 {
     /**
      * Scans and count the number of blank and normal lines per file
      */
+     //&i
     public void scan(){
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
@@ -117,6 +122,7 @@ public class Programa1 {
     /**
      * prints data per file
      */
+     //&i
     public void individualData(){
 
         for(int iI = 0; iI < lklFiles.size(); iI++){
@@ -127,6 +133,7 @@ public class Programa1 {
     /**
      * prints total quantities of lines, blank lines and files
      */
+    //&i
     public void printGlobalData(){
         Analyzer analyzer = new Analyzer();
         iBLANKLINES = analyzer.calculateBlankLinesGlobalInfo(lklFiles,
@@ -138,6 +145,7 @@ public class Programa1 {
     /**
      * Performs the overall analysis of files
      */
+     //&i
     public void analyze(){
         //methods
         init();
@@ -150,6 +158,7 @@ public class Programa1 {
         printGlobalData();
     }
 
+    //&i
     public static void main(String[] args) {
         Programa1 program = new Programa1();
         program.analyze();

@@ -8,5 +8,6 @@ Coordenada; T=13, I=0
 Controlador; T=154, I=15
 --------------------------------------------
 PARTES REUSADAS:
+Archivo: T=46, I=6
 --------------------------------------------
 Total LDC: 303

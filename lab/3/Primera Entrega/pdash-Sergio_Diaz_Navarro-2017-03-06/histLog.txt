@@ -1,0 +1,1713 @@
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Jan 18 12:35:25 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-18 12:35:25.720:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-18 12:35:25.745:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-18 12:35:25.790:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 18, 2017 12:35:27 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Jan 18, 2017 12:35:28 PM net.sourceforge.processdash.tool.export.DataImporter importData
+INFO: importing /Users/SDN/Library/Process Dashboard/data/import/customPsp.pdash
+Jan 18, 2017 12:35:31 PM net.sourceforge.processdash.hier.HierarchyAltererMessageHandler handle
+INFO: Handling hierarchy alteration message pdash.alterHierarchy/add-tec-de-monterrey-psp-training
+Saved /Users/SDN/Library/Process Dashboard/data/global.dat
+Jan 18, 2017 12:35:35 PM net.sourceforge.processdash.hier.HierarchyAltererMessageHandler handle
+INFO: Done handling hierarchy alteration message
+Saved /Users/SDN/Library/Process Dashboard/data/1.dat
+Saved /Users/SDN/Library/Process Dashboard/data/0.dat
+Saved /Users/SDN/Library/Process Dashboard/data/global.dat
+Saved /Users/SDN/Library/Process Dashboard/data/1.dat
+Saved /Users/SDN/Library/Process Dashboard/data/0.dat
+Saved /Users/SDN/Library/Process Dashboard/data/1.dat
+Saved /Users/SDN/Library/Process Dashboard/data/0.dat
+Jan 18, 2017 12:45:28 PM net.sourceforge.processdash.tool.export.DataImporter closeFile
+INFO: closing import /Users/SDN/Library/Process Dashboard/data/import/customPsp.pdash
+Exception in thread "AWT-EventQueue-0" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1931)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.makeParentLabel(AddTaskDialog.java:175)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.<init>(AddTaskDialog.java:114)
+	at net.sourceforge.processdash.hier.ui.AddTaskButton.actionPerformed(AddTaskButton.java:54)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Exception in thread "AWT-EventQueue-0" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1931)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.makeParentLabel(AddTaskDialog.java:175)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.<init>(AddTaskDialog.java:114)
+	at net.sourceforge.processdash.hier.ui.AddTaskButton.actionPerformed(AddTaskButton.java:54)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Exception in thread "AWT-EventQueue-0" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1931)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.makeParentLabel(AddTaskDialog.java:175)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.<init>(AddTaskDialog.java:114)
+	at net.sourceforge.processdash.hier.ui.AddTaskButton.actionPerformed(AddTaskButton.java:54)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Exception in thread "AWT-EventQueue-0" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1931)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.makeParentLabel(AddTaskDialog.java:175)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.<init>(AddTaskDialog.java:114)
+	at net.sourceforge.processdash.hier.ui.AddTaskButton.actionPerformed(AddTaskButton.java:54)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/0.dat
+Saved /Users/SDN/Library/Process Dashboard/data/global.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 18, 2017 3:58:05 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-18 15:58:05.443:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.443:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-18 15:58:05.448:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.448:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-18 15:58:05.450:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.451:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-18 15:58:05.452:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.452:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-18 15:58:05.454:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.454:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-18 15:58:05.455:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.455:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-18 15:58:05.457:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.457:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-18 15:58:05.458:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.459:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-18 15:58:05.460:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.461:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+ractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Exception in thread "AWT-EventQueue-0" java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1931)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.makeParentLabel(AddTaskDialog.java:175)
+	at net.sourceforge.processdash.hier.ui.AddTaskDialog.<init>(AddTaskDialog.java:114)
+	at net.sourceforge.processdash.hier.ui.AddTaskButton.actionPerformed(AddTaskButton.java:54)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6535)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4525)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/0.dat
+Saved /Users/SDN/Library/Process Dashboard/data/global.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 18, 2017 3:58:05 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-18 15:58:05.443:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.443:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-18 15:58:05.448:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.448:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-18 15:58:05.450:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.451:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-18 15:58:05.452:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.452:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-18 15:58:05.454:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.454:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-18 15:58:05.455:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.455:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-18 15:58:05.457:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.457:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-18 15:58:05.458:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.459:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-18 15:58:05.460:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-18 15:58:05.461:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/TEC/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Jan 21 11:40:50 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-21 11:40:50.650:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-21 11:40:50.779:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-21 11:40:50.923:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 21, 2017 11:40:52 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Jan 21, 2017 11:40:55 AM net.sourceforge.processdash.tool.export.DataImporter importData
+INFO: importing /Users/SDN/Library/Process Dashboard/data/import/customPsp.pdash
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 21, 2017 11:50:55 AM net.sourceforge.processdash.tool.export.DataImporter closeFile
+INFO: closing import /Users/SDN/Library/Process Dashboard/data/import/customPsp.pdash
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 21, 2017 7:52:24 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-21 19:52:24.646:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.646:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-21 19:52:24.677:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.678:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-21 19:52:24.680:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.681:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-21 19:52:24.682:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.683:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-21 19:52:24.685:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.685:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-21 19:52:24.686:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.687:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-21 19:52:24.688:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.688:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-21 19:52:24.689:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.689:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-21 19:52:24.691:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-21 19:52:24.691:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Jan 25 09:42:12 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-25 09:42:12.767:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-25 09:42:12.819:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-25 09:42:12.963:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 25, 2017 9:42:15 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 25, 2017 9:58:13 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-25 09:58:13.929:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.930:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-25 09:58:13.932:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.933:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-25 09:58:13.934:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.935:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-25 09:58:13.936:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.937:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-25 09:58:13.938:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.939:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-25 09:58:13.940:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.940:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-25 09:58:13.941:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.942:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-25 09:58:13.943:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.944:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-25 09:58:13.946:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 09:58:13.946:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Jan 25 10:30:19 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-25 10:30:19.693:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-25 10:30:19.723:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-25 10:30:19.759:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 25, 2017 10:30:21 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 25, 2017 2:53:50 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-25 14:53:50.108:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.109:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-25 14:53:50.111:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.111:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-25 14:53:50.112:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.112:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-25 14:53:50.113:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.113:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-25 14:53:50.114:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.115:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-25 14:53:50.116:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.116:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-25 14:53:50.117:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.118:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-25 14:53:50.119:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.120:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-25 14:53:50.122:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 14:53:50.122:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Jan 25 17:08:13 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-25 17:08:13.646:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-25 17:08:13.682:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-25 17:08:13.726:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 25, 2017 5:08:15 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+could not parse: .
+could not parse: .
+could not parse: .
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 25, 2017 8:28:45 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-25 20:28:46.001:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.002:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-25 20:28:46.004:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.005:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-25 20:28:46.006:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.006:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-25 20:28:46.007:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.007:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-25 20:28:46.008:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.009:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-25 20:28:46.010:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.010:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-25 20:28:46.011:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.012:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-25 20:28:46.013:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.014:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-25 20:28:46.016:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-25 20:28:46.016:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Thu Jan 26 21:05:27 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-26 21:05:28.190:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-26 21:05:28.246:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-26 21:05:28.366:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 26, 2017 9:05:30 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 27, 2017 9:08:41 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-27 09:08:41.377:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.378:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-27 09:08:41.381:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.382:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-27 09:08:41.384:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.384:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-27 09:08:41.388:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.388:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-27 09:08:41.394:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.394:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-27 09:08:41.396:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.397:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-27 09:08:41.398:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.399:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-27 09:08:41.400:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.401:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-27 09:08:41.402:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 09:08:41.403:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Fri Jan 27 11:09:12 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-27 11:09:12.907:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-27 11:09:12.936:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-27 11:09:12.963:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 27, 2017 11:09:14 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 27, 2017 2:41:08 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-27 14:41:08.763:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.763:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-27 14:41:08.765:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.766:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-27 14:41:08.767:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.768:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-27 14:41:08.769:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.770:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-27 14:41:08.771:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.771:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-27 14:41:08.772:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.772:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-27 14:41:08.773:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.774:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-27 14:41:08.775:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.775:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-27 14:41:08.777:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-27 14:41:08.777:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sun Jan 29 17:04:13 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-01-29 17:04:13.569:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-01-29 17:04:13.682:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-01-29 17:04:13.853:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Jan 29, 2017 5:04:16 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Jan 29, 2017 5:55:50 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-01-29 17:55:50.839:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.840:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-01-29 17:55:50.842:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.842:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-01-29 17:55:50.843:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.844:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-01-29 17:55:50.845:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.846:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-01-29 17:55:50.847:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.847:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-01-29 17:55:50.848:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.848:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-01-29 17:55:50.849:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.849:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-01-29 17:55:50.851:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.851:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-01-29 17:55:50.852:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-01-29 17:55:50.853:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Thu Feb 02 09:22:36 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-02 09:22:36.714:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-02 09:22:36.784:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-02 09:22:36.950:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 02, 2017 9:22:39 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Feb 02, 2017 12:09:19 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-02 12:09:19.321:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.322:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-02 12:09:19.324:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.324:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-02 12:09:19.326:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.326:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-02 12:09:19.328:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.328:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-02 12:09:19.329:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.330:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-02 12:09:19.331:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.331:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-02 12:09:19.333:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.333:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-02 12:09:19.334:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.335:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-02 12:09:19.337:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-02 12:09:19.337:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Feb 11 18:19:47 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-11 18:19:47.405:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-11 18:19:47.434:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-11 18:19:47.585:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 11, 2017 6:19:49 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Feb 11, 2017 9:54:01 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-11 21:54:01.853:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.854:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-11 21:54:01.856:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.856:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-11 21:54:01.860:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.861:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-11 21:54:01.862:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.862:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-11 21:54:01.863:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.864:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-11 21:54:01.865:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.865:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-11 21:54:01.867:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.867:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-11 21:54:01.868:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.868:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-11 21:54:01.871:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-11 21:54:01.872:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sun Feb 12 10:32:07 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-12 10:32:07.644:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-12 10:32:07.671:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-12 10:32:07.710:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 12, 2017 10:32:09 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Feb 12, 2017 11:27:00 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-12 23:27:00.838:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.839:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-12 23:27:00.840:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.840:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-12 23:27:00.841:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.842:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-12 23:27:00.843:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.843:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-12 23:27:00.844:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.844:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-12 23:27:00.845:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.845:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-12 23:27:00.846:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.847:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-12 23:27:00.848:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.848:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-12 23:27:00.849:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-12 23:27:00.849:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Mon Feb 13 08:01:38 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-13 08:01:38.242:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-13 08:01:38.270:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-13 08:01:38.309:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 13, 2017 8:01:39 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Feb 13, 2017 9:57:04 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-13 21:57:04.615:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.615:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-13 21:57:04.671:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.671:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-13 21:57:04.673:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.674:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-13 21:57:04.675:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.676:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-13 21:57:04.677:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.677:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-13 21:57:04.679:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.679:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-13 21:57:04.680:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.680:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-13 21:57:04.682:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.682:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-13 21:57:04.684:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-13 21:57:04.684:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Mon Feb 13 21:57:49 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-13 21:57:49.514:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-13 21:57:49.546:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-13 21:57:49.585:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 13, 2017 9:57:51 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Feb 14, 2017 12:21:13 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-14 00:21:13.507:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.507:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-14 00:21:13.509:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.510:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-14 00:21:13.511:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.512:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-14 00:21:13.514:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.514:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-14 00:21:13.515:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.516:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-14 00:21:13.517:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.517:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-14 00:21:13.519:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.519:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-14 00:21:13.521:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.521:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-14 00:21:13.522:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-14 00:21:13.523:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Feb 22 22:54:16 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-22 22:54:17.108:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-22 22:54:17.215:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-22 22:54:17.409:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 22, 2017 10:54:19 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/2.dat
+Feb 22, 2017 11:44:02 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-22 23:44:02.488:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.489:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-22 23:44:02.491:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.491:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-22 23:44:02.494:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.494:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-22 23:44:02.496:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.497:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-22 23:44:02.498:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.499:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-22 23:44:02.502:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.502:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-22 23:44:02.509:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.509:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-22 23:44:02.511:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.512:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-22 23:44:02.516:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-22 23:44:02.517:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Thu Feb 23 09:26:38 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-02-23 09:26:38.279:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-02-23 09:26:38.307:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-02-23 09:26:38.336:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Feb 23, 2017 9:26:39 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Feb 23, 2017 9:43:13 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-02-23 09:43:13.179:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.180:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-02-23 09:43:13.186:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.186:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-02-23 09:43:13.188:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.189:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-02-23 09:43:13.193:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.193:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-02-23 09:43:13.195:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.195:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-02-23 09:43:13.197:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.198:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-02-23 09:43:13.201:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.201:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-02-23 09:43:13.205:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.206:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-02-23 09:43:13.208:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-02-23 09:43:13.209:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Wed Mar 01 10:50:30 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-01 10:50:30.983:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-01 10:50:31.094:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-01 10:50:31.224:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 01, 2017 10:50:33 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/3.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 01, 2017 1:11:00 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-01 13:11:00.193:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.194:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-01 13:11:00.201:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.203:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-01 13:11:00.206:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.207:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-01 13:11:00.209:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.209:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-01 13:11:00.211:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.211:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-01 13:11:00.213:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.213:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-01 13:11:00.216:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.217:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-01 13:11:00.221:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.221:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-01 13:11:00.224:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-01 13:11:00.224:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Fri Mar 03 09:07:15 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-03 09:07:16.029:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-03 09:07:16.119:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-03 09:07:16.668:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 03, 2017 9:07:18 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 03, 2017 10:17:44 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-03 10:17:44.246:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.247:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-03 10:17:44.249:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.250:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-03 10:17:44.251:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.252:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-03 10:17:44.254:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.255:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-03 10:17:44.256:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.257:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-03 10:17:44.258:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.258:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-03 10:17:44.260:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.260:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-03 10:17:44.264:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.264:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-03 10:17:44.266:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-03 10:17:44.267:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Mar 04 14:57:16 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-04 14:57:17.056:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-04 14:57:17.129:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-04 14:57:17.294:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 04, 2017 2:57:20 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 04, 2017 5:59:04 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-04 17:59:04.955:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.956:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-04 17:59:04.958:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.958:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-04 17:59:04.967:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.967:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-04 17:59:04.971:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.971:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-04 17:59:04.972:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.972:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-04 17:59:04.974:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.974:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-04 17:59:04.977:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.978:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-04 17:59:04.979:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.979:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-04 17:59:04.981:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 17:59:04.982:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Mar 04 18:24:15 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-04 18:24:15.133:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-04 18:24:15.167:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-04 18:24:15.225:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 04, 2017 6:24:16 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 04, 2017 6:29:25 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-04 18:29:25.775:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.776:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-04 18:29:25.780:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.781:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-04 18:29:25.783:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.784:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-04 18:29:25.787:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.788:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-04 18:29:25.790:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.790:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-04 18:29:25.792:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.792:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-04 18:29:25.793:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.794:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-04 18:29:25.796:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.796:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-04 18:29:25.798:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 18:29:25.799:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Mar 04 19:04:20 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-04 19:04:21.088:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-04 19:04:21.129:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-04 19:04:21.175:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 04, 2017 7:04:22 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 04, 2017 7:09:57 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-04 19:09:57.412:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.413:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-04 19:09:57.417:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.418:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-04 19:09:57.425:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.425:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-04 19:09:57.430:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.431:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-04 19:09:57.437:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.438:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-04 19:09:57.445:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.445:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-04 19:09:57.451:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.451:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-04 19:09:57.461:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.462:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-04 19:09:57.472:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:09:57.472:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sat Mar 04 19:10:06 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-04 19:10:06.285:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-04 19:10:06.318:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-04 19:10:06.362:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 04, 2017 7:10:08 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Saved /Users/SDN/Library/Process Dashboard/data/4.dat
+Mar 04, 2017 7:14:04 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-04 19:14:04.770:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.773:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-04 19:14:04.775:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.776:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-04 19:14:04.778:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.778:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-04 19:14:04.780:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.780:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-04 19:14:04.782:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.782:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-04 19:14:04.783:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.784:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-04 19:14:04.785:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.786:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-04 19:14:04.787:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.788:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-04 19:14:04.789:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-04 19:14:04.790:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sun Mar 05 10:59:30 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-05 10:59:30.415:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-05 10:59:30.453:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-05 10:59:30.489:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 05, 2017 10:59:32 AM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Mar 05, 2017 11:06:25 AM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-05 11:06:25.863:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.864:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-05 11:06:25.865:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.866:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-05 11:06:25.867:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.867:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-05 11:06:25.868:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.868:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-05 11:06:25.869:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.870:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-05 11:06:25.871:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.872:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-05 11:06:25.873:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.873:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-05 11:06:25.874:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.875:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-05 11:06:25.877:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 11:06:25.877:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+----------------------------------------------------------------------
+Process Dashboard - logging started at Sun Mar 05 18:10:38 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-05 18:10:38.959:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-05 18:10:39.131:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-05 18:10:39.264:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 05, 2017 6:10:41 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3
+Mar 05, 2017 6:35:43 PM net.sourceforge.processdash.ProcessDashboard quit
+INFO: Successfully saved all data.
+2017-03-05 18:35:43.931:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.932:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelp.jar!/Templates/}
+2017-03-05 18:35:43.934:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.934:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/dashHelpExt.jar!/Templates/}
+2017-03-05 18:35:43.936:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.937:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/extras.jar!/Templates/}
+2017-03-05 18:35:43.938:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.939:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/importPSP.jar!/Templates/}
+2017-03-05 18:35:43.940:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.941:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/l10nTool.jar!/Templates/}
+2017-03-05 18:35:43.942:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.943:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspForEng.jar!/Templates/}
+2017-03-05 18:35:43.945:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.945:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspProc2.jar!/Templates/}
+2017-03-05 18:35:43.946:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.947:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextMcf{,processdash-mcf:/}
+2017-03-05 18:35:43.948:INFO:oejsl.ELContextCleaner:javax.el.BeanELResolver purged
+2017-03-05 18:35:43.948:INFO:oejsh.ContextHandler:stopped n.s.p.n.h.WebAppContextLegacy{,jar:file:/Users/SDN/sdn/tec/VI/Calidad/PD/Calidad/pspdash.jar!/Templates/}
+2017-03-05 18:35:44.001:WARN:oejut.QueuedThreadPool:1 threads could not be stopped
+----------------------------------------------------------------------
+Process Dashboard - logging started at Mon Mar 06 21:01:42 CST 2017
+Oracle Corporation JRE 1.8.0_77; Mac OS X
+Using LocalWorkingDirectory[/Users/SDN/Library/Process Dashboard/data]
+2017-03-06 21:01:43.080:INFO:oejs.Server:jetty-8.y.z-SNAPSHOT
+2017-03-06 21:01:43.162:INFO:oejs.AbstractConnector:Started LocalConnector@0.0.0.0:0
+2017-03-06 21:01:43.393:INFO:oejs.AbstractConnector:Started SelectChannelConnector@127.0.0.1:2468
+Mar 06, 2017 9:01:45 PM net.sourceforge.processdash.ProcessDashboard <init>
+INFO: Process Dashboard version 2.3

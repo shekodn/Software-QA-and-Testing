@@ -1,0 +1,7 @@
+Código:
+1.  Importar librerías que se van a utilizar = listo
+2.  Realizar cada clase = listo
+3.  Declarar variables globales = listo
+4.  Hacer método para inicializar esas variables globales = listo
+5.  Hacer funciones y métodos que se planearon = listo
+6.  Checar que el main del programa coincida con el diagrama de flujo = listo

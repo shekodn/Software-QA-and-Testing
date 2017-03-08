@@ -1,0 +1,6 @@
+Diseño:
+1.  Flujo del programa = listo
+2.  Diseño de clases = listo
+3.  Diseño de métodos = listo
+4.  Diseño de código prototipo = listo
+5.  Diseño de pruebas = listo

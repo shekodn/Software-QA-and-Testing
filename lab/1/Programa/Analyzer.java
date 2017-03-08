@@ -1,3 +1,4 @@
+//&p-Analyzer
 import java.io.*;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
@@ -53,6 +54,7 @@ public class Analyzer {
      * @param  String fileName
      * @return  true if it is a file
      */
+     //&i
     public boolean isAFile(String fileName){
 
         File f = new File(fileName);
@@ -74,6 +76,7 @@ public class Analyzer {
      * @param  Archivo archivo
      * @return a file with updated infomration
      */
+     //&i
     public Archivo readByLine2(String fileName, Archivo archivo){
 
         String FILENAME = fileName;
@@ -123,6 +126,7 @@ public class Analyzer {
      * @param int blankLines
      * @param int iLines
      */
+     //&i
     public void globalInformation(int iListSize, int blankLines, int iLines){
         System.out.println("TOTALES:");
         System.out.println("Cantidad de archivos " + iListSize);
@@ -136,6 +140,7 @@ public class Analyzer {
      * @param  int iLines = number of lines with info
      * @return number of lines with info
      */
+     //&i
     public int calculateLinesGlobalInfo(LinkedList <Archivo> list, int iLines){
 
         for(int iI = 0; iI < list.size(); iI++){
@@ -151,6 +156,7 @@ public class Analyzer {
      * @param  int        iBlankLines   Total number of blank lines
      * @return Total number of blank lines
      */
+     //&i
     public int calculateBlankLinesGlobalInfo(LinkedList <Archivo> list,
             int iBlankLines){
 
