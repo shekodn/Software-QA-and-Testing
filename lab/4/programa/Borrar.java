@@ -38,13 +38,11 @@ class Borrar {
 
 
 
-    public void calcula(double dX){
+    public void calcula(double dX, int iDof){
 
-        dX = 1.1;
-        int iNum_seg = 10;
-        double dW = dX/(double) iNum_seg;
+        int iNum_seg = 10; //CTE
+        double dW = dX / (double) iNum_seg;
         double dE = 0.0000001;
-        int iDof = 9;
         double dF0 = 0.0;
         double dF2 = 0.0;
         double dF4 = 0.0;
@@ -58,8 +56,10 @@ class Borrar {
         double four = 0.0;
 
         //calcula F(0)
-        dF0 = (dW/3) * (Math.pow(get3(0, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
-        System.out.println(dF0);
+        //dF0 = (dW/3) * (Math.pow(get3(0, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
+        dF0 = (Math.pow(get3(0, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
+
+        //System.out.println(dF0);
 
 
         for(int iI = 1; iI <= iNum_seg - 1 ; iI++){
@@ -72,36 +72,26 @@ class Borrar {
             if(iI % 2 == 0){
 
                 dF2 = 2 * four * get5(xi, iDof);
-                dF2 = (dW / 3) * dF2;
                 sumatoriaf2 = dF2 + sumatoriaf2;
-                System.out.println(dF2);
-                // System.out.println(2);
+                //System.out.println(dF2);
+                //System.out.println(2);
 
 
             } else {
 
-                dF4 = dF4 + 4 * four * get5(xi, iDof);
-                dF4 = (dW / 3) * dF4;
+                dF4 = (4 * four * get5(xi, iDof));
                 sumatoriaf4 = dF4 + sumatoriaf4;
-                System.out.println(dF4);
+                //System.out.println(dF4);
                 // System.out.println(4);
             }
         }
 
         //calcula f(x)
-        dFx = (dW/3) * (Math.pow(get3(dX, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
-        System.out.println(dFx);
+        //dFx = (dW/3) * (Math.pow(get3(dX, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
+        dFx = (Math.pow(get3(dX, iDof), -1 * ((iDof+1) / 2))) * get5(xi, iDof);
+        //System.out.println(dFx);
 
-
-        dP = (dF0 + sumatoriaf4 + sumatoriaf2 + dFx);
-        System.out.println("Respuestas");
-        System.out.println(dF0);
-        System.out.println(dF2);
-        System.out.println(dF4);
-        System.out.println(dFx);
-
-
-
+        dP = (dW/3) * (dF0 + sumatoriaf4 + sumatoriaf2 + dFx);
 
         System.out.println(dP);
 
@@ -155,11 +145,12 @@ class Borrar {
     public static void main(String[] args) {
 
         Borrar p = new Borrar();
-        p.calculaGamaDecimal(9);
 
-        System.out.println('\n');
+        p.calcula(1.1, 9);
+        p.calcula(1.18120, 10);
+        p.calcula(2.75000, 30);
 
-        p.calcula(10);
+
 
 
     }
