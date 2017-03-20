@@ -1,16 +1,17 @@
 //&p-DistT
 public class DistT {
-	private double Xi = 0;
-	private int DOF = 0;
+
+	private double dXi = 0;
+	private int iDof = 0;
 
 	//&i
-	public DistT(double x, int dof){
-		Xi = x;
-		DOF = dof;
+	public DistT(double iX, int iDof){
+		this.dXi = iX;
+		this. iDof = iDof;
 	}
 
 	//&i
-	public static double Gamma(double x){
+	public double calculaGama(double x){
 		if (x == 0){
 			return -1;
 		}
@@ -18,33 +19,42 @@ public class DistT {
 			return 1;
 		}
 		if (x == 0.5){
+
 			return Math.sqrt(Math.PI);
 		}
 		else{
-			return (x-1)*Gamma(x-1);
+			return (x - 1) * calculaGama(x - 1);
 		}
 	}
 
+
 	//&i
 	public double calculaF(){
-		double res = 0;
-		double x,y,z,aux;
-		x = 1.0 * ((DOF + 1)*0.5);
-		aux = Gamma(x);
 
-		y = Math.pow(DOF * Math.PI, 0.5);
+		double dAnswer = 0;
+		double aux;
+		double dX;
+		double dY;
+		double dZ;
 
-		x = 1.0 * (DOF*0.5);
-		z = Gamma(x);
+		dX = 1.0 * ((iDof + 1) * 0.5);
+		aux = calculaGama(dX);
 
-		res = aux / (y *z);
+		dY = Math.pow(iDof * Math.PI, 0.5);
 
-		x = 1.0 + (Math.pow(Xi, 2)/DOF);
-		y = -1.0 * ((DOF + 1) * 0.5);
+		dX = 1.0 * (iDof * 0.5);
+		dZ = calculaGama(dX);
 
-		aux = Math.pow(x, y);
-		res = res * aux;
+		dAnswer = aux / (dY * dZ);
+		//System.out.println(dAnswer);
 
-		return res;
+		dX = 1.0 + (Math.pow(dXi, 2)/iDof);
+		dY = -1.0 * ((iDof + 1) * 0.5);
+
+		aux = Math.pow(dX, dY);
+		dAnswer = dAnswer * aux;
+
+		//System.out.println(dAnswer);
+		return dAnswer;
 	}
 }
