@@ -1,43 +1,43 @@
 //&p-Simpson
 public class Simpson {
-	private double X;
-	private int DOF;
+
+	private double dX;
+	private int iDof;
 	private int num_seg;
-	private double W;
+	private double dW;
 
 	//&i
-	public Simpson(double x, int dof, int num){
-		X = x;
-		DOF = dof;
-		num_seg = num;
-		W = x / num_seg;
+	public Simpson(double dX, int iDof, int iNumberOfSegments){
+		this.dX = dX;
+		this.iDof = iDof;
+		this.num_seg = iNumberOfSegments;
+		this.dW = dX / iNumberOfSegments;
 	}
 
 	//&i
 	public double getP(){
-		double Xi = 0;
-		int mult;
-		double res = 0;
+		double dXi = 0;
+		int iMultiplier;
+		double dAnswer = 0;
 		DistT distT;
 
-		for (int i=0; i<=num_seg; i++){
-			distT = new DistT(Xi, DOF);
+		for (int iI = 0; iI <= num_seg; iI++){
 
-			if (i==0 || i==num_seg){
-				mult = 1;
-			}
-			else if (i%2 == 0){
-				mult = 2;
-			}
-			else {
-				mult = 4;
+			distT = new DistT(dXi, iDof);
+
+			if (iI == 0 || iI == num_seg){
+			 iMultiplier = 1;
+			} else if (iI % 2 == 0){
+			 iMultiplier = 2;
+		 	} else {
+			 iMultiplier = 4;
 			}
 
-			res += ( (W/3) * mult * distT.calculaF() );
+			dAnswer = dAnswer + ((dW/3) * iMultiplier * distT.calculaF());
 
-			Xi += W;
+			dXi = dXi + dW;
 		}
 
-		return res;
+		return dAnswer;
 	}
 }
