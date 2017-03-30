@@ -1,23 +1,10 @@
+import java.io.*;
+import java.util.*;
 
-/**
- * Clase : ErrorHandle.java
- * 
- * Clase que realiza el manejo de los errores que se tienen 
- * dentro de la clases se llama el error handle cuando se tenga un error dentro del codigo
- *  
- * 
- * @author AlejandroSanchez
- *@date 27/9/2015
- *@version 1.0
- *
- */
-
-//&p-ErrorHandle
-//&b=17
 public class ErrorHandle {
 	/*
 	 * archivoNoEncontrado
-	 * Imprime que el archivo no fue encontrado 
+	 * Imprime que el archivo no fue encontrado
 	 *
 	 */
 	//&i
@@ -26,17 +13,17 @@ public class ErrorHandle {
 	}
 	/*
 	 * extensionIncorrecta
-	 * Imprime que la extension es incorrecta 
+	 * Imprime que la extension es incorrecta
 	 *
 	 */
 	//&i
 	public static void extensionIncorrecta(){
 		System.out.println("Extension Incorrecta");
 	}
-	
+
 	/*
 	 * LineasNoExistentes
-	 * Imprime que las lineas del archivo no existen 
+	 * Imprime que las lineas del archivo no existen
 	 *
 	 */
 	//&i
@@ -45,7 +32,7 @@ public class ErrorHandle {
 	}
 	/*
 	 * CuantosArchivos
-	 * Imprime la cantidad de archivos que intentas meter no son adecuados 
+	 * Imprime la cantidad de archivos que intentas meter no son adecuados
 	 *
 	 */
 	//&i
@@ -63,7 +50,7 @@ public class ErrorHandle {
 	}
 	/*
 	 * errorEnOutput
-	 * Error cuando quieres escribir 
+	 * Error cuando quieres escribir
 	 */
 	//&i
 	public static void errorEnOutput(){
@@ -74,5 +61,5 @@ public class ErrorHandle {
 	public static void incorrectDocFormat(){
 		System.out.println("Este no es el formato del documento");
 	}
-	
+
 }

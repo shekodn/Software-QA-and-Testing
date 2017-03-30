@@ -1,32 +1,17 @@
+import java.io.*;
+import java.util.*;
 
-
-import java.util.Scanner;
-
-/**
- * Clase : Main.java
- * 
- * Clase que ayuda a compilar el proyecto. Dentro de esta clase se junta todo 
- * Se debe de fusionar todos los elementos que se han creado para que se compile bien 
- * y se tenga de una forma cero errores
- * 
- * @author AlejandroSanchez
- *@date 27/9/2015
- *@version 1.0
- *
- */
-//&p-Main
-//&b=55
 public class Main {
 	/*
 	 * main
 	 * Realiza la ejecucion del programa dentro de este se realizan las llamadas
-	 * para que se ejecuten los metodos de las otras clases 
-	 * 
+	 * para que se ejecuten los metodos de las otras clases
+	 *
 	 * @param args es un conjunto de argumentos tipo <code>String</code> los cuales se pueden
-	 * meter por medio de la terminal  
+	 * meter por medio de la terminal
 	 */
 	//&i
-	public static void main(String [ ] args){	
+	public static void main(String [ ] args){
 		Double dx = 1.0;
 		Double dxAux = 1.0;
 		Double dDof = 0.0;
@@ -43,11 +28,11 @@ public class Main {
 		Double dP = 0.0;
 		int iDireccionPasada = 0;
 		int iDireccionActual = 0;
-		
+
 		Calculos calculos = new Calculos();
-		
+
 		Scanner scan = new Scanner(System.in);
-		
+
 		while(true){
 			System.out.println("Inserta el P");//&m
 			try{
@@ -60,7 +45,7 @@ public class Main {
 				ErrorHandle.errorEnLinea();
 			}
 		}
-		
+
 		while(true){
 			System.out.println("Inserta Dof");
 			try{
@@ -73,7 +58,7 @@ public class Main {
 				ErrorHandle.errorEnLinea();
 			}
 		}
-		
+
 		do{
 			 if(dCalculo1 != 0.0){
 				 dNum_seg = dNum_seg * 2;
@@ -84,7 +69,7 @@ public class Main {
 				 dNum_seg2 = Double.parseDouble(Impresion.Formatear("00.00000", dNum_seg2));
 				 dW2  = dx/dNum_seg2;
 				 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
-				 
+
 			 }
 			 else{
 				 dW = dx/dNum_seg;
@@ -98,9 +83,9 @@ public class Main {
 			 if(dValue < dError){
 				 bOut = true;
 			 }
-			 
+
 		}while(bOut != true);
-		
+
 		if(dCalculo2 == dP){
 			Impresion.Imprimir(dx, dDof, dP);
 		}else if(dCalculo2 < dP){
@@ -126,7 +111,7 @@ public class Main {
 					 dNum_seg2 = dNum_seg * 2;
 					 dW2  = dx/dNum_seg2;
 					 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
-					 
+
 				 }
 				 else{
 					 dW = dx/dNum_seg;
@@ -140,7 +125,7 @@ public class Main {
 				 if(dValue < dError){
 					 bOut = true;
 				 }
-				 
+
 			}while(bOut != true);
 			if(dCalculo2 == dP){
 				Impresion.Imprimir(dx, dDof, dP);
@@ -153,7 +138,7 @@ public class Main {
 					iDireccionActual = -1;
 				}
 			}
-			
+
 			if(iDireccionPasada !=0 && iDireccionActual != iDireccionPasada){
 				dD /= 2.0;
 			}
