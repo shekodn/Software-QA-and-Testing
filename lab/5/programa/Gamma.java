@@ -3,13 +3,7 @@ import java.util.*;
 
 
 public class Gamma {
-	/*
-	 * Factorial
-	 * Toma un valor Double( x) y le aplica la funcion gamma por medio del
-	 * Factorial
-	 *
-	 * @param con un valor <code>Double</code> es el valor double que le quieres aplicar la funcion gamma
-	 */
+
 	//&i
 	public static double Factorial(int n){
 		 double ifact = 1;

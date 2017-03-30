@@ -2,11 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class ErrorHandle {
-	/*
-	 * archivoNoEncontrado
-	 * Imprime que el archivo no fue encontrado
-	 *
-	 */
+
 	//&i
 	public static void archivoNoEncontrado(){
 		System.out.println("Archivo no fue encontrado");

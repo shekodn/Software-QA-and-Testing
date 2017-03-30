@@ -2,14 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	/*
-	 * main
-	 * Realiza la ejecucion del programa dentro de este se realizan las llamadas
-	 * para que se ejecuten los metodos de las otras clases
-	 *
-	 * @param args es un conjunto de argumentos tipo <code>String</code> los cuales se pueden
-	 * meter por medio de la terminal
-	 */
+	
 	//&i
 	public static void main(String [ ] args){
 		Double dx = 1.0;
