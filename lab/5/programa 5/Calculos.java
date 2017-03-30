@@ -5,15 +5,15 @@ import java.util.*;
 public class Calculos {
 
 	//&i
-	public ArrayList<Double> segmentos;
-	public ArrayList<Double> patron;
-	public TDist tDist;
-	public ArrayList<Double> tdistOne;
-	public ArrayList<Double> tdistTwo;
-	public Double dtdistThree;
-	public ArrayList<Double> tdistFour;
-	public ArrayList <Double> finalArr;
-	public Double dRetorno;
+	private ArrayList<Double> segmentos;
+	private ArrayList<Double> patron;
+	private TDist tDist;
+	private ArrayList<Double> tdistOne;
+	private ArrayList<Double> tdistTwo;
+	private Double dtdistThree;
+	private ArrayList<Double> tdistFour;
+	private ArrayList <Double> finalArr;
+	private Double dRetorno;
 
 	//&i
 	public Double Iniciar(Double x, Double dof, Double num_seg, Double error, Double w){
