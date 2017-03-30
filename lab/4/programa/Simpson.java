@@ -1,6 +1,7 @@
 //&p-Simpson
 public class Simpson {
 
+	//&i
 	private double dX;
 	private int iDof;
 	private int num_seg;
@@ -15,7 +16,7 @@ public class Simpson {
 	}
 
 	//&i
-	public double getP(){
+	public double calculaP(){
 		double dXi = 0;
 		int iMultiplier;
 		double dAnswer = 0;
