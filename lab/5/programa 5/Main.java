@@ -85,11 +85,9 @@ public class Main {
 		do{
 			 if(dCalculo1 != 0.0){
 				 dNum_seg = dNum_seg * 2;
-				 dNum_seg = Double.parseDouble(Impresion.Formatear("00.00000", dNum_seg));
 				 dW = dx/dNum_seg;
 				 dCalculo1 = simpson.Iniciar(dx, dDof, dNum_seg, dError, dW);
 				 dNum_seg2 = dNum_seg * 2;
-				 dNum_seg2 = Double.parseDouble(Impresion.Formatear("00.00000", dNum_seg2));
 				 dW2  = dx/dNum_seg2;
 				 dCalculo2 = simpson.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
 
