@@ -113,6 +113,7 @@ public class Main {
 			System.out.printf("P = %.05f \n", dP);
 			System.out.printf("DOF = %.0f \n", dDof);
 			System.out.printf("X = %.05f \n", dx);
+
 		}else if(dCalculo2 < dP){
 			dxAux = dx + dD;
 			iDireccionActual = 1;
@@ -120,7 +121,9 @@ public class Main {
 			dxAux = dx - dD;
 			iDireccionActual = -1;
 		}
+
 		dCalculo2 = 0.0;
+
 		while(Math.abs(dCalculo2- dP) > dError){
 			dx = dxAux;
 			bOut = false;
