@@ -8,24 +8,47 @@ public class Main {
 
 	//&i
 	public static void main(String [ ] args){
-		Double dx = 1.0;
-		Double dxAux = 1.0;
-		Double dDof = 0.0;
-		Double dCalculo1 = 0.0;
-		Double dCalculo2 = 0.0;
-		Double dNum_seg = 10.0;
-		Double dNum_seg2 = 20.0;
-		Double dError = 0.00000001;
-		Double dW = 0.0;
-		Double dW2 = 0.0;
-		Double dValue = 0.0;
-		boolean bOut = false;
-		Double dD = 0.5;
-		Double dP = 0.0;
-		int iDireccionPasada = 0;
-		int iDireccionActual = 0;
+		//Declaracion
+		//&i
+		Double dx;
+		Double dxAux;
+		Double dDof;
+		Double dCalculo1;
+		Double dCalculo2;
+		Double dNum_seg;
+		Double dNum_seg2;
+		Double dError;
+		Double dW;
+		Double dW2;
+		Double dValue;
+		boolean bOut;
+		Double dD;
+		Double dP;
+		int iDireccionPasada;
+		int iDireccionActual;
 
-		Calculos calculos = new Calculos();
+		//inicializacion
+		//&i
+		dx = 1.0;
+		dxAux = 1.0;
+		dDof = 0.0;
+		dCalculo1 = 0.0;
+		dCalculo2 = 0.0;
+		dNum_seg = 10.0;
+		dNum_seg2 = 20.0;
+		dError = 0.00000001;
+		dW = 0.0;
+		dW2 = 0.0;
+		dValue = 0.0;
+		bOut = false;
+		dD = 0.5;
+		dP = 0.0;
+		iDireccionPasada = 0;
+		iDireccionActual = 0;
+
+
+
+		Simpson simpson = new Simpson();
 		Scanner scan = new Scanner(System.in);
 
 		while(true){
@@ -59,19 +82,19 @@ public class Main {
 				 dNum_seg = dNum_seg * 2;
 				 dNum_seg = Double.parseDouble(Impresion.Formatear("00.00000", dNum_seg));
 				 dW = dx/dNum_seg;
-				 dCalculo1 = calculos.Iniciar(dx, dDof, dNum_seg, dError, dW);
+				 dCalculo1 = simpson.Iniciar(dx, dDof, dNum_seg, dError, dW);
 				 dNum_seg2 = dNum_seg * 2;
 				 dNum_seg2 = Double.parseDouble(Impresion.Formatear("00.00000", dNum_seg2));
 				 dW2  = dx/dNum_seg2;
-				 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
+				 dCalculo2 = simpson.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
 
 			 }
 			 else{
 				 dW = dx/dNum_seg;
-				 dCalculo1 = calculos.Iniciar(dx, dDof, dNum_seg, dError, dW);
+				 dCalculo1 = simpson.Iniciar(dx, dDof, dNum_seg, dError, dW);
 				 if(dCalculo1 != 0.0){
 					 dW2  = dx/dNum_seg2;
-					 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
+					 dCalculo2 = simpson.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
 				 }
 			 }
 			 dValue = Math.abs(dCalculo1 - dCalculo2);
@@ -102,18 +125,18 @@ public class Main {
 				 if(dCalculo1 != 0.0){
 					 dNum_seg = dNum_seg * 2;
 					 dW = dx/dNum_seg;
-					 dCalculo1 = calculos.Iniciar(dx, dDof, dNum_seg, dError, dW);
+					 dCalculo1 = simpson.Iniciar(dx, dDof, dNum_seg, dError, dW);
 					 dNum_seg2 = dNum_seg * 2;
 					 dW2  = dx/dNum_seg2;
-					 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
+					 dCalculo2 = simpson.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
 
 				 }
 				 else{
 					 dW = dx/dNum_seg;
-					 dCalculo1 = calculos.Iniciar(dx, dDof, dNum_seg, dError, dW);
+					 dCalculo1 = simpson.Iniciar(dx, dDof, dNum_seg, dError, dW);
 					 if(dCalculo1 != 0.0){
 						 dW2  = dx/dNum_seg2;
-						 dCalculo2 = calculos.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
+						 dCalculo2 = simpson.Iniciar(dx, dDof, dNum_seg2, dError, dW2);
 					 }
 				 }
 				 dValue = Math.abs(dCalculo1 - dCalculo2);

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class Calculos {
+public class Simpson {
 
 	//&i
 	private ArrayList<Double> segmentos;

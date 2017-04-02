@@ -11,11 +11,13 @@ public class Impresion {
 		String sOutput = format.format(dValor);
 		return sOutput;
 	}
+
+	
 	//&i
-	public static void Imprimir(Double x, Double dof, Double p){
-		System.out.println("P = " + Formatear("0.00000",p));//&m
-		System.out.println("Dof = " + Formatear("##.#####",dof));
-		System.out.println("X = " + Formatear("#0.00000",x));//&m
+	public static void Imprimir(Double dX, Double dDof, Double dP){
+		System.out.printf("P = %.05f \n", dP);
+		System.out.printf("DOF = %.0f \n", dDof);
+		System.out.printf("X = %.05f \n", dX);
 	}
 
 }
