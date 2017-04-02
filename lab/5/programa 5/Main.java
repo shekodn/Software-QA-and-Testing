@@ -108,6 +108,8 @@ public class Main {
 		}while(bOut != true);
 
 		if(dCalculo2 == dP){
+
+			//prints
 			System.out.printf("P = %.05f \n", dP);
 			System.out.printf("DOF = %.0f \n", dDof);
 			System.out.printf("X = %.05f \n", dx);
@@ -151,6 +153,8 @@ public class Main {
 
 			}while(bOut != true);
 			if(dCalculo2 == dP){
+
+				//prints
 				System.out.printf("P = %.05f \n", dP);
 				System.out.printf("DOF = %.0f \n", dDof);
 				System.out.printf("X = %.05f \n", dx);
@@ -171,6 +175,8 @@ public class Main {
 			iDireccionPasada = iDireccionActual;
 			dValue = Math.abs(dCalculo2 - dP);
 		}
+
+		//prints
 		System.out.printf("P = %.05f \n", dP);
 		System.out.printf("DOF = %.0f \n", dDof);
 		System.out.printf("X = %.05f \n", dx);
