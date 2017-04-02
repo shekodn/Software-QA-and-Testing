@@ -4,7 +4,6 @@ import java.util.*;
 
 public class TDist {
 
-
 	//&i
 	public static double Factorial(int n){
 		double ifact = 1;
@@ -72,7 +71,7 @@ public class TDist {
 		Double dValueUp = 0.0;
 		Double dValueDownTwo = 0.0;
 		Double ivalue = (dof + 1)/ 2.0;
-		String sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
+		String sDof = String.valueOf(ivalue);
 		try{
 			int iValue = Integer.parseInt(sDof);
 			dValueUp = (double) Factorial(iValue-1);
