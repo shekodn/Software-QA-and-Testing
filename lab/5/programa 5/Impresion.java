@@ -12,12 +12,4 @@ public class Impresion {
 		return sOutput;
 	}
 
-	
-	//&i
-	public static void Imprimir(Double dX, Double dDof, Double dP){
-		System.out.printf("P = %.05f \n", dP);
-		System.out.printf("DOF = %.0f \n", dDof);
-		System.out.printf("X = %.05f \n", dX);
-	}
-
 }

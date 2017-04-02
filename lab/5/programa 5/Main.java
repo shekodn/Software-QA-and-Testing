@@ -5,9 +5,8 @@ import java.util.*;
 //&p-Programa5
 public class Main {
 
-
 	//&i
-	public static void main(String [ ] args){
+	public static void main(String [] args){
 		//Declaracion
 		//&i
 		Double dx;
@@ -26,6 +25,9 @@ public class Main {
 		Double dP;
 		int iDireccionPasada;
 		int iDireccionActual;
+		Simpson simpson;
+		Scanner scan;
+
 
 		//inicializacion
 		//&i
@@ -45,35 +47,38 @@ public class Main {
 		dP = 0.0;
 		iDireccionPasada = 0;
 		iDireccionActual = 0;
+		simpson = new Simpson();
+		scan = new Scanner(System.in);
 
-
-
-		Simpson simpson = new Simpson();
-		Scanner scan = new Scanner(System.in);
-
-		while(true){
+		/**
+		 * Asks user for P
+		 */
+		while(true){ //&m
 			System.out.println("Inserta el P");//&m
 			try{
 				dP = Double.parseDouble(scan.nextLine());//&m
-				if(dP >= 0 && dP <= 0.5){
-					break;
+				if(dP >= 0 && dP <= 0.5){//&m
+					break;//&m
 				}
-				System.out.println("Error con el valor de P");
+				System.out.println("Error con el valor de P");//&m
 			}catch(NumberFormatException e){
 				System.out.println("Error con el valor de P");
 			}
 		}
 
+		/**
+		 * Asks user for DOF
+		 */
 		while(true){
-			System.out.println("Inserta Dof");
+			System.out.println("Inserta Dof");//&m
 			try{
-				dDof = Double.parseDouble(scan.nextLine());
+				dDof = Double.parseDouble(scan.nextLine());//&m
 				if(dDof > 0){
-					break;
+					break;//&m
 				}
-				System.out.println("Error con el valor de DOF");
+				System.out.println("Error con el valor de DOF");//&m
 			}catch(NumberFormatException e){
-				System.out.println("Error con el valor de DOF");
+				System.out.println("Error con el valor de DOF");//&m
 			}
 		}
 
@@ -105,7 +110,9 @@ public class Main {
 		}while(bOut != true);
 
 		if(dCalculo2 == dP){
-			Impresion.Imprimir(dx, dDof, dP);
+			System.out.printf("P = %.05f \n", dP);
+			System.out.printf("DOF = %.0f \n", dDof);
+			System.out.printf("X = %.05f \n", dx);
 		}else if(dCalculo2 < dP){
 			dxAux = dx + dD;
 			iDireccionActual = 1;
@@ -146,7 +153,10 @@ public class Main {
 
 			}while(bOut != true);
 			if(dCalculo2 == dP){
-				Impresion.Imprimir(dx, dDof, dP);
+				System.out.printf("P = %.05f \n", dP);
+				System.out.printf("DOF = %.0f \n", dDof);
+				System.out.printf("X = %.05f \n", dx);
+
 			}else{
 				if(dCalculo2 < dP){
 					dxAux += dD;
@@ -163,7 +173,9 @@ public class Main {
 			iDireccionPasada = iDireccionActual;
 			dValue = Math.abs(dCalculo2 - dP);
 		}
-		Impresion.Imprimir(dx, dDof, dP);
-		scan.close();
+		System.out.printf("P = %.05f \n", dP);
+		System.out.printf("DOF = %.0f \n", dDof);
+		System.out.printf("X = %.05f \n", dx);
+
 	}
 }
