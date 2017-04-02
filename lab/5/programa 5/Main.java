@@ -1,8 +1,11 @@
 import java.io.*;
 import java.util.*;
 
+
+//&p-Programa5
 public class Main {
-	
+
+
 	//&i
 	public static void main(String [ ] args){
 		Double dx = 1.0;
@@ -23,7 +26,6 @@ public class Main {
 		int iDireccionActual = 0;
 
 		Calculos calculos = new Calculos();
-
 		Scanner scan = new Scanner(System.in);
 
 		while(true){
@@ -33,9 +35,9 @@ public class Main {
 				if(dP >= 0 && dP <= 0.5){
 					break;
 				}
-				ErrorHandle.errorEnLinea();
+				System.out.println("Error con el valor de P");
 			}catch(NumberFormatException e){
-				ErrorHandle.errorEnLinea();
+				System.out.println("Error con el valor de P");
 			}
 		}
 
@@ -46,9 +48,9 @@ public class Main {
 				if(dDof > 0){
 					break;
 				}
-				ErrorHandle.errorEnLinea();
+				System.out.println("Error con el valor de DOF");
 			}catch(NumberFormatException e){
-				ErrorHandle.errorEnLinea();
+				System.out.println("Error con el valor de DOF");
 			}
 		}
 

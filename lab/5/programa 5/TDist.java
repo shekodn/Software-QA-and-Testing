@@ -50,8 +50,8 @@ public class TDist {
 	//&i
 	public ArrayList<Double> TDistOne(ArrayList<Double> x,Double dof){
 		ArrayList<Double> distOne = new ArrayList<Double>();
-		for(int i=0; i< x.size();i++){
-			Double dVal = 1 + ((Math.pow(x.get(i), 2)) / dof);
+		for(int iI=0; iI< x.size(); iI++){
+			Double dVal = 1 + ((Math.pow(x.get(iI), 2)) / dof);
 			distOne.add(dVal);
 		}
 		return distOne;
@@ -61,8 +61,8 @@ public class TDist {
 	public ArrayList<Double> TDistTwo(ArrayList<Double> x,Double dof){
 		ArrayList<Double> distTwo = new ArrayList<Double>();
 		Double dValor = ((dof + 1) / 2.0);
-		for(int i=0; i< x.size();i++){
-			distTwo.add(Math.pow(x.get(i), - dValor));
+		for(int iI=0; iI< x.size();iI++){
+			distTwo.add(Math.pow(x.get(iI), - dValor));
 		}
 		return distTwo;
 	}
@@ -98,10 +98,10 @@ public class TDist {
 	//&i
 	public ArrayList<Double> TDistFour(ArrayList<Double> TdistTwo, Double TdistThree){
 		ArrayList<Double> finalArray = new ArrayList<Double>();
-		for(int i= 0; i < TdistTwo.size(); i++){
-			finalArray.add(TdistThree * TdistTwo.get(i));
+
+		for(int iI= 0; iI < TdistTwo.size(); iI++){
+			finalArray.add(TdistThree * TdistTwo.get(iI));
 		}
 		return finalArray;
 	}
-
 }
