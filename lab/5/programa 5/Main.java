@@ -91,36 +91,36 @@ public class Main {
 		do{
 			 if(dAns1 != 0.0){
 				 dNum_seg = dNum_seg * 2;
-				 System.out.println("dNum_seg  - " + dNum_seg);//&m //borrar
+				//  System.out.println("dNum_seg  - " + dNum_seg);//&m //borrar
 				 dW = dX/dNum_seg;
-				 System.out.println("dW - " + dW);//&m //borrar
+				//  System.out.println("dW - " + dW);//&m //borrar
 				 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
-				 System.out.println("dAns1 - " + dAns1);//&m //borrar
+				//  System.out.println("dAns1 - " + dAns1);//&m //borrar
 				 dNum_seg2 = dNum_seg * 2;
-				 System.out.println("dNum_seg2 - " + dNum_seg2);//&m //borrar
+				//  System.out.println("dNum_seg2 - " + dNum_seg2);//&m //borrar
 				 dW2  = dX/dNum_seg2;
-				 System.out.println("dW2 - " + dW2);//&m //borrar
+				//  System.out.println("dW2 - " + dW2);//&m //borrar
 				 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
-				 System.out.println("dAns2 - " + dAns2);//&m //borrar
+				//  System.out.println("dAns2 - " + dAns2);//&m //borrar
 
 			 }
 			 else{
 				 dW = dX/dNum_seg;
-				 System.out.println("dW - " + dW);//&m //borrar
+				//  System.out.println("dW - " + dW);//&m //borrar
 				 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
-				 System.out.println("dAns1 - " + dAns1);//&m //borrar
+				//  System.out.println("dAns1 - " + dAns1);//&m //borrar
 				 if(dAns1 != 0.0){
 					 dW2  = dX/dNum_seg2;
-					 System.out.println("dW2 - " + dW2);//&m //borrar
+					//  System.out.println("dW2 - " + dW2);//&m //borrar
 					 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
-					 System.out.println("dAns2 - " + dAns2);//&m //borrar
+					//  System.out.println("dAns2 - " + dAns2);//&m //borrar
 				 }
 			 }
 			 dValue = Math.abs(dAns1 - dAns2);
-			 System.out.println("dValue - " + dAns2);//&m //borrar
+			//  System.out.println("dValue - " + dAns2);//&m //borrar
 			 if(dValue < dEpsilon){
 				 isSolved = true;
-				 System.out.println("isSolved - true");//&m //borrar
+				//  System.out.println("isSolved - true");//&m //borrar
 
 			 }
 
@@ -136,12 +136,12 @@ public class Main {
 		}else if(dAns2 < dP){
 
 			dAux = dX + dD;
-			System.out.println("dAux - " + dAux);//&m //borrar
+			// System.out.println("dAux - " + dAux);//&m //borrar
 			iDireccionActual = 1;
 
 		}else if(dAns2 > dP){
 			dAux = dX - dD;
-			System.out.println("dAux - " + dAux);//&m //borrar
+			// System.out.println("dAux - " + dAux);//&m //borrar
 			iDireccionActual = -1;
 		}
 
@@ -159,34 +159,34 @@ public class Main {
 				 if(dAns1 != 0.0){
 					 dNum_seg = dNum_seg * 2;
 					 dW = dX/dNum_seg;
-					 System.out.println("dW - " + dW);//&m //borrar
+					//  System.out.println("dW - " + dW);//&m //borrar
 					 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
-					 System.out.println("dAns1 - " + dAns1);//&m //borrar
+					//  System.out.println("dAns1 - " + dAns1);//&m //borrar
 					 dNum_seg2 = dNum_seg * 2;
-					 System.out.println("dNum_seg2 - " + dNum_seg2);//&m //borrar
+					//  System.out.println("dNum_seg2 - " + dNum_seg2);//&m //borrar
 					 dW2  = dX/dNum_seg2;
-					 System.out.println("dW2 - " + dW2);//&m //borrar
+					//  System.out.println("dW2 - " + dW2);//&m //borrar
 					 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
-					 System.out.println("dAns2 - " + dAns2);//&m //borrar
+					//  System.out.println("dAns2 - " + dAns2);//&m //borrar
 
 				 }
 				 else{
 					 dW = dX/dNum_seg;
-					 System.out.println("dW - " + dW);//&m //borrar
+					//  System.out.println("dW - " + dW);//&m //borrar
 					 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
-					 System.out.println("dAns1 - " + dAns1);//&m //borrar
+					//  System.out.println("dAns1 - " + dAns1);//&m //borrar
 					 if(dAns1 != 0.0){
 						 dW2  = dX/dNum_seg2;
-						 System.out.println("dW2 - " + dW2);//&m //borrar
+						//  System.out.println("dW2 - " + dW2);//&m //borrar
 						 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
-						 System.out.println("dAns2 - " + dAns2);//&m //borrar
+						//  System.out.println("dAns2 - " + dAns2);//&m //borrar
 					 }
 				 }
 
 				 dValue = Math.abs(dAns1 - dAns2);
 				 if(dValue < dEpsilon){
 					 isSolved = true;
-					 System.out.println("isSolved - true");//&m //borrar
+					//  System.out.println("isSolved - true");//&m //borrar
 				 }
 
 			} while(!isSolved);
