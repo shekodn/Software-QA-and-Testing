@@ -10,11 +10,11 @@ public class TDist {
 
 	//&i
 	public static double Factorial(int n){
-		double ifact = 1;
+		double factorial = 1;
 		for (int i = 1; i <= n; i++) {
-			ifact *= i;
+			factorial *= i;
 		}
-		return ifact;
+		return factorial;
 	}
 
 	//&i
@@ -64,37 +64,41 @@ public class TDist {
 		ArrayList<Double> distTwo = new ArrayList<Double>();
 		Double dValor = ((dof + 1) / 2.0);
 		for(int iI=0; iI< x.size();iI++){
-			distTwo.add(Math.pow(x.get(iI), - dValor));
+			distTwo.add(Math.pow(x.get(iI),
+						- dValor));
 		}
 		return distTwo;
 	}
 
 	//&i
 	public Double tres(Double dof){
-		Double dValueUp = 0.0;
-		Double dValueDownTwo = 0.0;
+		Double dArriba = 0.0;
+		Double dAbajo2 = 0.0;
 		Double ivalue = (dof + 1)/ 2.0;
-		String sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
+		String sDof =
+				String.valueOf(Impresion.Formatear("##.#####", ivalue));
 		try{
-			int iValue = Integer.parseInt(sDof);
-			dValueUp = (double) Factorial(iValue-1);
+			int iValor = Integer.parseInt(sDof);
+			dArriba = (double) Factorial(iValor-1);
 		}catch(NumberFormatException e){
 			double dValue = Double.parseDouble(sDof);
-			dValueUp = Calculo(dValue-1);
+			dArriba = Calculo(dValue-1);
 		}
 		ivalue = dof/2.0;
 		sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
 		try{
-			int iValue = Integer.parseInt(sDof);
-			dValueDownTwo = (double) Factorial(iValue-1);
+			int iValor = Integer.parseInt(sDof);
+			dAbajo2 = (double) Factorial(iValor-1);
 		}catch(NumberFormatException e){
-			double dValue = Double.parseDouble(sDof);
-			dValueDownTwo = Calculo(dValue-1);
+			double dValue =
+				Double.parseDouble(sDof);
+			dAbajo2 =
+				Calculo(dValue-1);
 		}
 
-		Double dValueDownOne = Math.pow((dof * Math.PI), 0.5);
-		Double dValueDown = (dValueDownOne * dValueDownTwo);
-		return dValueUp / dValueDown;
+		Double dAbajo1 = Math.pow((dof * Math.PI), 0.5);
+		Double dAbajo = (dAbajo1 * dAbajo2);
+		return dArriba / dAbajo;
 	}
 
 	//&i
