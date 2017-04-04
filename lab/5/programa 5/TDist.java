@@ -1,3 +1,6 @@
+//&p-TDist
+//&b=66
+
 import java.io.*;
 import java.util.*;
 
@@ -29,7 +32,6 @@ public class TDist {
 	}
 
 	//&i
-	//&b=9
 	public double calculaGama(double x){
 		if (x == 0){
 			return -1;

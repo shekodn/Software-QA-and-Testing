@@ -1,3 +1,6 @@
+//&p-Simpson
+//&b=63
+
 import java.io.*;
 import java.util.*;
 
@@ -8,12 +11,12 @@ public class Simpson {
 	private ArrayList<Double> segmentos;
 	private ArrayList<Double> patron;
 	private TDist tDist;
-	private ArrayList<Double> tdistOne;
-	private ArrayList<Double> tdistTwo;
-	private Double dtdistThree;
-	private ArrayList<Double> tdistFour;
-	private ArrayList <Double> finalArr;
-	private Double dRetorno;
+	private ArrayList<Double> calcula1;
+	private ArrayList<Double> calcula2;
+	private Double calcula3;
+	private ArrayList<Double> calcula4;
+	private ArrayList <Double> arrAns;
+	private Double dFinalAns;
 
 	//&i
 	public Double Iniciar(Double x, Double dof, Double num_seg, Double error, Double w){
@@ -22,39 +25,39 @@ public class Simpson {
 		patron = new ArrayList<Double>();
 		patron = Patron(num_seg);
 		tDist = new TDist();
-		tdistOne = new ArrayList<Double>();
-		tdistOne = tDist.TDistOne(segmentos, dof);
-		tdistTwo = new ArrayList<Double>();
-		tdistTwo = tDist.TDistTwo(tdistOne, dof);
-		dtdistThree = 0.0;
-		dtdistThree = tDist.TDistThree(dof);
-		tdistFour = new ArrayList<Double>();
-		tdistFour = tDist.TDistFour(tdistTwo, dtdistThree);
-		finalArr = new ArrayList<Double>();
-		finalArr = Final(w,patron,tdistFour);
-		dRetorno = Sumatoria(finalArr);
-		return dRetorno;
+		calcula1 = new ArrayList<Double>();
+		calcula1 = tDist.TDistOne(segmentos, dof);
+		calcula2 = new ArrayList<Double>();
+		calcula2 = tDist.TDistTwo(calcula1, dof);
+		calcula3 = 0.0;
+		calcula3 = tDist.TDistThree(dof);
+		calcula4 = new ArrayList<Double>();
+		calcula4 = tDist.TDistFour(calcula2, calcula3);
+		arrAns = new ArrayList<Double>();
+		arrAns = Final(w,patron,calcula4);
+		dFinalAns = Sumatoria(arrAns);
+		return dFinalAns;
 	}
 
 
 
 	//&i
-	private Double Sumatoria(ArrayList<Double> finalArr){
+	private Double Sumatoria(ArrayList<Double> arrAns){
 		Double dtotal = 0.0;
-		for(int i = 0; i < finalArr.size(); i++){
-			dtotal += finalArr.get(i);
+		for(int i = 0; i < arrAns.size(); i++){
+			dtotal += arrAns.get(i);
 		}
 		return dtotal;
 	}
 
 
 	//&i
-	private ArrayList<Double> Final(Double w, ArrayList<Double> patron, ArrayList<Double> tdistFour) {
-		ArrayList<Double> finalArr = new ArrayList<Double>();
-		for(int i= 0; i< tdistFour.size();i++){
-			finalArr.add((w/3.0) * patron.get(i) * tdistFour.get(i));
+	private ArrayList<Double> Final(Double w, ArrayList<Double> patron, ArrayList<Double> calcula4) {
+		ArrayList<Double> arrAns = new ArrayList<Double>();
+		for(int i= 0; i< calcula4.size();i++){
+			arrAns.add((w/3.0) * patron.get(i) * calcula4.get(i));
 		}
-		return finalArr;
+		return arrAns;
 	}
 
 	//&i
@@ -91,5 +94,4 @@ public class Simpson {
 		patron.add((double) 1);
 	    return patron;
 	}
-
 }
