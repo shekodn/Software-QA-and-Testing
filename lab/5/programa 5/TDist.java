@@ -1,8 +1,17 @@
+//&p-TDist
+//&b=71
 import java.io.*;
 import java.util.*;
-
+import java.text.*;
 
 public class TDist {
+
+	//&i
+	public static String Formatear(String sPatron, Double dValor){
+		DecimalFormat format = new DecimalFormat(sPatron);
+		String sOutput = format.format(dValor);
+		return sOutput;
+	}
 
 	//&i
 	public static double Factorial(int n){
@@ -27,8 +36,7 @@ public class TDist {
 		return dTotal * Math.sqrt(Math.PI);
 	}
 
-	//&i
-	//&b=9
+	//i
 	public double calculaGama(double x){
 		if (x == 0){
 			return -1;
@@ -45,8 +53,7 @@ public class TDist {
 		}
 	}
 
-
-	//&i
+	//i
 	public ArrayList<Double> calcula1(ArrayList<Double> x,Double dof){
 		ArrayList<Double> calcula1 = new ArrayList<Double>();
 		for(int iI=0; iI< x.size(); iI++){
@@ -56,7 +63,7 @@ public class TDist {
 		return calcula1;
 	}
 
-	//&i
+	//i
 	public ArrayList<Double> calcula2(ArrayList<Double> x,Double dof){
 		ArrayList<Double> calcula2 = new ArrayList<Double>();
 		Double dValor = ((dof + 1) / 2.0);
@@ -66,7 +73,7 @@ public class TDist {
 		return calcula2;
 	}
 
-	//&i
+	//i
 	public Double calcula3(Double dof){
 		Double dArriba = 0.0;
 		Double dAbajo2 = 0.0;
@@ -80,7 +87,7 @@ public class TDist {
 			dArriba = Calculo(dValue-1);
 		}
 		ivalue = dof/2.0;
-		sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
+		sDof = String.valueOf(Formatear("##.#####", ivalue));
 		try{
 			int iValue = Integer.parseInt(sDof);
 			dAbajo2 = (double) Factorial(iValue-1);
@@ -94,7 +101,7 @@ public class TDist {
 		return dArriba / dAbajo;
 	}
 
-	//&i
+	//i
 	public ArrayList<Double> calcula4(ArrayList<Double> calcula2, Double calcula3){
 		ArrayList<Double> arrAns = new ArrayList<Double>();
 

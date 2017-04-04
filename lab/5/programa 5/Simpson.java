@@ -1,6 +1,7 @@
+//&p-Simpson
+//&b=63
 import java.io.*;
 import java.util.*;
-
 
 public class Simpson {
 
@@ -48,7 +49,7 @@ public class Simpson {
 	}
 
 
-	//&i
+	//i
 	private ArrayList<Double> Final(Double w, ArrayList<Double> patron, ArrayList<Double> calcula4) {
 		ArrayList<Double> finalArr = new ArrayList<Double>();
 		for(int i= 0; i< calcula4.size();i++){
@@ -57,7 +58,7 @@ public class Simpson {
 		return finalArr;
 	}
 
-	//&i
+	//i
 	private ArrayList<Double> Segmentos(Double num_seg, Double w, Double x){
 		ArrayList<Double> segementada = new ArrayList<Double>();
 		segementada.add((double) 0);
@@ -73,7 +74,7 @@ public class Simpson {
 	}
 
 
-	//&i
+	//i
 	private ArrayList<Double> Patron(Double num_seg){
 		ArrayList<Double> patron = new ArrayList<Double>();
 		patron.add((double) 1);
