@@ -26,13 +26,13 @@ public class Simpson {
 		patron = Patron(num_seg);
 		tDist = new TDist();
 		calcula1 = new ArrayList<Double>();
-		calcula1 = tDist.TDistOne(segmentos, dof);
+		calcula1 = tDist.uno(segmentos, dof);
 		calcula2 = new ArrayList<Double>();
-		calcula2 = tDist.TDistTwo(calcula1, dof);
+		calcula2 = tDist.dos(calcula1, dof);
 		calcula3 = 0.0;
-		calcula3 = tDist.TDistThree(dof);
+		calcula3 = tDist.tres(dof);
 		calcula4 = new ArrayList<Double>();
-		calcula4 = tDist.TDistFour(calcula2, calcula3);
+		calcula4 = tDist.cuatro(calcula2, calcula3);
 		arrAns = new ArrayList<Double>();
 		arrAns = Final(w,patron,calcula4);
 		dFinalAns = Sumatoria(arrAns);
