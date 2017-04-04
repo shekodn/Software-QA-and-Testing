@@ -8,12 +8,12 @@ public class Simpson {
 	private ArrayList<Double> segmentos;
 	private ArrayList<Double> patron;
 	private TDist tDist;
-	private ArrayList<Double> tdistOne;
-	private ArrayList<Double> tdistTwo;
-	private Double dtdistThree;
-	private ArrayList<Double> tdistFour;
+	private ArrayList<Double> calcula1;
+	private ArrayList<Double> calcula2;
+	private Double calcula3;
+	private ArrayList<Double> calcula4;
 	private ArrayList <Double> finalArr;
-	private Double dRetorno;
+	private Double dAns;
 
 	//&i
 	public Double Iniciar(Double x, Double dof, Double num_seg, Double error, Double w){
@@ -22,18 +22,18 @@ public class Simpson {
 		patron = new ArrayList<Double>();
 		patron = Patron(num_seg);
 		tDist = new TDist();
-		tdistOne = new ArrayList<Double>();
-		tdistOne = tDist.TDistOne(segmentos, dof);
-		tdistTwo = new ArrayList<Double>();
-		tdistTwo = tDist.TDistTwo(tdistOne, dof);
-		dtdistThree = 0.0;
-		dtdistThree = tDist.TDistThree(dof);
-		tdistFour = new ArrayList<Double>();
-		tdistFour = tDist.TDistFour(tdistTwo, dtdistThree);
+		calcula1 = new ArrayList<Double>();
+		calcula1 = tDist.calcula1(segmentos, dof);
+		calcula2 = new ArrayList<Double>();
+		calcula2 = tDist.calcula2(calcula1, dof);
+		calcula3 = 0.0;
+		calcula3 = tDist.calcula3(dof);
+		calcula4 = new ArrayList<Double>();
+		calcula4 = tDist.calcula4(calcula2, calcula3);
 		finalArr = new ArrayList<Double>();
-		finalArr = Final(w,patron,tdistFour);
-		dRetorno = Sumatoria(finalArr);
-		return dRetorno;
+		finalArr = Final(w,patron,calcula4);
+		dAns = Sumatoria(finalArr);
+		return dAns;
 	}
 
 
@@ -49,10 +49,10 @@ public class Simpson {
 
 
 	//&i
-	private ArrayList<Double> Final(Double w, ArrayList<Double> patron, ArrayList<Double> tdistFour) {
+	private ArrayList<Double> Final(Double w, ArrayList<Double> patron, ArrayList<Double> calcula4) {
 		ArrayList<Double> finalArr = new ArrayList<Double>();
-		for(int i= 0; i< tdistFour.size();i++){
-			finalArr.add((w/3.0) * patron.get(i) * tdistFour.get(i));
+		for(int i= 0; i< calcula4.size();i++){
+			finalArr.add((w/3.0) * patron.get(i) * calcula4.get(i));
 		}
 		return finalArr;
 	}

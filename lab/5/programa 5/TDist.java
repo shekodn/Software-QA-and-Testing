@@ -47,60 +47,60 @@ public class TDist {
 
 
 	//&i
-	public ArrayList<Double> TDistOne(ArrayList<Double> x,Double dof){
-		ArrayList<Double> distOne = new ArrayList<Double>();
+	public ArrayList<Double> calcula1(ArrayList<Double> x,Double dof){
+		ArrayList<Double> calcula1 = new ArrayList<Double>();
 		for(int iI=0; iI< x.size(); iI++){
 			Double dVal = 1 + ((Math.pow(x.get(iI), 2)) / dof);
-			distOne.add(dVal);
+			calcula1.add(dVal);
 		}
-		return distOne;
+		return calcula1;
 	}
 
 	//&i
-	public ArrayList<Double> TDistTwo(ArrayList<Double> x,Double dof){
-		ArrayList<Double> distTwo = new ArrayList<Double>();
+	public ArrayList<Double> calcula2(ArrayList<Double> x,Double dof){
+		ArrayList<Double> calcula2 = new ArrayList<Double>();
 		Double dValor = ((dof + 1) / 2.0);
 		for(int iI=0; iI< x.size();iI++){
-			distTwo.add(Math.pow(x.get(iI), - dValor));
+			calcula2.add(Math.pow(x.get(iI), - dValor));
 		}
-		return distTwo;
+		return calcula2;
 	}
 
 	//&i
-	public Double TDistThree(Double dof){
-		Double dValueUp = 0.0;
-		Double dValueDownTwo = 0.0;
+	public Double calcula3(Double dof){
+		Double dArriba = 0.0;
+		Double dAbajo2 = 0.0;
 		Double ivalue = (dof + 1)/ 2.0;
 		String sDof = String.valueOf(ivalue);
 		try{
 			int iValue = Integer.parseInt(sDof);
-			dValueUp = (double) Factorial(iValue-1);
+			dArriba = (double) Factorial(iValue-1);
 		}catch(NumberFormatException e){
 			double dValue = Double.parseDouble(sDof);
-			dValueUp = Calculo(dValue-1);
+			dArriba = Calculo(dValue-1);
 		}
 		ivalue = dof/2.0;
 		sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
 		try{
 			int iValue = Integer.parseInt(sDof);
-			dValueDownTwo = (double) Factorial(iValue-1);
+			dAbajo2 = (double) Factorial(iValue-1);
 		}catch(NumberFormatException e){
 			double dValue = Double.parseDouble(sDof);
-			dValueDownTwo = Calculo(dValue-1);
+			dAbajo2 = Calculo(dValue-1);
 		}
 
-		Double dValueDownOne = Math.pow((dof * Math.PI), 0.5);
-		Double dValueDown = (dValueDownOne * dValueDownTwo);
-		return dValueUp / dValueDown;
+		Double dAbajo1 = Math.pow((dof * Math.PI), 0.5);
+		Double dAbajo = (dAbajo1 * dAbajo2);
+		return dArriba / dAbajo;
 	}
 
 	//&i
-	public ArrayList<Double> TDistFour(ArrayList<Double> TdistTwo, Double TdistThree){
-		ArrayList<Double> finalArray = new ArrayList<Double>();
+	public ArrayList<Double> calcula4(ArrayList<Double> calcula2, Double calcula3){
+		ArrayList<Double> arrAns = new ArrayList<Double>();
 
-		for(int iI= 0; iI < TdistTwo.size(); iI++){
-			finalArray.add(TdistThree * TdistTwo.get(iI));
+		for(int iI= 0; iI < calcula2.size(); iI++){
+			arrAns.add(calcula3 * calcula2.get(iI));
 		}
-		return finalArray;
+		return arrAns;
 	}
 }
