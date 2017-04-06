@@ -1,25 +1,20 @@
 //&p-TDist
-//&b=71
+//&b=66
+
 import java.io.*;
 import java.util.*;
-import java.text.*;
+
 
 public class TDist {
 
-	//&i
-	public static String Formatear(String sPatron, Double dValor){
-		DecimalFormat format = new DecimalFormat(sPatron);
-		String sOutput = format.format(dValor);
-		return sOutput;
-	}
 
 	//&i
 	public static double Factorial(int n){
-		double ifact = 1;
+		double factorial = 1;
 		for (int i = 1; i <= n; i++) {
-			ifact *= i;
+			factorial *= i;
 		}
-		return ifact;
+		return factorial;
 	}
 
 	//&i
@@ -36,7 +31,7 @@ public class TDist {
 		return dTotal * Math.sqrt(Math.PI);
 	}
 
-	//i
+	//&i
 	public double calculaGama(double x){
 		if (x == 0){
 			return -1;
@@ -53,47 +48,52 @@ public class TDist {
 		}
 	}
 
-	//i
-	public ArrayList<Double> calcula1(ArrayList<Double> x,Double dof){
-		ArrayList<Double> calcula1 = new ArrayList<Double>();
+
+	//&i
+	public ArrayList<Double> uno(ArrayList<Double> x,Double dof){
+		ArrayList<Double> distOne = new ArrayList<Double>();
 		for(int iI=0; iI< x.size(); iI++){
 			Double dVal = 1 + ((Math.pow(x.get(iI), 2)) / dof);
-			calcula1.add(dVal);
+			distOne.add(dVal);
 		}
-		return calcula1;
+		return distOne;
 	}
 
-	//i
-	public ArrayList<Double> calcula2(ArrayList<Double> x,Double dof){
-		ArrayList<Double> calcula2 = new ArrayList<Double>();
+	//&i
+	public ArrayList<Double> dos(ArrayList<Double> x,Double dof){
+		ArrayList<Double> distTwo = new ArrayList<Double>();
 		Double dValor = ((dof + 1) / 2.0);
 		for(int iI=0; iI< x.size();iI++){
-			calcula2.add(Math.pow(x.get(iI), - dValor));
+			distTwo.add(Math.pow(x.get(iI),
+						- dValor));
 		}
-		return calcula2;
+		return distTwo;
 	}
 
-	//i
-	public Double calcula3(Double dof){
+	//&i
+	public Double tres(Double dof){
 		Double dArriba = 0.0;
 		Double dAbajo2 = 0.0;
 		Double ivalue = (dof + 1)/ 2.0;
-		String sDof = String.valueOf(ivalue);
+		String sDof =
+				String.valueOf(Impresion.Formatear("##.#####", ivalue));
 		try{
-			int iValue = Integer.parseInt(sDof);
-			dArriba = (double) Factorial(iValue-1);
+			int iValor = Integer.parseInt(sDof);
+			dArriba = (double) Factorial(iValor-1);
 		}catch(NumberFormatException e){
 			double dValue = Double.parseDouble(sDof);
 			dArriba = Calculo(dValue-1);
 		}
 		ivalue = dof/2.0;
-		sDof = String.valueOf(Formatear("##.#####", ivalue));
+		sDof = String.valueOf(Impresion.Formatear("##.#####", ivalue));
 		try{
-			int iValue = Integer.parseInt(sDof);
-			dAbajo2 = (double) Factorial(iValue-1);
+			int iValor = Integer.parseInt(sDof);
+			dAbajo2 = (double) Factorial(iValor-1);
 		}catch(NumberFormatException e){
-			double dValue = Double.parseDouble(sDof);
-			dAbajo2 = Calculo(dValue-1);
+			double dValue =
+				Double.parseDouble(sDof);
+			dAbajo2 =
+				Calculo(dValue-1);
 		}
 
 		Double dAbajo1 = Math.pow((dof * Math.PI), 0.5);
@@ -101,13 +101,13 @@ public class TDist {
 		return dArriba / dAbajo;
 	}
 
-	//i
-	public ArrayList<Double> calcula4(ArrayList<Double> calcula2, Double calcula3){
-		ArrayList<Double> arrAns = new ArrayList<Double>();
+	//&i
+	public ArrayList<Double> cuatro(ArrayList<Double> arrDos, Double dTres){
+		ArrayList<Double> finalArray = new ArrayList<Double>();
 
-		for(int iI= 0; iI < calcula2.size(); iI++){
-			arrAns.add(calcula3 * calcula2.get(iI));
+		for(int iI= 0; iI < arrDos.size(); iI++){
+			finalArray.add(dTres * arrDos.get(iI));
 		}
-		return arrAns;
+		return finalArray;
 	}
 }

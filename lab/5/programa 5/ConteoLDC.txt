@@ -1,8 +1,11 @@
 PARTES BASE:
 --------------------------------------------
 PARTES NUEVAS
-Programa5; T=101, I=1
+Programa5; T=99, I=2
 --------------------------------------------
 PARTES REUSADAS:
+Coordenada: T=13, I=0
+Simpson: T=63, I=6
+TDist: T=66, I=7
 --------------------------------------------
-Total LDC: 101
+Total LDC: 243

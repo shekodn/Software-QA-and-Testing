@@ -1,13 +1,16 @@
-//&p-Programa5
+
+
 import java.io.*;
 import java.util.*;
 
+//&p-Programa5
 public class Main {
 
 	//&i
 	public static void main(String [] args){
 		//Declaracion
 		//inicializacion
+		//&i
 		double dX = 1.0;
 		double dAux = 1.0;
 		double dDof = 0.0;
