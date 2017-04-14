@@ -173,7 +173,8 @@ public class Programa6 {
 		double dP = 0.35;
 		int iDireccionPasada = 0;
 		int iDireccionActual = 0;
-		Simpson5 simpson = new Simpson5();
+
+		Simpson simpson = new Simpson(dX,dDof/1.0,dNum_seg );
 
 		do{
 			 if(dAns1 != 0.0){
