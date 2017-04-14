@@ -81,8 +81,14 @@ public class Programa3 {
         double b1 = auxiliar.calculaB1(lklCoordenadas);
         double yk = auxiliar.calculaYK(lklCoordenadas, iXK);
         double x = auxiliar.calculaX(r, lklCoordenadas.size());
-        programa4(x,lklCoordenadas.size());
+        double xiaux = auxiliar.sumatoriaXi(lklCoordenadas);
 
+        double dX = programa5();
+        double dStdDev = controlador.calculaStdDev(lklCoordenadas, b0, b1);
+        double auxRangeSumatoria = controlador.sumatoriaXiMinusXavg(lklCoordenadas);
+        double calculaRange = controlador.calculaRange(dX, dStdDev, iXK, xiaux/lklCoordenadas.size(), lklCoordenadas.size(), auxRangeSumatoria);
+
+        controlador.dSig = programa4(x,lklCoordenadas.size());
         controlador.setiN(lklCoordenadas.size());
         controlador.setXK(iXK);
         controlador.setR(r);
@@ -90,13 +96,16 @@ public class Programa3 {
         controlador.setB0(b0);
         controlador.setB1(b1);
         controlador.setYK(yk);
+        controlador.dRange = calculaRange;
+        controlador.dUPI = calculaRange + yk;
 
-        double dX = programa5();
-        double dStdDev = controlador.calculaStdDev(lklCoordenadas, b0, b1);
-        double auxRangeSumatoria = controlador.sumatoriaXiMinusXavg(lklCoordenadas);
-        double calculaRange = controlador.calculaRange(dX, dStdDev, iXK, iXK/lklCoordenadas.size(), lklCoordenadas.size(), auxRangeSumatoria);
+        if(yk - calculaRange < 0){
+            controlador.dLPI = 0.0;
+        } else{
+            controlador.dLPI = yk - calculaRange;
+        }
 
-        System.out.println("calculaRange " + calculaRange);
+
     }
 
     /**
@@ -111,12 +120,11 @@ public class Programa3 {
         fileName(1);//&m
         addCoordinatesToList();
         performCalculation();
-        programa5();
 
         controlador.printInfo();
     }
 
-    public void programa4(double dX, int iN){//&m
+    public double programa4(double dX, int iN){//&m
 
         double x = dX; //&m
         int dof = iN - 2;//&m
@@ -144,7 +152,7 @@ public class Programa3 {
             absSubstraction = aux.calculaP() - resultado.calculaP();
         }
 
-        controlador.dSig = 1 - (2 * resultado.calculaP());//&m
+        return (1 - (2 * resultado.calculaP()));//&m
     }
 
     public double programa5(){
