@@ -36,14 +36,8 @@ public class DistT {
 	public double calculaF(){
 
 		double dAnswer = 0;
-
-		//previous value
 		double aux;
-
-		//top part
-		double dX; //top
-
-		//bottom
+		double dX; 
 		double dY;
 		double dZ;
 

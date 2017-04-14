@@ -1,5 +1,4 @@
 //&p-Programa3
-//&b=6
 import java.io.*;
 import java.util.*;
 import java.math.*;
@@ -84,7 +83,6 @@ public class Programa6 {
         double xiaux = auxiliar.sumatoriaXi(lklCoordenadas);
 
         double dX = programa5();
-        System.out.println("dx "+ dX );
         double dStdDev = controlador.calculaStdDev(lklCoordenadas, b0, b1);
         double auxRangeSumatoria = controlador.sumatoriaXiMinusXavg(lklCoordenadas);
         double calculaRange = controlador.calculaRange(dX, dStdDev, iXK, xiaux/lklCoordenadas.size(), lklCoordenadas.size(), auxRangeSumatoria);
@@ -111,18 +109,18 @@ public class Programa6 {
      * Performs the overall analysis of files
      */
      //&i
-     //&b=9
-     //&d=4
+     //&b=13
     public void analyze(){
-
         init();
         fileName(1);//&m
         addCoordinatesToList();
         performCalculation();
-
         controlador.printInfo();
     }
-
+    /**
+     * gets (1 - (2 * calculaP())
+     */
+     //&i
     public double programa4(double dX, int iN){//&m
 
         double x = dX; //&m
@@ -154,6 +152,10 @@ public class Programa6 {
         return (1 - (2 * resultado.calculaP()));//&m
     }
 
+    /**
+     * gets dX
+     */
+     //&i
     public double programa5(){
 
         //&i

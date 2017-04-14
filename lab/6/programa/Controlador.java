@@ -320,12 +320,16 @@ public class Controlador {
     }
 
 
+    ////////////////////////////////////////////////////////////////////////////
+
     //p6
+    //&i
     public double calculaX(double dR, int iN){ //&m
         //System.out.println((Math.abs(dR)*Math.sqrt(iN - 2))/ Math.sqrt(1 - (dR * dR)));
         return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1.0 - (dR * dR)); //&m
     }
 
+    //&i
     public double sumatoriaXiMinusXavg(LinkedList <Coordenada> list){
 
         double dSum = 0.0;
@@ -343,6 +347,7 @@ public class Controlador {
         return dSum;
     }
 
+    //&i
     public double sumatoriaStdDec(LinkedList <Coordenada> list, double b0, double b1){
 
         double dSum = 0.0;
@@ -367,15 +372,16 @@ public class Controlador {
         return (dSum);
     }
 
+    //&i
     public double calculaStdDev(LinkedList <Coordenada> list, double b0, double b1){
 
         double der = sumatoriaStdDec(list, b0, b1);
         double izq = 1.0 / (list.size() - 2.0);
 
-        System.out.println("std dev" + Math.sqrt(izq * der));
         return Math.sqrt(izq * der);
     }
 
+    //&i
     public double calculaRange(double dTDist, double dStdDev, int dXK, double dXavg, double iN, double sumatoria){
 
         return dTDist*dStdDev*Math.sqrt(1.0 + (1.0/iN) + (calculaCuadrado(dXK - dXavg) / sumatoria));

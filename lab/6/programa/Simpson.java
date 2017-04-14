@@ -4,7 +4,6 @@ import java.util.*;
 //&p-Simpson
 public class Simpson {
 
-	//&i
 	private double dX;
 	private double iDof;
 	private double num_seg;
@@ -133,5 +132,4 @@ public class Simpson {
 		patron.add((double) 1);
 		return patron;
 	}
-
 }
