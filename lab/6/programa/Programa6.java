@@ -128,7 +128,7 @@ public class Programa6 {
         double x = dX; //&m
         int dof = iN - 2;//&m
         double eps = 0.0000000000001;
-        int num_seg = 10;
+        int num_seg = 100;
         double absSubstraction;
 
 
@@ -146,7 +146,7 @@ public class Programa6 {
         while (Math.abs(absSubstraction) >= eps){
             //System.out.println(aux.calculaP() + " -- " + resultado.calculaP());
             aux = resultado;
-            num_seg+=10;
+            num_seg*=2;
             resultado = new Simpson(x,dof, num_seg);
             absSubstraction = aux.calculaP() - resultado.calculaP();
         }
