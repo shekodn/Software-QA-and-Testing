@@ -1,7 +1,8 @@
+//&p-Simpson
+//&b=88
 import java.io.*;
 import java.util.*;
 
-//&p-Simpson
 public class Simpson {
 
 	private double dX;

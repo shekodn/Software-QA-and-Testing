@@ -3,6 +3,6 @@ PARTES BASE:
 PARTES NUEVAS
 --------------------------------------------
 PARTES REUSADAS:
-DistT: T=92, I=9
+Simpson: T=88, I=7
 --------------------------------------------
-Total LDC: 92
+Total LDC: 88
