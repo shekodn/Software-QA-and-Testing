@@ -378,7 +378,7 @@ public class Controlador {
 
     public double calculaRange(double dTDist, double dStdDev, int dXK, double dXavg, double iN, double sumatoria){
 
-        return dTDist*dStdDev*Math.sqrt(1.0 + (1.0/iN) + (calculaCuadrado(dXK - dXavg) / calculaCuadrado(sumatoria)));
+        return dTDist*dStdDev*Math.sqrt(1.0 + (1.0/iN) + (calculaCuadrado(dXK - dXavg) / sumatoria));
     }
 
 
