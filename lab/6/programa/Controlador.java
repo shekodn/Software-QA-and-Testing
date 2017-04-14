@@ -347,7 +347,11 @@ public class Controlador {
             yi = (list.get(iI).getY());
             xi = (list.get(iI).getX());
 
-            operacion = yi - b0 - b1*xi;
+            //System.out.println("xi " + xi  + " -- " + yi + " yi");
+
+            operacion = yi - b0 - (b1*xi);
+            // System.out.println("op "  + operacion);
+            // System.out.println("op 2 " + calculaCuadrado(operacion));
 
             dSum = dSum + calculaCuadrado(operacion);
         }
@@ -357,7 +361,10 @@ public class Controlador {
 
     public double calculaStdDev(LinkedList <Coordenada> list, double b0, double b1){
 
-        return Math.sqrt( (1/list.size()-2) * sumatoriaStdDec(list, b0, b1));
+        double der = sumatoriaStdDec(list, b0, b1);
+        double izq = 1.0/(list.size()-2);
+
+        return Math.sqrt(izq * der);
     }
 
     public double calculaRange(double dTDist, double dStdDev, double dXK, double dXavg, double iN, double sumatoria){

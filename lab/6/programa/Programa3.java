@@ -89,16 +89,14 @@ public class Programa3 {
         controlador.setR2(r2);
         controlador.setB0(b0);
         controlador.setB1(b1);
-        controlador.setB1(b1);
         controlador.setYK(yk);
 
         double dX = programa5();
-        double calculaStdDev
-        double auxRangeSumatoria = auxiliar.sumatoriaXiMinusXavg(lklCoordenadas);
-        double calculaRange = auxiliar.calculaRange(dX, double dStdDev, double dXK, double dXavg, double iN, double sumatoria);
+        double dStdDev = controlador.calculaStdDev(lklCoordenadas, b0, b1);
+        double auxRangeSumatoria = controlador.sumatoriaXiMinusXavg(lklCoordenadas);
+        double calculaRange = controlador.calculaRange(dX, dStdDev, iXK, iXK/lklCoordenadas.size(), lklCoordenadas.size(), auxRangeSumatoria);
 
-
-
+        System.out.println("calculaRange " + calculaRange);
     }
 
     /**
@@ -213,9 +211,9 @@ public class Programa3 {
 
 			//prints
 			//System.out.printf("first");
-			System.out.printf("P = %.05f \n", dP);
-			System.out.printf("DOF = %.0f \n", dDof);
-			System.out.printf("X = %.05f \n", dX);
+			// System.out.printf("P = %.05f \n", dP);
+			// System.out.printf("DOF = %.0f \n", dDof);
+			// System.out.printf("X = %.05f \n", dX);
 
 		}else if(dAns2 < dP){
 
@@ -279,9 +277,9 @@ public class Programa3 {
 
 				//prints
 				//System.out.printf("MID");
-				System.out.printf("P = %.05f \n", dP);
-				System.out.printf("DOF = %.0f \n", dDof);
-				System.out.printf("X = %.05f \n", dX);
+				// System.out.printf("P = %.05f \n", dP);
+				// System.out.printf("DOF = %.0f \n", dDof);
+				// System.out.printf("X = %.05f \n", dX);
 
 			}else{
 				if(dAns2 < dP){
@@ -302,9 +300,9 @@ public class Programa3 {
 
 		//prints
 		//System.out.printf("LAST");
-		System.out.printf("P = %.05f \n", dP);
-		System.out.printf("DOF = %.0f \n", dDof);
-		System.out.printf("X = %.05f \n", dX);
+		// System.out.printf("P = %.05f \n", dP);
+		// System.out.printf("DOF = %.0f \n", dDof);
+		// System.out.printf("X = %.05f \n", dX);
 
         return dX;
 
