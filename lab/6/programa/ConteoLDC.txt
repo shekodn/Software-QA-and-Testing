@@ -1,8 +1,15 @@
 PARTES BASE:
+Controlador: T=191, I=20, B=154, D=0, M=0, A=37
+Programa6: T=163, I=9, B=152, D=0, M=6, A=11
 --------------------------------------------
 PARTES NUEVAS
 --------------------------------------------
 PARTES REUSADAS:
+Analyzer: T=36, I=2
+Archivo: T=46, I=6
+Coordenada: T=13, I=0
 Simpson: T=88, I=7
+DistT: T=92, I=9
+Impresion: T=8, I=1
 --------------------------------------------
-Total LDC: 88
+Total LDC: 637

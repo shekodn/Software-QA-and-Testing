@@ -1,4 +1,5 @@
 //&p-Programa6
+//&b=152
 import java.io.*;
 import java.util.*;
 import java.math.*;
@@ -16,7 +17,6 @@ public class Programa6 {
      * Initializes variables
      */
      //&i
-     //&b=7
     public void init(){
 
         lklCoordenadas = new LinkedList();
@@ -32,7 +32,6 @@ public class Programa6 {
      * @param int iNumberOfFiles
      */
      //&i
-     //&b=18
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -109,7 +108,6 @@ public class Programa6 {
      * Performs the overall analysis of files
      */
      //&i
-     //&b=13
     public void analyze(){
         init();
         fileName(1);//&m
@@ -121,7 +119,6 @@ public class Programa6 {
      * gets (1 - (2 * calculaP())
      */
      //&i
-     //&p-p4
     public double programa4(double dX, int iN){//&m
 
         double x = dX; //&m
@@ -155,8 +152,7 @@ public class Programa6 {
     /**
      * gets dX
      */
-     //&p-p5
-    public double programa5(){
+    public double programa5(){//&m
 
         //&i
         double dX = 1.0;
@@ -299,7 +295,7 @@ public class Programa6 {
 		}
 
 
-        return dX;
+        return dX;//&m
 	}
 
     /**

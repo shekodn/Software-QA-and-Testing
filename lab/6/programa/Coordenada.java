@@ -1,4 +1,5 @@
 //&p-Coordenada
+//&b=13
 import java.io.*;
 import java.util.*;
 
@@ -8,7 +9,7 @@ public class Coordenada {
     private double dY;
 
     /* Getters */
-    
+
     /**
      * Gets X coordinate
      * @return [description]

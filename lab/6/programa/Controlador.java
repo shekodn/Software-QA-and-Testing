@@ -1,4 +1,5 @@
 //&p-Controlador
+//&b=154
 import java.io.*;
 import java.util.*;
 
@@ -20,7 +21,7 @@ public class Controlador {
     private int iN;
 
     //p6
-    protected double dSig; //&m
+    protected double dSig;
     protected double dUPI;
     protected double dLPI;
     protected double dT;
@@ -326,7 +327,7 @@ public class Controlador {
     //&i
     public double calculaX(double dR, int iN){ //&m
         //System.out.println((Math.abs(dR)*Math.sqrt(iN - 2))/ Math.sqrt(1 - (dR * dR)));
-        return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1.0 - (dR * dR)); //&m
+        return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1.0 - (dR * dR));
     }
 
     //&i
@@ -359,13 +360,7 @@ public class Controlador {
 
             yi = (list.get(iI).getY());
             xi = (list.get(iI).getX());
-
-            //System.out.println("xi " + xi  + " -- " + yi + " yi");
-
             operacion = yi - b0 - (b1*xi);
-            // System.out.println("op "  + operacion);
-            // System.out.println("op 2 " + calculaCuadrado(operacion));
-
             dSum = dSum + calculaCuadrado(operacion);
         }
 
