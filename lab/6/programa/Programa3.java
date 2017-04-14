@@ -84,6 +84,7 @@ public class Programa3 {
         double xiaux = auxiliar.sumatoriaXi(lklCoordenadas);
 
         double dX = programa5();
+        System.out.println("dx "+ dX );
         double dStdDev = controlador.calculaStdDev(lklCoordenadas, b0, b1);
         double auxRangeSumatoria = controlador.sumatoriaXiMinusXavg(lklCoordenadas);
         double calculaRange = controlador.calculaRange(dX, dStdDev, iXK, xiaux/lklCoordenadas.size(), lklCoordenadas.size(), auxRangeSumatoria);
@@ -104,8 +105,6 @@ public class Programa3 {
         } else{
             controlador.dLPI = yk - calculaRange;
         }
-
-
     }
 
     /**
@@ -128,7 +127,7 @@ public class Programa3 {
 
         double x = dX; //&m
         int dof = iN - 2;//&m
-        double eps = 0.0001;
+        double eps = 0.0000000000001;
         int num_seg = 10;
         double absSubstraction;
 
@@ -158,14 +157,14 @@ public class Programa3 {
     public double programa5(){
 
         //&i
-		double dX = 1.0;
+        double dX = 1.0;
 		double dAux = 1.0;
-		double dDof = lklCoordenadas.size()-2;
+		double dDof = lklCoordenadas.size() - 2;
 		double dAns1 = 0.0;
 		double dAns2 = 0.0;
 		double dNum_seg = 10.0;
 		double dNum_seg2 = 20.0;
-		double dEpsilon = 0.00000001;
+		double dEpsilon = 0.0000000000001;
 		double dW = 0.0;
 		double dW2 = 0.0;
 		double dValue = 0.0;
@@ -175,7 +174,6 @@ public class Programa3 {
 		int iDireccionPasada = 0;
 		int iDireccionActual = 0;
 		Simpson5 simpson = new Simpson5();
-		Scanner userInput = new Scanner(System.in);
 
 		do{
 			 if(dAns1 != 0.0){
@@ -213,15 +211,11 @@ public class Programa3 {
 
 			 }
 
-		}while(isSolved != true);
+		} while(isSolved != true);
 
 		if(dAns2 == dP){
 
 			//prints
-			//System.out.printf("first");
-			// System.out.printf("P = %.05f \n", dP);
-			// System.out.printf("DOF = %.0f \n", dDof);
-			// System.out.printf("X = %.05f \n", dX);
 
 		}else if(dAns2 < dP){
 
@@ -283,11 +277,6 @@ public class Programa3 {
 
 			if(dAns2 == dP){
 
-				//prints
-				//System.out.printf("MID");
-				// System.out.printf("P = %.05f \n", dP);
-				// System.out.printf("DOF = %.0f \n", dDof);
-				// System.out.printf("X = %.05f \n", dX);
 
 			}else{
 				if(dAns2 < dP){
@@ -306,16 +295,9 @@ public class Programa3 {
 			dValue = Math.abs(dAns2 - dP);
 		}
 
-		//prints
-		//System.out.printf("LAST");
-		// System.out.printf("P = %.05f \n", dP);
-		// System.out.printf("DOF = %.0f \n", dDof);
-		// System.out.printf("X = %.05f \n", dX);
 
         return dX;
-
-    }
-
+	}
 
     /**
      * [main description]
