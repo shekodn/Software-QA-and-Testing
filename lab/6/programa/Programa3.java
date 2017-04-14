@@ -78,6 +78,7 @@ public class Programa3 {
         double b0 = auxiliar.calculaB0(lklCoordenadas);
         double b1 = auxiliar.calculaB1(lklCoordenadas);
         double yk = auxiliar.calculaYK(lklCoordenadas, iXK);
+        double x = auxiliar.calculaX(r, lklCoordenadas.size());
 
         controlador.setiN(lklCoordenadas.size());
         controlador.setXK(iXK);
@@ -87,6 +88,8 @@ public class Programa3 {
         controlador.setB1(b1);
         controlador.setB1(b1);
         controlador.setYK(yk);
+
+
 
     }
 

@@ -302,4 +302,11 @@ public class Controlador {
         double b0 = (calculaB0(list));
         return (b0 + (b1 * xk));
     }
+
+
+    //p6
+    public double calculaX(double dR, int iN){
+        //System.out.println((Math.abs(dR)*Math.sqrt(iN - 2))/ Math.sqrt(1 - (dR * dR)));
+        return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1 - (dR * dR));
+    }
 }
