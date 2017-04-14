@@ -21,7 +21,11 @@ public class Controlador {
 
     //p6
     protected double dSig; //&m
-
+    protected double dUPI;
+    protected double dLPI;
+    protected double dT;
+    protected double dStdDev;
+    protected double XiMinusXavg;
 
 
     /* Getters */
@@ -315,4 +319,51 @@ public class Controlador {
         //System.out.println((Math.abs(dR)*Math.sqrt(iN - 2))/ Math.sqrt(1 - (dR * dR)));
         return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1 - (dR * dR)); //&m
     }
+
+    public double sumatoriaXiMinusXavg(LinkedList <Coordenada> list){
+
+        double dSum = 0;
+
+        for(int iI = 0; iI < list.size(); iI++){
+
+            dXi = (list.get(iI).getX());
+            dXavg = calculaPromedio(dXi, list.size());
+
+            dSum = dSum + calculaCuadrado(dXi - dXavg);
+        }
+
+        return (dSum);
+    }
+
+    public double sumatoriaStdDec(LinkedList <Coordenada> list, double b0, double b1){
+
+        double dSum = 0;
+        double yi;
+        double xi;
+        double operacion;
+
+        for(int iI = 0; iI < list.size(); iI++){
+
+            yi = (list.get(iI).getY());
+            xi = (list.get(iI).getX());
+
+            operacion = yi - b0 - b1*xi;
+
+            dSum = dSum + calculaCuadrado(operacion);
+        }
+
+        return (dSum);
+    }
+
+    public double calculaStdDev(LinkedList <Coordenada> list, double b0, double b1){
+
+        return Math.sqrt( (1/list.size()-2) * sumatoriaStdDec(list, b0, b1));
+    }
+
+    public double calculaRange(double dTDist, double dStdDev, double dXK, double dXavg, double iN, double sumatoria){
+
+        return dTDist*dStdDev*Math.sqrt(1 + (1/iN) + (calculaCuadrado(dXK - dXavg) / calculaCuadrado(sumatoria)));
+    }
+
+
 }

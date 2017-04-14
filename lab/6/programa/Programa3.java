@@ -81,7 +81,6 @@ public class Programa3 {
         double b1 = auxiliar.calculaB1(lklCoordenadas);
         double yk = auxiliar.calculaYK(lklCoordenadas, iXK);
         double x = auxiliar.calculaX(r, lklCoordenadas.size());
-
         programa4(x,lklCoordenadas.size());
 
         controlador.setiN(lklCoordenadas.size());
@@ -92,6 +91,13 @@ public class Programa3 {
         controlador.setB1(b1);
         controlador.setB1(b1);
         controlador.setYK(yk);
+
+        double dX = programa5();
+        double calculaStdDev
+        double auxRangeSumatoria = auxiliar.sumatoriaXiMinusXavg(lklCoordenadas);
+        double calculaRange = auxiliar.calculaRange(dX, double dStdDev, double dXK, double dXavg, double iN, double sumatoria);
+
+
 
     }
 
@@ -107,6 +113,8 @@ public class Programa3 {
         fileName(1);//&m
         addCoordinatesToList();
         performCalculation();
+        programa5();
+
         controlador.printInfo();
     }
 
@@ -139,6 +147,167 @@ public class Programa3 {
         }
 
         controlador.dSig = 1 - (2 * resultado.calculaP());//&m
+    }
+
+    public double programa5(){
+
+        //&i
+		double dX = 1.0;
+		double dAux = 1.0;
+		double dDof = lklCoordenadas.size()-2;
+		double dAns1 = 0.0;
+		double dAns2 = 0.0;
+		double dNum_seg = 10.0;
+		double dNum_seg2 = 20.0;
+		double dEpsilon = 0.00000001;
+		double dW = 0.0;
+		double dW2 = 0.0;
+		double dValue = 0.0;
+		boolean isSolved = false;
+		double dD = 0.5;
+		double dP = 0.35;
+		int iDireccionPasada = 0;
+		int iDireccionActual = 0;
+		Simpson5 simpson = new Simpson5();
+		Scanner userInput = new Scanner(System.in);
+
+		do{
+			 if(dAns1 != 0.0){
+				 dNum_seg = dNum_seg * 2;
+				//  System.out.println("dNum_seg  - " + dNum_seg);//m //borrar
+				 dW = dX/dNum_seg;
+				//  System.out.println("dW - " + dW);//m //borrar
+				 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
+				//  System.out.println("dAns1 - " + dAns1);//m //borrar
+				 dNum_seg2 = dNum_seg * 2;
+				//  System.out.println("dNum_seg2 - " + dNum_seg2);//m //borrar
+				 dW2  = dX/dNum_seg2;
+				//  System.out.println("dW2 - " + dW2);//m //borrar
+				 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
+				//  System.out.println("dAns2 - " + dAns2);//m //borrar
+
+			 }
+			 else{
+				 dW = dX/dNum_seg;
+				//  System.out.println("dW - " + dW);//m //borrar
+				 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
+				//  System.out.println("dAns1 - " + dAns1);//m //borrar
+				 if(dAns1 != 0.0){
+					 dW2  = dX/dNum_seg2;
+					//  System.out.println("dW2 - " + dW2);//m //borrar
+					 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
+					//  System.out.println("dAns2 - " + dAns2);//m //borrar
+				 }
+			 }
+			 dValue = Math.abs(dAns1 - dAns2);
+			//  System.out.println("dValue - " + dAns2);//m //borrar
+			 if(dValue < dEpsilon){
+				 isSolved = true;
+				//  System.out.println("isSolved - true");//m //borrar
+
+			 }
+
+		}while(isSolved != true);
+
+		if(dAns2 == dP){
+
+			//prints
+			//System.out.printf("first");
+			System.out.printf("P = %.05f \n", dP);
+			System.out.printf("DOF = %.0f \n", dDof);
+			System.out.printf("X = %.05f \n", dX);
+
+		}else if(dAns2 < dP){
+
+			dAux = dX + dD;
+			// System.out.println("dAux - " + dAux);//m //borrar
+			iDireccionActual = 1;
+
+		}else if(dAns2 > dP){
+			dAux = dX - dD;
+			// System.out.println("dAux - " + dAux);//m //borrar
+			iDireccionActual = -1;
+		}
+
+		dAns2 = 0.0;
+
+		while(Math.abs(dAns2- dP) > dEpsilon){
+			dX = dAux;
+			isSolved = false;
+			dW = 0.0;
+			dW2 = 0.0;
+			dAns1 = 0.0;
+			dAns2 = 0.0;
+
+			do{
+				 if(dAns1 != 0.0){
+					 dNum_seg = dNum_seg * 2;
+					 dW = dX/dNum_seg;
+					//  System.out.println("dW - " + dW);//m //borrar
+					 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
+					//  System.out.println("dAns1 - " + dAns1);//m //borrar
+					 dNum_seg2 = dNum_seg * 2;
+					//  System.out.println("dNum_seg2 - " + dNum_seg2);//m //borrar
+					 dW2  = dX/dNum_seg2;
+					//  System.out.println("dW2 - " + dW2);//m //borrar
+					 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
+					//  System.out.println("dAns2 - " + dAns2);//m //borrar
+
+				 }
+				 else{
+					 dW = dX/dNum_seg;
+					//  System.out.println("dW - " + dW);//m //borrar
+					 dAns1 = simpson.Iniciar(dX, dDof, dNum_seg, dEpsilon, dW);
+					//  System.out.println("dAns1 - " + dAns1);//m //borrar
+					 if(dAns1 != 0.0){
+						 dW2  = dX/dNum_seg2;
+						//  System.out.println("dW2 - " + dW2);//m //borrar
+						 dAns2 = simpson.Iniciar(dX, dDof, dNum_seg2, dEpsilon, dW2);
+						//  System.out.println("dAns2 - " + dAns2);//m //borrar
+					 }
+				 }
+
+				 dValue = Math.abs(dAns1 - dAns2);
+				 if(dValue < dEpsilon){
+					 isSolved = true;
+					//  System.out.println("isSolved - true");//m //borrar
+				 }
+
+			} while(!isSolved);
+
+			if(dAns2 == dP){
+
+				//prints
+				//System.out.printf("MID");
+				System.out.printf("P = %.05f \n", dP);
+				System.out.printf("DOF = %.0f \n", dDof);
+				System.out.printf("X = %.05f \n", dX);
+
+			}else{
+				if(dAns2 < dP){
+					dAux += dD;
+					iDireccionActual = 1;
+				} else if(dAns2 > dP){
+					dAux -= dD;
+					iDireccionActual = -1;
+				}
+			}
+
+			if(iDireccionPasada !=0 && iDireccionActual != iDireccionPasada){
+				dD /= 2.0;
+			}
+			iDireccionPasada = iDireccionActual;
+			dValue = Math.abs(dAns2 - dP);
+		}
+
+		//prints
+		//System.out.printf("LAST");
+		System.out.printf("P = %.05f \n", dP);
+		System.out.printf("DOF = %.0f \n", dDof);
+		System.out.printf("X = %.05f \n", dX);
+
+        return dX;
+
     }
 
 
