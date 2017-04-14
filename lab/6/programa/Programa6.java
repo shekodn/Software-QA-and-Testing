@@ -1,4 +1,4 @@
-//&p-Programa3
+//&p-Programa6
 import java.io.*;
 import java.util.*;
 import java.math.*;
@@ -121,6 +121,7 @@ public class Programa6 {
      * gets (1 - (2 * calculaP())
      */
      //&i
+     //&p-p4
     public double programa4(double dX, int iN){//&m
 
         double x = dX; //&m
@@ -138,7 +139,6 @@ public class Programa6 {
         Simpson aux = new Simpson(x, dof, num_seg);
         num_seg*=2;
         Simpson resultado = new Simpson(x,dof, num_seg);
-
         absSubstraction = aux.calculaP() - resultado.calculaP();
 
         while (Math.abs(absSubstraction) >= eps){
@@ -155,7 +155,7 @@ public class Programa6 {
     /**
      * gets dX
      */
-     //&i
+     //&p-p5
     public double programa5(){
 
         //&i
@@ -306,8 +306,6 @@ public class Programa6 {
      * [main description]
      * @param String[] args [description]
      */
-    //&p-Main
-    //&b=3
     //&i
     public static void main(String[] args) {
         Programa6 program = new Programa6();//&m

@@ -1,8 +1,9 @@
+//&p-DistT
+//&b=92
 import java.io.*;
 import java.util.*;
 
 
-//&p-DistT
 public class DistT {
 
 	private double dXi = 0;
@@ -37,7 +38,7 @@ public class DistT {
 
 		double dAnswer = 0;
 		double aux;
-		double dX; 
+		double dX;
 		double dY;
 		double dZ;
 
