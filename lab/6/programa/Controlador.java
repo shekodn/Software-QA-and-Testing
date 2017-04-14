@@ -19,6 +19,10 @@ public class Controlador {
     private int dXK;
     private int iN;
 
+    //p6
+    protected double dSig; //&m
+
+
 
     /* Getters */
     public double getX2(){
@@ -148,6 +152,8 @@ public class Controlador {
         System.out.println("b0 = " + roundNumber(dB0));
         System.out.println("b1 = " + roundNumber(dB1));
         System.out.println("yk = " + roundNumber(dYK));
+        System.out.printf("sig = %.10f\n", dSig); //&m
+
     }
 
     /* Sumatorias */
@@ -305,8 +311,8 @@ public class Controlador {
 
 
     //p6
-    public double calculaX(double dR, int iN){
+    public double calculaX(double dR, int iN){ //&m
         //System.out.println((Math.abs(dR)*Math.sqrt(iN - 2))/ Math.sqrt(1 - (dR * dR)));
-        return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1 - (dR * dR));
+        return (Math.abs(dR)*Math.sqrt(iN - 2))/Math.sqrt(1 - (dR * dR)); //&m
     }
 }

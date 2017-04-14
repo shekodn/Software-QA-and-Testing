@@ -2,6 +2,8 @@
 //&b=6
 import java.io.*;
 import java.util.*;
+import java.math.*;
+
 
 public class Programa3 {
 
@@ -80,6 +82,8 @@ public class Programa3 {
         double yk = auxiliar.calculaYK(lklCoordenadas, iXK);
         double x = auxiliar.calculaX(r, lklCoordenadas.size());
 
+        programa4(x,lklCoordenadas.size());
+
         controlador.setiN(lklCoordenadas.size());
         controlador.setXK(iXK);
         controlador.setR(r);
@@ -88,8 +92,6 @@ public class Programa3 {
         controlador.setB1(b1);
         controlador.setB1(b1);
         controlador.setYK(yk);
-
-
 
     }
 
@@ -106,6 +108,37 @@ public class Programa3 {
         addCoordinatesToList();
         performCalculation();
         controlador.printInfo();
+    }
+
+    public void programa4(double dX, int iN){//&m
+
+        double x = dX; //&m
+        int dof = iN - 2;//&m
+        double eps = 0.0001;
+        int num_seg = 10;
+        double absSubstraction;
+
+
+        /**
+         * Calculates P
+         */
+
+        //&i
+        Simpson aux = new Simpson(x, dof, num_seg);
+        num_seg*=2;
+        Simpson resultado = new Simpson(x,dof, num_seg);
+
+        absSubstraction = aux.calculaP() - resultado.calculaP();
+
+        while (Math.abs(absSubstraction) >= eps){
+            System.out.println(aux.calculaP() + " -- " + resultado.calculaP());
+            aux = resultado;
+            num_seg+=10;
+            resultado = new Simpson(x,dof, num_seg);
+            absSubstraction = aux.calculaP() - resultado.calculaP();
+        }
+
+        controlador.dSig = 1 - (2 * resultado.calculaP());//&m
     }
 
 
