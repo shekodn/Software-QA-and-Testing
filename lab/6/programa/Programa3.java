@@ -131,7 +131,7 @@ public class Programa3 {
         absSubstraction = aux.calculaP() - resultado.calculaP();
 
         while (Math.abs(absSubstraction) >= eps){
-            System.out.println(aux.calculaP() + " -- " + resultado.calculaP());
+            //System.out.println(aux.calculaP() + " -- " + resultado.calculaP());
             aux = resultado;
             num_seg+=10;
             resultado = new Simpson(x,dof, num_seg);
