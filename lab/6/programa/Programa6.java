@@ -5,7 +5,7 @@ import java.util.*;
 import java.math.*;
 
 
-public class Programa3 {
+public class Programa6 {
 
     private LinkedList <Coordenada> lklCoordenadas; //Lista de coordenadas
     private LinkedList <Archivo> lklFiles; //Lista de archivo
@@ -307,7 +307,7 @@ public class Programa3 {
     //&b=3
     //&i
     public static void main(String[] args) {
-        Programa3 program = new Programa3();//&m
+        Programa6 program = new Programa6();//&m
         program.analyze();
     }
 }
