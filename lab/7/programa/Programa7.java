@@ -334,7 +334,7 @@ public class Programa7 {
     //&i
     public void print(){
 
-        System.out.printf(" N = %.0f \n", N);
+        System.out.printf("N  = %.0f \n", N);
         System.out.printf("wk = %.05f \n", wk);
         System.out.printf("xk = %.05f \n", xk);
         System.out.printf("yk = %.05f \n", yk);

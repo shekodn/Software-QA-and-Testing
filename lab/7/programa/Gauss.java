@@ -25,32 +25,30 @@ public class Gauss {
 
         iN = 4;
 
-        for (int k = 0; k < iN; k++) {
-            /** find pivot row **/
-            int max = k;
+        for (int iK = 0; iK < iN; iK++) {
 
-            for (int i = k + 1; i < iN; i++){
-                if (Math.abs(A[i][k]) > Math.abs(A[max][k])){
-                    max = i;
+            int iMax = iK;
+
+            for (int iI = iK + 1; iI < iN; iI++){
+                if (Math.abs(A[iI][iK]) > Math.abs(A[iMax][iK])){
+                    iMax = iI;
                 }
             }
 
-            /** swap row in A matrix **/
-            double[] temp = A[k];
-            A[k] = A[max];
-            A[max] = temp;
+            //intercambio
+            double[] aux = A[iK];
+            A[iK] = A[iMax];
+            A[iMax] = aux;
+            double t = B[iK];
+            B[iK] = B[iMax];
+            B[iMax] = t;
 
-            /** swap corresponding values in constants matrix **/
-            double t = B[k];
-            B[k] = B[max];
-            B[max] = t;
+            for (int iI = iK + 1; iI < iN; iI++){
+                double factor = A[iI][iK] / A[iK][iK];
+                B[iI] -= factor * B[iK];
 
-            for (int i = k + 1; i < iN; i++){
-                double factor = A[i][k] / A[k][k];
-                B[i] -= factor * B[k];
-
-                for (int j = k; j < iN; j++){
-                    A[i][j] -= factor * A[k][j];
+                for (int iJ = iK; iJ < iN; iJ++){
+                    A[iI][iJ] -= factor * A[iK][iJ];
                 }
             }
         }
@@ -58,14 +56,14 @@ public class Gauss {
         //sustitucion hacia atras
         double[] solution = new double[iN];
 
-        for (int i = iN - 1; i >= 0; i--){
+        for (int iI = iN - 1; iI >= 0; iI--){
             double sum = 0.0;
 
-            for (int j = i + 1; j < iN; j++){
-                sum += A[i][j] * solution[j];
+            for (int iJ = iI + 1; iJ < iN; iJ++){
+                sum += A[iI][iJ] * solution[iJ];
             }
 
-            solution[i] = (B[i] - sum) / A[i][i];
+            solution[iI] = (B[iI] - sum) / A[iI][iI];
         }
 
         b0 = solution[0];
@@ -77,11 +75,11 @@ public class Gauss {
     public void printRowEchelonForm(double[][] A, double[] B){
         int iN = B.length;
         System.out.println("\nRow Echelon form : ");
-        for (int i = 0; i < iN; i++)
+        for (int iI = 0; iI < iN; iI++)
            {
-               for (int j = 0; j < iN; j++)
-                   System.out.printf("%.3f ", A[i][j] + '\t');
-               System.out.printf("| %.3f\n", B[i]);
+               for (int iJ = 0; iJ < iN; iJ++)
+                   System.out.printf("%.3f ", A[iI][iJ] + '\t');
+               System.out.printf("| %.3f\n", B[iI]);
            }
         System.out.println();
     }
