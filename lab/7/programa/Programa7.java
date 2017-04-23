@@ -288,6 +288,9 @@ public class Programa7 {
         print();
     }
 
+    /**
+     * Fills matrix so gauss can perform calculations
+     */
     public void prepareForSolving(){
 
         A[0][0] = N;
