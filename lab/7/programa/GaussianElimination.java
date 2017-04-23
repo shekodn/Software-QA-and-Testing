@@ -1,17 +1,12 @@
-/**
- ** Java Program to Implement Gaussian Elimination Algorithm
- **/
+import java.util.*;
+import java.util.io;
 
-import java.util.Scanner;
 
-/** Class GaussianElimination **/
-public class GaussianElimination
-{
-    public void solve(double[][] A, double[] B)
-    {
+public class GaussianElimination {
+
+    public void solve(double[][] A, double[] B) {
         int N = B.length;
-        for (int k = 0; k < N; k++)
-        {
+        for (int k = 0; k < N; k++) {
             /** find pivot row **/
             int max = k;
             for (int i = k + 1; i < N; i++)
@@ -71,15 +66,16 @@ public class GaussianElimination
     {
         int N = sol.length;
         System.out.println("\nSolution : ");
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < N; i++){
             System.out.printf("%.3f ", sol[i]);
+        }
         System.out.println();
     }
     /** Main function **/
-    public static void main (String[] args)
-    {
+    public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Gaussian Elimination Algorithm Test\n");
+
         /** Make an object of GaussianElimination class **/
         GaussianElimination ge = new GaussianElimination();
 
@@ -98,6 +94,7 @@ public class GaussianElimination
         for (int i = 0; i < N; i++)
             B[i] = scan.nextDouble();
 
+        
         ge.solve(A,B);
     }
 }
