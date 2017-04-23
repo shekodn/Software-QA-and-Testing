@@ -264,24 +264,6 @@ public class Programa7 {
         ZY = sumatoriaAB(lklZ, lklY);
         ZW = sumatoriaAB(lklZ, lklW);
 
-        // System.out.println("sumatoriaX); " + sumatoriaX);
-        // System.out.println("sumatoriaY); " + sumatoriaY);
-        // System.out.println("sumatoriaZ); " + sumatoriaZ);
-        // System.out.println("sumatoriaW); " + sumatoriaW);
-        //
-        // System.out.println("X2); " + X2);
-        // System.out.println("Y2); " + Y2);
-        // System.out.println("W2); " + W2);
-        //
-        // System.out.println("WX); " + WX);
-        // System.out.println("WY); " + WY);
-        // System.out.println("XY); " + XY);
-        //
-        // System.out.println("ZX); " + ZX);
-        // System.out.println("ZY); " + ZY);
-        // System.out.println("ZW); " + ZW);
-
-        //
         prepareForSolving();
         print();
     }
@@ -313,19 +295,6 @@ public class Programa7 {
         B[2] = ZX;
         B[3] = ZY;
 
-        // for (int i = 0; i < iNum; i++){
-        //     for (int j = 0; j < iNum; j++){
-        //         System.out.print(A[i][j] + " ");
-        //     }
-        //     System.out.println("\n");
-        // }
-        //
-        // System.out.println("\n");
-        //
-        // for (int i = 0; i < iNum; i++){
-        //     System.out.println(B[i]);
-        // }
-
         ge.solve(A,B);
 
         b0 = ge.b0;
@@ -343,17 +312,16 @@ public class Programa7 {
         System.out.printf("xk = %.05f \n", xk);
         System.out.printf("yk = %.05f \n", yk);
         System.out.print("------------\n");
-        System.out.printf("P = %.05f \n", b0);
-        System.out.printf("P = %.05f \n", b1);
-        System.out.printf("P = %.05f \n", b2);
-        System.out.printf("P = %.05f \n", b3);
+        System.out.printf("b0 = %.05f \n", b0);
+        System.out.printf("b1 = %.05f \n", b1);
+        System.out.printf("b2 = %.05f \n", b2);
+        System.out.printf("b3 = %.05f \n", b3);
         System.out.print("------------\n");
-        System.out.printf("P = %.05f \n", zk);
+        System.out.printf("zk = %.05f \n", zk);
     }
 
     public static void main(String[] args) {
         Programa7 p7 = new Programa7();
         p7.analyze();
-
     }
 }

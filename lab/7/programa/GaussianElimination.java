@@ -38,7 +38,7 @@ public class GaussianElimination {
         }
 
         /** Print row echelon form **/
-        printRowEchelonForm(A, B);
+        //printRowEchelonForm(A, B);
 
         /** back substitution **/
         double[] solution = new double[N];
@@ -54,9 +54,6 @@ public class GaussianElimination {
         b1 = solution[1];
         b2 = solution[2];
         b3 = solution[3];
-
-        /** Print solution **/
-        //printSolution(solution);
     }
     /** function to print in row    echleon form **/
     public void printRowEchelonForm(double[][] A, double[] B)
@@ -66,18 +63,9 @@ public class GaussianElimination {
         for (int i = 0; i < N; i++)
            {
                for (int j = 0; j < N; j++)
-                   System.out.printf("%.3f ", A[i][j]);
+                   System.out.printf("%.3f ", A[i][j] + '\t');
                System.out.printf("| %.3f\n", B[i]);
            }
            System.out.println();
-    }
-    /** function to print solution **/
-    public void printSolution(double[] sol)
-    {
-        int N = sol.length;
-        System.out.println("\nSolution : ");
-        for (int i = 0; i < N; i++){
-            //System.out.printf("%.3f ", sol[i]);
-        }
     }
 }
