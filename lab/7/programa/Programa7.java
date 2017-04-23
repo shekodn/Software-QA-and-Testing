@@ -328,6 +328,12 @@ public class Programa7 {
 
         ge.solve(A,B);
 
+        b0 = ge.b0;
+        b1 = ge.b1;
+        b2 = ge.b2;
+        b3 = ge.b3;
+        zk = b0 + b1*wk + b2*xk + b3*yk;
+
     }
 
     public void print(){

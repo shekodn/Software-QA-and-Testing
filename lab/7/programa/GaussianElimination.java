@@ -3,6 +3,11 @@ import java.util.*;
 
 public class GaussianElimination {
 
+    public double b0 = 0.0;
+    public double b1 = 0.0;
+    public double b2 = 0.0;
+    public double b3 = 0.0;
+
     public void solve(double[][] A, double[] B) {
         int N = B.length;
         for (int k = 0; k < N; k++) {
@@ -44,8 +49,14 @@ public class GaussianElimination {
                 sum += A[i][j] * solution[j];
             solution[i] = (B[i] - sum) / A[i][i];
         }
+
+        b0 = solution[0];
+        b1 = solution[1];
+        b2 = solution[2];
+        b3 = solution[3];
+
         /** Print solution **/
-        printSolution(solution);
+        //printSolution(solution);
     }
     /** function to print in row    echleon form **/
     public void printRowEchelonForm(double[][] A, double[] B)
@@ -66,8 +77,7 @@ public class GaussianElimination {
         int N = sol.length;
         System.out.println("\nSolution : ");
         for (int i = 0; i < N; i++){
-            System.out.printf("%.3f ", sol[i]);
+            //System.out.printf("%.3f ", sol[i]);
         }
-        System.out.println();
     }
 }
