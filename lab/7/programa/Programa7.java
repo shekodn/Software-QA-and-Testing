@@ -320,10 +320,10 @@ public class Programa7 {
 
         gauss.solve(A,B);
 
-        b0 = gauss.b0;
-        b1 = gauss.b1;
-        b2 = gauss.b2;
-        b3 = gauss.b3;
+        b0 = gauss.getB0();
+        b1 = gauss.getB1();
+        b2 = gauss.getB2();
+        b3 = gauss.getB3();
         zk = b0 + b1*wk + b2*xk + b3*yk;
 
     }
