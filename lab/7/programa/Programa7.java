@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Programa7 {
 
+    /* Variable declaration */
     private Scanner scFileName; //scanner with user input to name files
 
     /* Aux lists*/
@@ -12,7 +13,7 @@ public class Programa7 {
     private LinkedList <Double> lklZ;
     private LinkedList <Double> lklDoubles;
     private LinkedList <Double> lklGaussInput;
-    private LinkedList <Archivo> lklFiles; //Lista de archivo
+    private LinkedList <Archivo> lklFiles;
 
     /* Aux */
     private double sumatoriaX;
@@ -43,27 +44,22 @@ public class Programa7 {
     private double b3;
     private double zk;
 
-    /* GAUSS */
-    Scanner scan;
-    GaussianElimination ge;
-    int iNum = 4; //here goes 4
-    double[] B;
-    double[][] A;
-    double[] auxB;
-    double[][] auxA;
-
-
+    /* GAUSS variables*/
+    private Gauss gauss;
+    private int iNum = 4;
+    private double[] B;
+    private double[][] A;
 
     /**
      * Initializes variables
      */
+     //&i
     public void init(){
 
         lklFiles = new LinkedList<Archivo>();
         scFileName = new Scanner(System.in);
         lklDoubles = new LinkedList<Double>();
         lklGaussInput = new LinkedList<Double>();
-
 
         lklW = new LinkedList<Double>();
         lklX = new LinkedList<Double>();
@@ -79,7 +75,6 @@ public class Programa7 {
         b2 = 0;
         b3 = 0;
         zk = 0;
-
 
         sumatoriaX = 0;
         sumatoriaY = 0;
@@ -98,21 +93,19 @@ public class Programa7 {
         ZY = 0;
         ZW = 0;
 
-        scan = new Scanner(System.in);
-        ge = new GaussianElimination();
+        gauss = new Gauss();
         iNum = 4; //here goes 4
         B = new double[iNum];
         A = new double[iNum][iNum];
-        auxB = new double[iNum];
-        auxA = new double[iNum][iNum];
 
     }
 
 
     /**
      * The user put the name of the files he is going to scan
-     * @param int iNumberOfFiles
+     * @param int iNumberOfFiles = 1
      */
+     //&i
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -141,24 +134,29 @@ public class Programa7 {
         }
     }
 
-
+    /**
+     * [scan the file provided by the user]
+     */
+     //&i
     public void scan(){
-        String hola="";
+
         for(int iI = 0; iI < lklFiles.size(); iI++){
             Analyzer analyzer = new Analyzer();
             analyzer.readByLine2(lklFiles.get(iI).getName(), lklDoubles);
-            //System.out.println(lklDoubles);
         }
 
-        Double auxN = lklDoubles.size() - 3.0;
-        N = auxN / 4;
-        wk = lklDoubles.get(0);
-        xk = lklDoubles.get(1);
-        yk = lklDoubles.get(2);
-
+        Double auxN = lklDoubles.size() - 3.0; //&m
+        N = auxN / 4; //&m
+        wk = lklDoubles.get(0); //&m
+        xk = lklDoubles.get(1); //&m
+        yk = lklDoubles.get(2); //&m
 
     }
-
+    /**
+     * Fills 4 lists: lkl X,lkl Y,lkl Z, lkl W
+     * @param LinkedList<Double> list [description]
+     */
+    //&i
     public void buildLists(LinkedList<Double> list){
 
         for(int iI = 3; iI < list.size(); iI++){
@@ -179,21 +177,26 @@ public class Programa7 {
                 lklW.add(list.get(iI));
             }
         }
-
-        // System.out.println("X" +lklX);
-        // System.out.println("Y" + lklY);
-        // System.out.println("Z" + lklZ);
-        // System.out.println("W" + lklW);
     }
 
 
-    //&i
+    /**
+     * [calculaCuadrado]
+     * @param  double dNum
+     * @return  dNum * dNum
+     */
+     //&i
     public double calculaCuadrado(double dNum){
         return dNum * dNum;
     }
 
 
     //&i
+    /**
+     * [sumatoria]
+     * @param  LinkedList list
+     * @return the sum of all the elements of the list
+     */
     public double sumatoria(LinkedList <Double> list){
 
         double dSum = 0;
@@ -208,6 +211,12 @@ public class Programa7 {
     }
 
     //&i
+    /**
+     * [sumatoriaAB]
+     * @param  LinkedList <Double> listA [list A]
+     * @param  LinkedList <Double> listB [list B]
+     * @return the sum of all the elements of both lists
+     */
     public double sumatoriaAB(LinkedList <Double> listA, LinkedList <Double> listB){
 
         double dSum = 0;
@@ -224,6 +233,12 @@ public class Programa7 {
         return dSum;
     }
 
+    //&i
+    /**
+     * [sumatoriaAB]
+     * @param  LinkedList <Double> list
+     * @return the sum to the 2nd power of all the elements of list
+     */
     public double sumatoriaCuadrado(LinkedList <Double> list){
 
         double dSum = 0;
@@ -239,7 +254,12 @@ public class Programa7 {
     }
 
 
+    /**
+     * Performs the necesary methods to perform calculations.
+     */
+    //&i
     public void analyze(){
+
         //methods
         init();
         fileName(1); //1 file
@@ -295,12 +315,12 @@ public class Programa7 {
         B[2] = ZX;
         B[3] = ZY;
 
-        ge.solve(A,B);
+        gauss.solve(A,B);
 
-        b0 = ge.b0;
-        b1 = ge.b1;
-        b2 = ge.b2;
-        b3 = ge.b3;
+        b0 = gauss.b0;
+        b1 = gauss.b1;
+        b2 = gauss.b2;
+        b3 = gauss.b3;
         zk = b0 + b1*wk + b2*xk + b3*yk;
 
     }

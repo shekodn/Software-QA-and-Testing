@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class GaussianElimination {
+public class Gauss {
 
     public double b0 = 0.0;
     public double b1 = 0.0;
