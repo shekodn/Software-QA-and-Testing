@@ -4,14 +4,17 @@ import java.io.*;
 public class Programa7 {
 
     private Scanner scFileName; //scanner with user input to name files
-    private LinkedList <Archivo> lklFiles; //Lista de archivo
-    private LinkedList <Double> lklDoubles;
 
+    /* Aux lists*/
     private LinkedList <Double> lklW;
     private LinkedList <Double> lklX;
     private LinkedList <Double> lklY;
     private LinkedList <Double> lklZ;
+    private LinkedList <Double> lklDoubles;
+    private LinkedList <Double> lklGaussInput;
+    private LinkedList <Archivo> lklFiles; //Lista de archivo
 
+    /* Aux */
     private double sumatoriaX;
     private double sumatoriaY;
     private double sumatoriaZ;
@@ -29,7 +32,7 @@ public class Programa7 {
     private double ZY;
     private double ZW;
 
-
+    /* OUTPUT */
     private double N;
     private double wk;
     private double xk;
@@ -40,6 +43,17 @@ public class Programa7 {
     private double b3;
     private double zk;
 
+    /* GAUSS */
+    Scanner scan;
+    GaussianElimination ge;
+    int iNum = 4; //here goes 4
+    double[] B;
+    double[][] A;
+    double[] auxB;
+    double[][] auxA;
+
+
+
     /**
      * Initializes variables
      */
@@ -48,6 +62,8 @@ public class Programa7 {
         lklFiles = new LinkedList<Archivo>();
         scFileName = new Scanner(System.in);
         lklDoubles = new LinkedList<Double>();
+        lklGaussInput = new LinkedList<Double>();
+
 
         lklW = new LinkedList<Double>();
         lklX = new LinkedList<Double>();
@@ -82,6 +98,13 @@ public class Programa7 {
         ZY = 0;
         ZW = 0;
 
+        scan = new Scanner(System.in);
+        ge = new GaussianElimination();
+        iNum = 4; //here goes 4
+        B = new double[iNum];
+        A = new double[iNum][iNum];
+        auxB = new double[iNum];
+        auxA = new double[iNum][iNum];
 
     }
 
@@ -258,9 +281,53 @@ public class Programa7 {
         // System.out.println("ZY); " + ZY);
         // System.out.println("ZW); " + ZW);
 
-
-
+        //
+        prepareForSolving();
         print();
+    }
+
+    public void prepareForSolving(){
+
+        A[0][0] = N;
+        A[0][1] = sumatoriaW;
+        A[0][2] = sumatoriaX;
+        A[0][3] = sumatoriaY;
+
+        A[1][0] = sumatoriaW;
+        A[1][1] = W2;
+        A[1][2] = WX;
+        A[1][3] = WY;
+
+        A[2][0] = sumatoriaX;
+        A[2][1] = WX;
+        A[2][2] = X2;
+        A[2][3] = XY;
+
+        A[3][0] = sumatoriaY;
+        A[3][1] = WY;
+        A[3][2] = XY;
+        A[3][3] = Y2;
+
+        B[0] = sumatoriaZ;
+        B[1] = ZW;
+        B[2] = ZX;
+        B[3] = ZY;
+
+        // for (int i = 0; i < iNum; i++){
+        //     for (int j = 0; j < iNum; j++){
+        //         System.out.print(A[i][j] + " ");
+        //     }
+        //     System.out.println("\n");
+        // }
+        //
+        // System.out.println("\n");
+        //
+        // for (int i = 0; i < iNum; i++){
+        //     System.out.println(B[i]);
+        // }
+
+        ge.solve(A,B);
+
     }
 
     public void print(){
@@ -276,12 +343,11 @@ public class Programa7 {
         System.out.printf("P = %.05f \n", b3);
         System.out.print("------------\n");
         System.out.printf("P = %.05f \n", zk);
-
-
     }
 
     public static void main(String[] args) {
         Programa7 p7 = new Programa7();
         p7.analyze();
+
     }
 }
