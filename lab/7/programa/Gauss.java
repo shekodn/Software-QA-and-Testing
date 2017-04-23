@@ -21,15 +21,15 @@ public class Gauss {
         return b3;
     }
 
-    public void solve(double[][] A, double[] B) {
+    public void calcula(double[][] A, double[] B, int iN) {
 
-        int N = B.length;
+        iN = 4;
 
-        for (int k = 0; k < N; k++) {
+        for (int k = 0; k < iN; k++) {
             /** find pivot row **/
             int max = k;
 
-            for (int i = k + 1; i < N; i++){
+            for (int i = k + 1; i < iN; i++){
                 if (Math.abs(A[i][k]) > Math.abs(A[max][k])){
                     max = i;
                 }
@@ -45,23 +45,23 @@ public class Gauss {
             B[k] = B[max];
             B[max] = t;
 
-            for (int i = k + 1; i < N; i++){
+            for (int i = k + 1; i < iN; i++){
                 double factor = A[i][k] / A[k][k];
                 B[i] -= factor * B[k];
 
-                for (int j = k; j < N; j++){
+                for (int j = k; j < iN; j++){
                     A[i][j] -= factor * A[k][j];
                 }
             }
         }
 
         //sustitucion hacia atras
-        double[] solution = new double[N];
+        double[] solution = new double[iN];
 
-        for (int i = N - 1; i >= 0; i--){
+        for (int i = iN - 1; i >= 0; i--){
             double sum = 0.0;
 
-            for (int j = i + 1; j < N; j++){
+            for (int j = i + 1; j < iN; j++){
                 sum += A[i][j] * solution[j];
             }
 
@@ -74,13 +74,12 @@ public class Gauss {
         b3 = solution[3];
     }
 
-    /** function to print in row    echleon form **/
     public void printRowEchelonForm(double[][] A, double[] B){
-        int N = B.length;
+        int iN = B.length;
         System.out.println("\nRow Echelon form : ");
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < iN; i++)
            {
-               for (int j = 0; j < N; j++)
+               for (int j = 0; j < iN; j++)
                    System.out.printf("%.3f ", A[i][j] + '\t');
                System.out.printf("| %.3f\n", B[i]);
            }

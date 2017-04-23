@@ -318,7 +318,7 @@ public class Programa7 {
         B[2] = ZX;
         B[3] = ZY;
 
-        gauss.solve(A,B);
+        gauss.calcula(A,B,4);
 
         b0 = gauss.getB0();
         b1 = gauss.getB1();
@@ -328,6 +328,10 @@ public class Programa7 {
 
     }
 
+    /**
+     * [prints answer]
+     */
+    //&i
     public void print(){
 
         System.out.printf(" N = %.0f \n", N);
@@ -343,6 +347,10 @@ public class Programa7 {
         System.out.printf("zk = %.05f \n", zk);
     }
 
+    /**
+     * main
+     */
+    //&i
     public static void main(String[] args) {
         Programa7 p7 = new Programa7();
         p7.analyze();
