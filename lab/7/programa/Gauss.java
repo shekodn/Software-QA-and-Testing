@@ -21,7 +21,7 @@ public class Gauss {
         return b3;
     }
 
-    public void calcula(double[][] A, double[] B, int iN) {
+    public void calcula(double[][] coeficientes, double[] resultados, int iN) {
 
         iN = 4;
 
@@ -30,25 +30,25 @@ public class Gauss {
             int iMax = iK;
 
             for (int iI = iK + 1; iI < iN; iI++){
-                if (Math.abs(A[iI][iK]) > Math.abs(A[iMax][iK])){
+                if (Math.abs(coeficientes[iI][iK]) > Math.abs(coeficientes[iMax][iK])){
                     iMax = iI;
                 }
             }
 
             //intercambio
-            double[] aux = A[iK];
-            A[iK] = A[iMax];
-            A[iMax] = aux;
-            double t = B[iK];
-            B[iK] = B[iMax];
-            B[iMax] = t;
+            double[] aux = coeficientes[iK];
+            coeficientes[iK] = coeficientes[iMax];
+            coeficientes[iMax] = aux;
+            double t = resultados[iK];
+            resultados[iK] = resultados[iMax];
+            resultados[iMax] = t;
 
             for (int iI = iK + 1; iI < iN; iI++){
-                double factor = A[iI][iK] / A[iK][iK];
-                B[iI] -= factor * B[iK];
+                double factor = coeficientes[iI][iK] / coeficientes[iK][iK];
+                resultados[iI] -= factor * resultados[iK];
 
                 for (int iJ = iK; iJ < iN; iJ++){
-                    A[iI][iJ] -= factor * A[iK][iJ];
+                    coeficientes[iI][iJ] -= factor * coeficientes[iK][iJ];
                 }
             }
         }
@@ -60,10 +60,10 @@ public class Gauss {
             double sum = 0.0;
 
             for (int iJ = iI + 1; iJ < iN; iJ++){
-                sum += A[iI][iJ] * solution[iJ];
+                sum += coeficientes[iI][iJ] * solution[iJ];
             }
 
-            solution[iI] = (B[iI] - sum) / A[iI][iI];
+            solution[iI] = (resultados[iI] - sum) / coeficientes[iI][iI];
         }
 
         b0 = solution[0];
@@ -72,14 +72,14 @@ public class Gauss {
         b3 = solution[3];
     }
 
-    public void printRowEchelonForm(double[][] A, double[] B){
-        int iN = B.length;
+    public void printRowEchelonForm(double[][] coeficientes, double[] resultados){
+        int iN = resultados.length;
         System.out.println("\nRow Echelon form : ");
         for (int iI = 0; iI < iN; iI++)
            {
                for (int iJ = 0; iJ < iN; iJ++)
-                   System.out.printf("%.3f ", A[iI][iJ] + '\t');
-               System.out.printf("| %.3f\n", B[iI]);
+                   System.out.printf("%.3f ", coeficientes[iI][iJ] + '\t');
+               System.out.printf("| %.3f\n", resultados[iI]);
            }
         System.out.println();
     }
