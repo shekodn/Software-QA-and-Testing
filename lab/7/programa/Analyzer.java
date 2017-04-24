@@ -1,6 +1,8 @@
-//&p-Analyzer
+//&p-Anlyzer
+//&b=59
 import java.util.*;
 import java.io.*;
+
 
 public class Analyzer {
 

@@ -1,5 +1,5 @@
+//&p-Gauss
 import java.util.*;
-
 
 public class Gauss {
 

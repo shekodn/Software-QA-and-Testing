@@ -1,3 +1,4 @@
+//&p-programa7
 import java.util.*;
 import java.io.*;
 
@@ -106,6 +107,7 @@ public class Programa7 {
      * @param int iNumberOfFiles = 1
      */
      //&i
+     //&b=17
     void fileName(int iNumberOfFiles){
 
         String sName;
@@ -138,6 +140,7 @@ public class Programa7 {
      * [scan the file provided by the user]
      */
      //&i
+    //&b=4
     public void scan(){
 
         for(int iI = 0; iI < lklFiles.size(); iI++){
@@ -186,6 +189,7 @@ public class Programa7 {
      * @return  dNum * dNum
      */
      //&i
+     //&b=2
     public double calculaCuadrado(double dNum){
         return dNum * dNum;
     }
@@ -197,6 +201,7 @@ public class Programa7 {
      * @param  LinkedList list
      * @return the sum of all the elements of the list
      */
+    //&b=6
     public double sumatoria(LinkedList <Double> list){
 
         double dSum = 0;
@@ -217,6 +222,7 @@ public class Programa7 {
      * @param  LinkedList <Double> listB [list B]
      * @return the sum of all the elements of both lists
      */
+     //&b=8
     public double sumatoriaAB(LinkedList <Double> listA, LinkedList <Double> listB){
 
         double dSum = 0;
@@ -239,6 +245,7 @@ public class Programa7 {
      * @param  LinkedList <Double> list
      * @return the sum to the 2nd power of all the elements of list
      */
+     //&b=7
     public double sumatoriaCuadrado(LinkedList <Double> list){
 
         double dSum = 0;
