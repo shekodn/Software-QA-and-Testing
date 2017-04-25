@@ -150,6 +150,12 @@ public class Programa7 {
 
         Double auxN = lklDoubles.size() - 3.0; //&m
         N = auxN / 4; //&m
+
+        if(lklDoubles.size() <= 3){
+            System.out.println("No hay datos suficientes para hacer los calculos");
+            System.exit(0);
+        }
+
         wk = lklDoubles.get(0); //&m
         xk = lklDoubles.get(1); //&m
         yk = lklDoubles.get(2); //&m
@@ -180,6 +186,12 @@ public class Programa7 {
                 lklW.add(list.get(iI));
             }
         }
+
+        if((lklX.size() + lklY.size() + lklW.size() + lklZ.size()) % 4 != 0){
+            System.out.println("Los datos del archivo no vienen en cuadruples");
+            System.exit(0);
+        }
+
     }
 
 
